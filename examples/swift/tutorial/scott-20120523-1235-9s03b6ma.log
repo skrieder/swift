@@ -1,0 +1,45 @@
+2012-05-23 12:35:34,922-0500 DEBUG Loader arguments: [-tc.file, ../../../etc/tc.data, scott.swift]
+2012-05-23 12:35:34,922-0500 DEBUG Loader Max heap: 265093120
+2012-05-23 12:35:34,924-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting() { 
+   "scott.sh" stdout=@filename(t);
+}
+
+messagefile outfile <"scott.txt">;
+
+outfile = greeting();
+
+
+
+2012-05-23 12:35:34,924-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-23 12:35:34,924-0500 INFO  Loader scott.swift: source file is new. Recompiling.
+2012-05-23 12:35:34,925-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 12:35:34,925-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 12:35:35,125-0500 ERROR VDLt2VDLx Could not compile SwiftScript source: line 4:4: expecting an identifier, found 'scott.sh'
+2012-05-23 12:35:35,126-0500 DEBUG VDLt2VDLx Full parser exception
+line 4:4: expecting an identifier, found 'scott.sh'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+2012-05-23 12:35:35,130-0500 DEBUG Loader Exception when compiling scott.swift
+org.griphyn.vdl.toolkit.VDLt2VDLx$ParsingException: Could not compile SwiftScript source: expecting an identifier, found 'scott.sh'
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:67)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: line 4:4: expecting an identifier, found 'scott.sh'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	... 3 more

@@ -1,0 +1,82 @@
+2012-05-18 18:07:37,396-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 18:07:37,396-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:07:37,398-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     sleep 5;
+}
+
+string inputNames = "onelaunch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 18:07:37,398-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:07:37,398-0500 INFO  Loader onelaunch.swift: source file is new. Recompiling.
+2012-05-18 18:07:37,400-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:07:37,400-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:07:38,480-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-05-18 18:07:38,774-0500 DEBUG textfiles using default sites file
+2012-05-18 18:07:38,784-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-18 18:07:39,700-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-18 18:07:39,753-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-18 18:07:39,903-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-18 18:07:40,654-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-18 18:07:40,655-0500 INFO  unknown RUNID id=run:20120518-1807-cocru107
+2012-05-18 18:07:40,752-0500 INFO  SetFieldValue Set: inputNames=onelaunch.1.txt
+2012-05-18 18:07:40,763-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-05-18 18:07:40,765-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-05-18 18:07:40,765-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-05-18 18:07:40,772-0500 INFO  SetFieldValue Set: swift#mapper#17002=(.*)txt
+2012-05-18 18:07:40,772-0500 INFO  SetFieldValue Set: swift#mapper#17004=\1count
+2012-05-18 18:07:40,774-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-3 name=countwords
+2012-05-18 18:07:40,775-0500 INFO  SetFieldValue Set: swift#mapper#17001=onelaunch.1.txt
+2012-05-18 18:07:40,777-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-05-18 18:07:40,779-0500 INFO  vdl:execute START thread=0-1-0-3 tr=sleep
+2012-05-18 18:07:41,306-0500 INFO  vdl:execute END_FAILURE thread=0-1-0-3 tr=sleep
+2012-05-18 18:07:41,311-0500 DEBUG VDL2ExecutionContext The application "sleep" is not available in the given site/pool in your tc.data catalog 
+The application "sleep" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-18 18:07:41,329-0500 INFO  ExecutionContext Detailed exception: 
+The application "sleep" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-18 18:07:41,329-0500 INFO  Loader Swift finished with errors

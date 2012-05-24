@@ -1,0 +1,66 @@
+2012-05-23 13:23:47,098-0500 DEBUG Loader arguments: [-tc.file, ../../../etc/tc.data, scott.swift]
+2012-05-23 13:23:47,098-0500 DEBUG Loader Max heap: 265093120
+2012-05-23 13:23:47,099-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting() { 
+   sh "/Users/scottkrieder/swift/examples/swift/tutorial/scott.sh"" stdout=@filename(t);
+}
+
+messagefile outfile <"scott.txt">;
+
+outfile = greeting();
+
+
+2012-05-23 13:23:47,100-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-23 13:23:47,100-0500 INFO  Loader scott.swift: source file is new. Recompiling.
+2012-05-23 13:23:47,101-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 13:23:47,101-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 13:23:47,304-0500 ERROR VDLt2VDLx Could not compile SwiftScript source: line 4:89: expecting '"', found '\n'
+2012-05-23 13:23:47,305-0500 DEBUG VDLt2VDLx Full parser exception
+line 4:89: expecting '"', found '\n'
+	at org.globus.swift.parser.SwiftScriptLexer.nextToken(SwiftScriptLexer.java:281)
+	at antlr.TokenBuffer.fill(TokenBuffer.java:69)
+	at antlr.TokenBuffer.LA(TokenBuffer.java:80)
+	at antlr.LLkParser.LA(LLkParser.java:52)
+	at org.globus.swift.parser.SwiftScriptParser.multiExpr(SwiftScriptParser.java:2996)
+	at org.globus.swift.parser.SwiftScriptParser.additiveExpr(SwiftScriptParser.java:2938)
+	at org.globus.swift.parser.SwiftScriptParser.condExpr(SwiftScriptParser.java:2875)
+	at org.globus.swift.parser.SwiftScriptParser.equalExpr(SwiftScriptParser.java:2792)
+	at org.globus.swift.parser.SwiftScriptParser.andExpr(SwiftScriptParser.java:2759)
+	at org.globus.swift.parser.SwiftScriptParser.orExpr(SwiftScriptParser.java:2729)
+	at org.globus.swift.parser.SwiftScriptParser.expression(SwiftScriptParser.java:1315)
+	at org.globus.swift.parser.SwiftScriptParser.mappingExpr(SwiftScriptParser.java:1496)
+	at org.globus.swift.parser.SwiftScriptParser.appArg(SwiftScriptParser.java:1628)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:855)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+2012-05-23 13:23:47,309-0500 DEBUG Loader Exception when compiling scott.swift
+org.griphyn.vdl.toolkit.VDLt2VDLx$ParsingException: Could not compile SwiftScript source: expecting '"', found '\n'
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:67)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: line 4:89: expecting '"', found '\n'
+	at org.globus.swift.parser.SwiftScriptLexer.nextToken(SwiftScriptLexer.java:281)
+	at antlr.TokenBuffer.fill(TokenBuffer.java:69)
+	at antlr.TokenBuffer.LA(TokenBuffer.java:80)
+	at antlr.LLkParser.LA(LLkParser.java:52)
+	at org.globus.swift.parser.SwiftScriptParser.multiExpr(SwiftScriptParser.java:2996)
+	at org.globus.swift.parser.SwiftScriptParser.additiveExpr(SwiftScriptParser.java:2938)
+	at org.globus.swift.parser.SwiftScriptParser.condExpr(SwiftScriptParser.java:2875)
+	at org.globus.swift.parser.SwiftScriptParser.equalExpr(SwiftScriptParser.java:2792)
+	at org.globus.swift.parser.SwiftScriptParser.andExpr(SwiftScriptParser.java:2759)
+	at org.globus.swift.parser.SwiftScriptParser.orExpr(SwiftScriptParser.java:2729)
+	at org.globus.swift.parser.SwiftScriptParser.expression(SwiftScriptParser.java:1315)
+	at org.globus.swift.parser.SwiftScriptParser.mappingExpr(SwiftScriptParser.java:1496)
+	at org.globus.swift.parser.SwiftScriptParser.appArg(SwiftScriptParser.java:1628)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:855)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	... 3 more

@@ -1,0 +1,130 @@
+2012-05-18 18:01:16,744-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 18:01:16,745-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:01:16,746-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     wc "-w" @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "onelaunch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 18:01:16,746-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:01:16,747-0500 INFO  Loader onelaunch.swift: source file is new. Recompiling.
+2012-05-18 18:01:16,748-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:01:16,748-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:01:17,802-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-05-18 18:01:18,124-0500 DEBUG textfiles using default sites file
+2012-05-18 18:01:18,131-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-18 18:01:19,019-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-18 18:01:19,075-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-18 18:01:19,216-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-18 18:01:19,989-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-18 18:01:19,990-0500 INFO  unknown RUNID id=run:20120518-1801-71g7f6td
+2012-05-18 18:01:20,097-0500 INFO  SetFieldValue Set: inputNames=onelaunch.1.txt
+2012-05-18 18:01:20,110-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-05-18 18:01:20,111-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-05-18 18:01:20,112-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-05-18 18:01:20,117-0500 INFO  SetFieldValue Set: swift#mapper#17003=(.*)txt
+2012-05-18 18:01:20,118-0500 INFO  SetFieldValue Set: swift#mapper#17005=\1count
+2012-05-18 18:01:20,119-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-3 name=countwords
+2012-05-18 18:01:20,119-0500 INFO  SetFieldValue Set: swift#mapper#17002=onelaunch.1.txt
+2012-05-18 18:01:20,126-0500 INFO  vdl:execute START thread=0-1-0-3 tr=wc
+2012-05-18 18:01:20,641-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-18 18:01:20,647-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-18 18:01:20,650-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,656-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,659-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-18 18:01:20,661-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,675-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,679-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,682-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,684-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,687-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,688-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-18 18:01:20,690-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=wc-o1xobirk thread=0-1-0-3-1 host=localhost replicationGroup=n1xobirk
+2012-05-18 18:01:20,696-0500 INFO  vdl:createdirset START jobid=wc-o1xobirk host=localhost - Initializing directory structure
+2012-05-18 18:01:20,697-0500 INFO  vdl:createdirset END jobid=wc-o1xobirk - Done initializing directory structure
+2012-05-18 18:01:20,698-0500 INFO  vdl:dostagein START jobid=wc-o1xobirk - Staging in files
+2012-05-18 18:01:20,705-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,711-0500 DEBUG vdl:dostagein CDM: file://localhost/onelaunch.1.txt : DEFAULT
+2012-05-18 18:01:20,723-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=onelaunch.1.txt srchost=localhost srcdir= srcname=onelaunch.1.txt desthost=localhost destdir=onelaunch-20120518-1801-71g7f6td/shared/ provider=file policy=DEFAULT
+2012-05-18 18:01:20,729-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,731-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=onelaunch.1.txt srchost=localhost srcdir= srcname=onelaunch.1.txt desthost=localhost destdir=onelaunch-20120518-1801-71g7f6td/shared/ provider=file
+2012-05-18 18:01:20,732-0500 INFO  vdl:dostagein END jobid=wc-o1xobirk - Staging in finished
+2012-05-18 18:01:20,734-0500 DEBUG vdl:execute2 JOB_START jobid=wc-o1xobirk tr=wc arguments=[-w, onelaunch.1.txt] tmpdir=onelaunch-20120518-1801-71g7f6td/jobs/o/wc-o1xobirk host=localhost
+2012-05-18 18:01:20,737-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+
+
+2012-05-18 18:01:20,737-0500 DEBUG textfiles END TC:
+2012-05-18 18:01:20,748-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-3-1-1337382079053) is /bin/bash shared/_swiftwrap wc-o1xobirk -jobdir o -scratch  -e /usr/bin/wc -out onelaunch.1.count -err stderr.txt -i -d  -if onelaunch.1.txt -of onelaunch.1.count -k  -cdmfile  -status files -a -w onelaunch.1.txt
+2012-05-18 18:01:20,758-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/onelaunch-20120518-1801-71g7f6td command: /bin/bash /var/tmp/onelaunch-20120518-1801-71g7f6td/shared/_swiftwrap wc-o1xobirk -jobdir o -scratch  -e /usr/bin/wc -out onelaunch.1.count -err stderr.txt -i -d  -if onelaunch.1.txt -of onelaunch.1.count -k  -cdmfile  -status files -a -w onelaunch.1.txt
+2012-05-18 18:01:20,866-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,870-0500 DEBUG vdl:checkjobstatus START jobid=wc-o1xobirk
+2012-05-18 18:01:20,874-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,876-0500 INFO  vdl:checkjobstatus SUCCESS jobid=wc-o1xobirk - Success file found
+2012-05-18 18:01:20,877-0500 DEBUG vdl:execute2 STAGING_OUT jobid=wc-o1xobirk
+2012-05-18 18:01:20,878-0500 INFO  vdl:dostageout START jobid=wc-o1xobirk - Staging out files
+2012-05-18 18:01:20,879-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-05-18 18:01:20,884-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=onelaunch.1.count srcdir=onelaunch-20120518-1801-71g7f6td/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-18 18:01:20,885-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,890-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,893-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=onelaunch.1.count srcdir=onelaunch-20120518-1801-71g7f6td/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-18 18:01:20,895-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,899-0500 INFO  vdl:dostageout END jobid=wc-o1xobirk - Staging out finished
+2012-05-18 18:01:20,909-0500 DEBUG vdl:execute2 JOB_END jobid=wc-o1xobirk
+2012-05-18 18:01:20,910-0500 INFO  vdl:execute END_SUCCESS thread=0-1-0-3 tr=wc
+2012-05-18 18:01:20,912-0500 DEBUG countwords PROCEDURE_END line=4
+2012-05-18 18:01:20,912-0500 DEBUG vdl:mains FOREACH_IT_END line=12 thread=0-1-0
+2012-05-18 18:01:20,931-0500 DEBUG vdl:mains Starting cleanups
+2012-05-18 18:01:20,932-0500 INFO  vdl:cleanups START cleanups=[[onelaunch-20120518-1801-71g7f6td, localhost]]
+2012-05-18 18:01:20,934-0500 INFO  vdl:cleanup START dir=onelaunch-20120518-1801-71g7f6td host=localhost
+2012-05-18 18:01:20,934-0500 DEBUG vdl:cleanup cdmfile 
+2012-05-18 18:01:20,937-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1337382079064) is /bin/rm -rf onelaunch-20120518-1801-71g7f6td
+2012-05-18 18:01:20,938-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp command: /bin/rm -rf onelaunch-20120518-1801-71g7f6td
+2012-05-18 18:01:20,939-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:01:20,968-0500 INFO  vdl:cleanup END dir=onelaunch-20120518-1801-71g7f6td host=localhost
+2012-05-18 18:01:20,971-0500 INFO  vdl:cleanups END cleanups=[[onelaunch-20120518-1801-71g7f6td, localhost]]
+2012-05-18 18:01:20,973-0500 DEBUG vdl:mains Ending cleanups
+2012-05-18 18:01:20,977-0500 INFO  Loader Swift finished with no errors

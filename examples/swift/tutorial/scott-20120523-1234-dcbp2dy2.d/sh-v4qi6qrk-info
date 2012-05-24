@@ -1,0 +1,107 @@
+Progress  2012-05-23 12:34:48.N-0500  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+PWD=/var/tmp/scott-20120523-1234-dcbp2dy2
+DIR=jobs/v/sh-v4qi6qrk
+EXEC=/bin/sh
+STDIN=
+STDOUT=scott.txt
+STDERR=stderr.txt
+DIRS=
+INF=
+OUTF=scott.txt
+KICKSTART=
+CDM_FILE=
+MPI_RANK=
+ARGS=scott.sh
+ARGC=1
+Progress  2012-05-23 12:34:48.N-0500  CREATE_JOBDIR
+Created job directory: jobs/v/sh-v4qi6qrk
+Progress  2012-05-23 12:34:48.N-0500  CREATE_INPUTDIR
+Progress  2012-05-23 12:34:48.N-0500  LINK_INPUTS
+Progress  2012-05-23 12:34:48.N-0500  EXECUTE
+Application /bin/sh failed with an exit code of 127
+
+_____________________________________________________________________________
+
+        command line
+_____________________________________________________________________________
+
+sh-v4qi6qrk -jobdir v -scratch -e /bin/sh -out scott.txt -err stderr.txt -i -d -if -of scott.txt -k -cdmfile -status files -a scott.sh
+
+_____________________________________________________________________________
+
+        uname -a
+_____________________________________________________________________________
+
+Darwin dhcp121.eastfowl1.iit.edu 11.3.0 Darwin Kernel Version 11.3.0: Thu Jan 12 18:47:41 PST 2012; root:xnu-1699.24.23~1/RELEASE_X86_64 x86_64
+
+_____________________________________________________________________________
+
+        id
+_____________________________________________________________________________
+
+uid=501(scottkrieder) gid=20(staff) groups=20(staff),402(com.apple.sharepoint.group.1),12(everyone),33(_appstore),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),100(_lpoperator),204(_developer),401(com.apple.access_screensharing)
+
+_____________________________________________________________________________
+
+        env
+_____________________________________________________________________________
+
+TERM_PROGRAM=Apple_Terminal
+GPG_AGENT_INFO=/Users/scottkrieder/.gnupg/S.gpg-agent:137:1
+SHELL=/bin/bash
+TERM=xterm-256color
+TMPDIR=/var/folders/hp/xb41c4h538vcx8xnlxlkq9j80000gn/T/
+Apple_PubSub_Socket_Render=/tmp/launch-bLC2Af/Render
+TERM_PROGRAM_VERSION=303
+OLDPWD=/var/tmp/scott-20120523-1234-dcbp2dy2
+TERM_SESSION_ID=1EE269AA-DD1E-4344-BDB6-EB4D59A4A10D
+com.apple.java.jvmTask=CommandLine.java
+USER=scottkrieder
+LD_LIBRARY_PATH=/usr/local/cuda/lib
+COMMAND_MODE=unix2003
+SSH_AUTH_SOCK=/tmp/launch-7KftkS/Listeners
+Apple_Ubiquity_Message=/tmp/launch-xryX4E/Apple_Ubiquity_Message
+__CF_USER_TEXT_ENCODING=0x1F5:0:0
+PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/cuda/bin:/usr/local/swift/bin:/sbin:/bin:/usr/bin
+PWD=/var/tmp/scott-20120523-1234-dcbp2dy2/jobs/v/sh-v4qi6qrk
+LANG=en_US.UTF-8
+com.apple.java.jvmMode=client
+JAVA_MAIN_CLASS_38926=org.griphyn.vdl.karajan.Loader
+HOME=/Users/scottkrieder
+SHLVL=3
+LOGNAME=scottkrieder
+DISPLAY=/tmp/launch-E7ItTE/org.x:0
+JAVA_ARCH=x86_64
+_=/usr/bin/env
+
+_____________________________________________________________________________
+
+        df
+_____________________________________________________________________________
+
+Filesystem                        512-blocks      Used Available Capacity  Mounted on
+/dev/disk0s2                       235298960 229102872   5684088    98%    /
+devfs                                    367       367         0   100%    /dev
+map -hosts                                 0         0         0   100%    /net
+map auto_home                              0         0         0   100%    /home
+localhost:/yQ7OX5LxN6qunUIbDNBuUD  235298960 235298960         0   100%    /Volumes/MobileBackups
+
+_____________________________________________________________________________
+
+        stdout
+_____________________________________________________________________________
+
+
+_____________________________________________________________________________
+
+        stderr
+_____________________________________________________________________________
+
+/bin/sh: scott.sh: No such file or directory

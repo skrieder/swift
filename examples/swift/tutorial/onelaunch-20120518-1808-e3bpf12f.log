@@ -1,0 +1,53 @@
+2012-05-18 18:08:16,834-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 18:08:16,835-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:08:16,836-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     /bin/sleep 5;
+}
+
+string inputNames = "onelaunch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 18:08:16,836-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:08:16,837-0500 INFO  Loader onelaunch.swift: source file is new. Recompiling.
+2012-05-18 18:08:16,839-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:08:16,840-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:08:17,025-0500 ERROR VDLt2VDLx Could not compile SwiftScript source: line 5:6: expecting an identifier, found '/'
+2012-05-18 18:08:17,026-0500 DEBUG VDLt2VDLx Full parser exception
+line 5:6: expecting an identifier, found '/'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+2012-05-18 18:08:17,029-0500 DEBUG Loader Exception when compiling onelaunch.swift
+org.griphyn.vdl.toolkit.VDLt2VDLx$ParsingException: Could not compile SwiftScript source: expecting an identifier, found '/'
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:67)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: line 5:6: expecting an identifier, found '/'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	... 3 more

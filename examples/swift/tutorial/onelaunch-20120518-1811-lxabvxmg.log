@@ -1,0 +1,40 @@
+2012-05-18 18:11:25,727-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 18:11:25,728-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:11:25,729-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+    echo hello stdout=@filename(t);
+}
+
+string inputNames = "onelaunch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 18:11:25,729-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:11:25,730-0500 INFO  Loader onelaunch.swift: source file is new. Recompiling.
+2012-05-18 18:11:26,739-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-05-18 18:11:26,867-0500 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Variable hello is undefined. in application echo at line 4
+	at org.griphyn.vdl.engine.Karajan.application(Karajan.java:917)
+	at org.griphyn.vdl.engine.Karajan.binding(Karajan.java:887)
+	at org.griphyn.vdl.engine.Karajan.procedure(Karajan.java:331)
+	at org.griphyn.vdl.engine.Karajan.processProcedures(Karajan.java:248)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:268)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:106)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:310)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: org.griphyn.vdl.karajan.CompilationException: Variable hello is undefined.
+	at org.griphyn.vdl.engine.Karajan.expressionToKarajan(Karajan.java:1118)
+	at org.griphyn.vdl.engine.Karajan.application(Karajan.java:898)
+	... 7 more

@@ -1,0 +1,93 @@
+2012-05-18 18:00:29,802-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 18:00:29,802-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:00:29,804-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     wc "-w" @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "onelauch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 18:00:29,804-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:00:29,806-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:00:29,806-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 18:00:29,806-0500 DEBUG Loader Recompilation suppressed.
+2012-05-18 18:00:30,042-0500 DEBUG textfiles using default sites file
+2012-05-18 18:00:30,048-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-18 18:00:31,021-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-18 18:00:31,064-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-18 18:00:31,233-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-18 18:00:32,051-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-18 18:00:32,052-0500 INFO  unknown RUNID id=run:20120518-1800-g77h61a7
+2012-05-18 18:00:32,156-0500 INFO  SetFieldValue Set: inputNames=onelauch.1.txt
+2012-05-18 18:00:32,169-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-05-18 18:00:32,170-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-05-18 18:00:32,170-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-05-18 18:00:32,177-0500 INFO  SetFieldValue Set: swift#mapper#17003=(.*)txt
+2012-05-18 18:00:32,177-0500 INFO  SetFieldValue Set: swift#mapper#17005=\1count
+2012-05-18 18:00:32,179-0500 INFO  SetFieldValue Set: swift#mapper#17002=onelauch.1.txt
+2012-05-18 18:00:32,183-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-3 name=countwords
+2012-05-18 18:00:32,189-0500 INFO  vdl:execute START thread=0-1-0-3 tr=wc
+2012-05-18 18:00:32,202-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-18 18:00:32,205-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-18 18:00:32,209-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,210-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,212-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-18 18:00:32,215-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,229-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,231-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,232-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,234-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,236-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,237-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-18 18:00:32,239-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=wc-etrnbirk thread=0-1-0-3-1 host=localhost replicationGroup=dtrnbirk
+2012-05-18 18:00:32,245-0500 INFO  vdl:createdirset START jobid=wc-etrnbirk host=localhost - Initializing directory structure
+2012-05-18 18:00:32,246-0500 INFO  vdl:createdirset END jobid=wc-etrnbirk - Done initializing directory structure
+2012-05-18 18:00:32,246-0500 INFO  vdl:dostagein START jobid=wc-etrnbirk - Staging in files
+2012-05-18 18:00:32,254-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,266-0500 DEBUG vdl:dostagein CDM: file://localhost/onelauch.1.txt : DEFAULT
+2012-05-18 18:00:32,271-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=onelauch.1.txt srchost=localhost srcdir= srcname=onelauch.1.txt desthost=localhost destdir=onelaunch-20120518-1800-g77h61a7/shared/ provider=file policy=DEFAULT
+2012-05-18 18:00:32,280-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:32,280-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=wc-etrnbirk - Error file missing
+2012-05-18 18:00:32,282-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=wc-etrnbirk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /Users/scottkrieder/swift/examples/swift/tutorial/./onelauch.1.txt
+2012-05-18 18:00:32,295-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job wc-etrnbirk
+2012-05-18 18:00:32,295-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from onelaunch-20120518-1800-g77h61a7/info/e on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/onelaunch-20120518-1800-g77h61a7/info/e/wc-etrnbirk-info
+2012-05-18 18:00:34,305-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-05-18 18:00:34,319-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=wc-gtrnbirk thread=0-1-0-3-1 host=localhost replicationGroup=ftrnbirk
+2012-05-18 18:00:34,322-0500 INFO  vdl:createdirset START jobid=wc-gtrnbirk host=localhost - Initializing directory structure
+2012-05-18 18:00:34,322-0500 INFO  vdl:createdirset END jobid=wc-gtrnbirk - Done initializing directory structure
+2012-05-18 18:00:34,342-0500 INFO  vdl:dostagein START jobid=wc-gtrnbirk - Staging in files
+2012-05-18 18:00:34,345-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:34,346-0500 DEBUG vdl:dostagein CDM: file://localhost/onelauch.1.txt : DEFAULT
+2012-05-18 18:00:34,347-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=onelauch.1.txt srchost=localhost srcdir= srcname=onelauch.1.txt desthost=localhost destdir=onelaunch-20120518-1800-g77h61a7/shared/ provider=file policy=DEFAULT
+2012-05-18 18:00:34,364-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:00:34,365-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=wc-gtrnbirk - Error file missing
+2012-05-18 18:00:34,365-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=wc-gtrnbirk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /Users/scottkrieder/swift/examples/swift/tutorial/./onelauch.1.txt
+2012-05-18 18:00:34,379-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job wc-gtrnbirk
+2012-05-18 18:00:34,380-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from onelaunch-20120518-1800-g77h61a7/info/g on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/onelaunch-20120518-1800-g77h61a7/info/g/wc-gtrnbirk-info

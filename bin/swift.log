@@ -1,0 +1,15 @@
+2012-05-18 17:13:11,959-0500 DEBUG Loader Loader started
+2012-05-18 17:14:11,078-0500 DEBUG Loader Loader started
+2012-05-18 17:24:39,973-0500 DEBUG Loader Loader started
+2012-05-18 18:52:01,265-0500 INFO  CoasterPersistentService Error loading credential
+org.globus.gsi.GlobusCredentialException: [JGLOBUS-5] Proxy file (/tmp/x509up_u501) not found.
+	at org.globus.gsi.GlobusCredential.<init>(GlobusCredential.java:114)
+	at org.globus.gsi.GlobusCredential.reloadDefaultCredential(GlobusCredential.java:590)
+	at org.globus.gsi.GlobusCredential.getDefaultCredential(GlobusCredential.java:575)
+	at org.globus.cog.abstraction.coaster.service.CoasterPersistentService.main(CoasterPersistentService.java:94)
+2012-05-18 21:43:23,675-0400 INFO  CoasterPersistentService Error loading credential
+org.globus.gsi.GlobusCredentialException: [JGLOBUS-5] Proxy file (/tmp/x509up_u501) not found.
+	at org.globus.gsi.GlobusCredential.<init>(GlobusCredential.java:114)
+	at org.globus.gsi.GlobusCredential.reloadDefaultCredential(GlobusCredential.java:590)
+	at org.globus.gsi.GlobusCredential.getDefaultCredential(GlobusCredential.java:575)
+	at org.globus.cog.abstraction.coaster.service.CoasterPersistentService.main(CoasterPersistentService.java:94)

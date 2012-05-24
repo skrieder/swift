@@ -1,0 +1,94 @@
+2012-05-18 17:59:46,192-0500 DEBUG Loader arguments: [onelaunch.swift]
+2012-05-18 17:59:46,192-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 17:59:46,193-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     wc "-w" @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "onelauch.1.txt";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c<regexp_mapper;
+	    source=@f,
+            match="(.*)txt",
+            transform="\\1count">;
+  c = countwords(f);
+}
+
+
+2012-05-18 17:59:46,194-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 17:59:46,194-0500 INFO  Loader onelaunch.swift: source file is new. Recompiling.
+2012-05-18 17:59:46,196-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 17:59:46,196-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-18 17:59:47,252-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-05-18 17:59:47,554-0500 DEBUG textfiles using default sites file
+2012-05-18 17:59:47,559-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-18 17:59:48,446-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-18 17:59:48,497-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-18 17:59:48,628-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-18 17:59:49,403-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-18 17:59:49,404-0500 INFO  unknown RUNID id=run:20120518-1759-kyes9l99
+2012-05-18 17:59:49,516-0500 INFO  SetFieldValue Set: inputNames=onelauch.1.txt
+2012-05-18 17:59:49,529-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-05-18 17:59:49,531-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-05-18 17:59:49,531-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-05-18 17:59:49,538-0500 INFO  SetFieldValue Set: swift#mapper#17005=\1count
+2012-05-18 17:59:49,539-0500 INFO  SetFieldValue Set: swift#mapper#17002=onelauch.1.txt
+2012-05-18 17:59:49,539-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-3 name=countwords
+2012-05-18 17:59:49,539-0500 INFO  SetFieldValue Set: swift#mapper#17003=(.*)txt
+2012-05-18 17:59:49,544-0500 INFO  vdl:execute START thread=0-1-0-3 tr=wc
+2012-05-18 17:59:50,065-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-18 17:59:50,068-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-18 17:59:50,071-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,073-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,076-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-18 17:59:50,078-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,093-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,096-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,098-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,101-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,103-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,106-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-18 17:59:50,108-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=wc-z4smbirk thread=0-1-0-3-1 host=localhost replicationGroup=y4smbirk
+2012-05-18 17:59:50,115-0500 INFO  vdl:createdirset START jobid=wc-z4smbirk host=localhost - Initializing directory structure
+2012-05-18 17:59:50,116-0500 INFO  vdl:createdirset END jobid=wc-z4smbirk - Done initializing directory structure
+2012-05-18 17:59:50,116-0500 INFO  vdl:dostagein START jobid=wc-z4smbirk - Staging in files
+2012-05-18 17:59:50,124-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:50,130-0500 DEBUG vdl:dostagein CDM: file://localhost/onelauch.1.txt : DEFAULT
+2012-05-18 17:59:50,135-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=onelauch.1.txt srchost=localhost srcdir= srcname=onelauch.1.txt desthost=localhost destdir=onelaunch-20120518-1759-kyes9l99/shared/ provider=file policy=DEFAULT
+2012-05-18 17:59:50,154-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-18 17:59:50,156-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=wc-z4smbirk - Error file missing
+2012-05-18 17:59:50,158-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=wc-z4smbirk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /Users/scottkrieder/swift/examples/swift/tutorial/./onelauch.1.txt
+2012-05-18 17:59:50,176-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job wc-z4smbirk
+2012-05-18 17:59:50,177-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from onelaunch-20120518-1759-kyes9l99/info/z on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/onelaunch-20120518-1759-kyes9l99/info/z/wc-z4smbirk-info
+2012-05-18 17:59:51,687-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-05-18 17:59:51,699-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=wc-15smbirk thread=0-1-0-3-1 host=localhost replicationGroup=05smbirk
+2012-05-18 17:59:51,716-0500 INFO  vdl:createdirset START jobid=wc-15smbirk host=localhost - Initializing directory structure
+2012-05-18 17:59:51,716-0500 INFO  vdl:createdirset END jobid=wc-15smbirk - Done initializing directory structure
+2012-05-18 17:59:51,717-0500 INFO  vdl:dostagein START jobid=wc-15smbirk - Staging in files
+2012-05-18 17:59:51,723-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:51,724-0500 DEBUG vdl:dostagein CDM: file://localhost/onelauch.1.txt : DEFAULT
+2012-05-18 17:59:51,726-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=onelauch.1.txt srchost=localhost srcdir= srcname=onelauch.1.txt desthost=localhost destdir=onelaunch-20120518-1759-kyes9l99/shared/ provider=file policy=DEFAULT
+2012-05-18 17:59:51,735-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 17:59:51,735-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=wc-15smbirk - Error file missing
+2012-05-18 17:59:51,736-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=wc-15smbirk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /Users/scottkrieder/swift/examples/swift/tutorial/./onelauch.1.txt
+2012-05-18 17:59:51,751-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job wc-15smbirk
+2012-05-18 17:59:51,752-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from onelaunch-20120518-1759-kyes9l99/info/1 on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/onelaunch-20120518-1759-kyes9l99/info/1/wc-15smbirk-info

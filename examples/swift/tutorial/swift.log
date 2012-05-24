@@ -1,0 +1,67 @@
+2012-05-18 17:43:15,543-0500 DEBUG Loader Loader started
+2012-05-18 17:53:13,493-0500 DEBUG Loader Loader started
+2012-05-18 17:53:31,077-0500 DEBUG Loader Loader started
+2012-05-18 17:53:54,602-0500 DEBUG Loader Loader started
+2012-05-18 17:55:45,902-0500 DEBUG Loader Loader started
+2012-05-18 17:59:46,095-0500 DEBUG Loader Loader started
+2012-05-18 18:00:29,705-0500 DEBUG Loader Loader started
+2012-05-18 18:01:16,646-0500 DEBUG Loader Loader started
+2012-05-18 18:02:44,303-0500 DEBUG Loader Loader started
+2012-05-18 18:07:02,065-0500 DEBUG Loader Loader started
+2012-05-18 18:07:37,296-0500 DEBUG Loader Loader started
+2012-05-18 18:08:16,736-0500 DEBUG Loader Loader started
+2012-05-18 18:09:27,647-0500 DEBUG Loader Loader started
+2012-05-18 18:11:25,623-0500 DEBUG Loader Loader started
+2012-05-18 18:12:35,418-0500 DEBUG Loader Loader started
+2012-05-18 18:13:01,603-0500 DEBUG Loader Loader started
+2012-05-18 18:17:44,266-0500 DEBUG Loader Loader started
+2012-05-18 18:24:41,382-0500 DEBUG Loader Loader started
+2012-05-18 18:27:41,630-0500 DEBUG Loader Loader started
+2012-05-18 18:30:40,073-0500 DEBUG Loader Loader started
+2012-05-18 18:31:30,067-0500 DEBUG Loader Loader started
+2012-05-18 18:33:04,749-0500 DEBUG Loader Loader started
+2012-05-18 18:33:39,254-0500 DEBUG Loader Loader started
+2012-05-18 18:38:39,081-0500 DEBUG Loader Loader started
+2012-05-18 18:42:27,750-0500 DEBUG Loader Loader started
+2012-05-18 18:42:49,265-0500 DEBUG Loader Loader started
+2012-05-18 18:45:40,408-0500 DEBUG Loader Loader started
+2012-05-18 18:47:27,820-0500 DEBUG Loader Loader started
+2012-05-18 21:43:43,891-0400 INFO  CoasterPersistentService Error loading credential
+org.globus.gsi.GlobusCredentialException: [JGLOBUS-5] Proxy file (/tmp/x509up_u501) not found.
+	at org.globus.gsi.GlobusCredential.<init>(GlobusCredential.java:114)
+	at org.globus.gsi.GlobusCredential.reloadDefaultCredential(GlobusCredential.java:590)
+	at org.globus.gsi.GlobusCredential.getDefaultCredential(GlobusCredential.java:575)
+	at org.globus.cog.abstraction.coaster.service.CoasterPersistentService.main(CoasterPersistentService.java:94)
+2012-05-18 21:43:55,255-0400 DEBUG Loader Loader started
+2012-05-18 21:47:35,775-0400 DEBUG Loader Loader started
+2012-05-18 21:48:13,806-0400 DEBUG Loader Loader started
+2012-05-18 21:49:04,805-0400 DEBUG Loader Loader started
+2012-05-18 21:50:33,414-0400 DEBUG Loader Loader started
+2012-05-18 21:50:59,326-0400 DEBUG Loader Loader started
+2012-05-18 21:51:27,031-0400 DEBUG Loader Loader started
+2012-05-18 21:51:57,451-0400 DEBUG Loader Loader started
+2012-05-18 21:54:16,651-0400 DEBUG Loader Loader started
+2012-05-18 21:54:33,245-0400 DEBUG Loader Loader started
+2012-05-18 21:56:40,097-0400 DEBUG Loader Loader started
+2012-05-18 21:58:48,872-0400 DEBUG Loader Loader started
+2012-05-22 22:05:38,103-0500 DEBUG Loader Loader started
+2012-05-22 22:18:09,230-0500 DEBUG Loader Loader started
+2012-05-22 22:19:22,003-0500 DEBUG Loader Loader started
+2012-05-23 11:16:26,735-0500 DEBUG Loader Loader started
+2012-05-23 11:16:41,670-0500 DEBUG Loader Loader started
+2012-05-23 11:17:08,727-0500 DEBUG Loader Loader started
+2012-05-23 11:18:35,888-0500 DEBUG Loader Loader started
+2012-05-23 11:42:13,839-0500 DEBUG Loader Loader started
+2012-05-23 12:34:00,261-0500 DEBUG Loader Loader started
+2012-05-23 12:34:45,177-0500 DEBUG Loader Loader started
+2012-05-23 12:35:11,065-0500 DEBUG Loader Loader started
+2012-05-23 12:35:34,825-0500 DEBUG Loader Loader started
+2012-05-23 12:38:21,786-0500 DEBUG Loader Loader started
+2012-05-23 12:38:39,130-0500 DEBUG Loader Loader started
+2012-05-23 13:13:35,791-0500 DEBUG Loader Loader started
+2012-05-23 13:13:59,203-0500 DEBUG Loader Loader started
+2012-05-23 13:20:17,442-0500 DEBUG Loader Loader started
+2012-05-23 13:20:47,194-0500 DEBUG Loader Loader started
+2012-05-23 13:23:31,204-0500 DEBUG Loader Loader started
+2012-05-23 13:23:47,001-0500 DEBUG Loader Loader started
+2012-05-23 13:24:11,423-0500 DEBUG Loader Loader started

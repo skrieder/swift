@@ -1,0 +1,130 @@
+2012-05-18 18:45:40,506-0500 DEBUG Loader arguments: [capitalise.swift]
+2012-05-18 18:45:40,506-0500 DEBUG Loader Max heap: 265093120
+2012-05-18 18:45:40,508-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting (string s) {   
+    echo s stdout=@filename(t);
+}
+
+app (messagefile o) capitalise(messagefile i) {   
+    tr "[a-z]" "[A-Z]" stdin=@filename(i) stdout=@filename(o);
+}
+
+messagefile hellofile <"capitalise.1.txt">;
+messagefile final <"capitalise.2.txt">;
+hellofile = greeting("hello from Swift");
+final = capitalise(hellofile);
+
+
+2012-05-18 18:45:40,508-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-18 18:45:40,508-0500 INFO  Loader capitalise.swift: source file is new. Recompiling.
+2012-05-18 18:45:41,472-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-05-18 18:45:41,802-0500 DEBUG textfiles using default sites file
+2012-05-18 18:45:41,808-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-18 18:45:42,744-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-18 18:45:42,784-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-18 18:45:42,945-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-18 18:45:43,686-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-18 18:45:43,687-0500 INFO  unknown RUNID id=run:20120518-1845-nrj6ap6a
+2012-05-18 18:45:43,804-0500 DEBUG greeting PROCEDURE line=3 thread=0-0 name=greeting
+2012-05-18 18:45:43,808-0500 DEBUG capitalise PROCEDURE line=7 thread=0-1 name=capitalise
+2012-05-18 18:45:43,812-0500 INFO  vdl:execute START thread=0-0 tr=echo
+2012-05-18 18:45:44,327-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-18 18:45:44,331-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-18 18:45:44,333-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,337-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,341-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-18 18:45:44,343-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,361-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,364-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,367-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,369-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,373-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,374-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-18 18:45:44,376-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=echo-mj1hdirk thread=0-0-1 host=localhost replicationGroup=lj1hdirk
+2012-05-18 18:45:44,382-0500 INFO  vdl:createdirset START jobid=echo-mj1hdirk host=localhost - Initializing directory structure
+2012-05-18 18:45:44,382-0500 INFO  vdl:createdirset END jobid=echo-mj1hdirk - Done initializing directory structure
+2012-05-18 18:45:44,383-0500 INFO  vdl:dostagein START jobid=echo-mj1hdirk - Staging in files
+2012-05-18 18:45:44,386-0500 INFO  vdl:dostagein END jobid=echo-mj1hdirk - Staging in finished
+2012-05-18 18:45:44,387-0500 DEBUG vdl:execute2 JOB_START jobid=echo-mj1hdirk tr=echo arguments=[hello from Swift] tmpdir=capitalise-20120518-1845-nrj6ap6a/jobs/m/echo-mj1hdirk host=localhost
+2012-05-18 18:45:44,390-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+
+
+2012-05-18 18:45:44,390-0500 DEBUG textfiles END TC:
+2012-05-18 18:45:44,401-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-0-1-1337384742773) is /bin/bash shared/_swiftwrap echo-mj1hdirk -jobdir m -scratch  -e /bin/echo -out capitalise.1.txt -err stderr.txt -i -d  -if  -of capitalise.1.txt -k  -cdmfile  -status files -a hello from Swift
+2012-05-18 18:45:44,407-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/capitalise-20120518-1845-nrj6ap6a command: /bin/bash /var/tmp/capitalise-20120518-1845-nrj6ap6a/shared/_swiftwrap echo-mj1hdirk -jobdir m -scratch  -e /bin/echo -out capitalise.1.txt -err stderr.txt -i -d  -if  -of capitalise.1.txt -k  -cdmfile  -status files -a hello from Swift
+2012-05-18 18:45:44,497-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,502-0500 DEBUG vdl:checkjobstatus START jobid=echo-mj1hdirk
+2012-05-18 18:45:44,504-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,505-0500 INFO  vdl:checkjobstatus SUCCESS jobid=echo-mj1hdirk - Success file found
+2012-05-18 18:45:44,506-0500 DEBUG vdl:execute2 STAGING_OUT jobid=echo-mj1hdirk
+2012-05-18 18:45:44,507-0500 INFO  vdl:dostageout START jobid=echo-mj1hdirk - Staging out files
+2012-05-18 18:45:44,508-0500 DEBUG vdl:dostageout stageouts: [[$, hellofile:messagefile - Open]]
+2012-05-18 18:45:44,512-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=capitalise.1.txt srcdir=capitalise-20120518-1845-nrj6ap6a/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-18 18:45:44,513-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,525-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,527-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=capitalise.1.txt srcdir=capitalise-20120518-1845-nrj6ap6a/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-18 18:45:44,530-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-18 18:45:44,536-0500 INFO  vdl:dostageout END jobid=echo-mj1hdirk - Staging out finished
+2012-05-18 18:45:44,539-0500 DEBUG vdl:execute2 JOB_END jobid=echo-mj1hdirk
+2012-05-18 18:45:44,540-0500 INFO  vdl:execute END_SUCCESS thread=0-0 tr=echo
+2012-05-18 18:45:44,542-0500 DEBUG greeting PROCEDURE_END line=3
+2012-05-18 18:45:44,545-0500 INFO  vdl:execute START thread=0-1 tr=tr
+2012-05-18 18:45:44,569-0500 INFO  vdl:execute END_FAILURE thread=0-1 tr=tr
+2012-05-18 18:45:44,573-0500 DEBUG VDL2ExecutionContext The application "tr" is not available in the given site/pool in your tc.data catalog 
+The application "tr" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-18 18:45:44,592-0500 INFO  ExecutionContext Detailed exception: 
+The application "tr" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-18 18:45:44,593-0500 INFO  Loader Swift finished with errors

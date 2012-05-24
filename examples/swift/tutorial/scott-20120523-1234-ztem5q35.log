@@ -1,0 +1,65 @@
+2012-05-23 12:34:00,390-0500 DEBUG Loader arguments: [scott.swift]
+2012-05-23 12:34:00,390-0500 DEBUG Loader Max heap: 265093120
+2012-05-23 12:34:00,393-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting() { 
+    sh "scott.sh" stdout=@filename(t);
+}
+
+messagefile outfile <"scott.txt">;
+
+outfile = greeting();
+
+
+
+2012-05-23 12:34:00,393-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-23 12:34:00,395-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 12:34:00,395-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-23 12:34:00,395-0500 DEBUG Loader Recompilation suppressed.
+2012-05-23 12:34:00,647-0500 DEBUG textfiles using default sites file
+2012-05-23 12:34:00,657-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-23 12:34:01,716-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-23 12:34:01,766-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-23 12:34:01,944-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-23 12:34:02,770-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-23 12:34:02,771-0500 INFO  unknown RUNID id=run:20120523-1234-ztem5q35
+2012-05-23 12:34:02,873-0500 DEBUG greeting PROCEDURE line=3 thread=0-1 name=greeting
+2012-05-23 12:34:02,880-0500 INFO  vdl:execute START thread=0-1 tr=sh
+2012-05-23 12:34:02,898-0500 INFO  vdl:execute END_FAILURE thread=0-1 tr=sh
+2012-05-23 12:34:02,902-0500 DEBUG VDL2ExecutionContext The application "sh" is not available in the given site/pool in your tc.data catalog 
+The application "sh" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-23 12:34:03,013-0500 INFO  ExecutionContext Detailed exception: 
+The application "sh" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-05-23 12:34:03,013-0500 INFO  Loader Swift finished with errors

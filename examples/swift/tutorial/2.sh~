@@ -1,0 +1,1 @@
+time swift /home/skrieder/swift/examples/swift/tutorial/scott.swift

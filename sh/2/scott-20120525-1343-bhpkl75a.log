@@ -1,0 +1,202 @@
+2012-05-25 13:43:31,880-0500 DEBUG Loader arguments: [/home/skrieder/swift/examples/swift/tutorial/scott.swift]
+2012-05-25 13:43:31,880-0500 DEBUG Loader Max heap: 252248064
+2012-05-25 13:43:31,881-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting() { 
+   sh "/home/skrieder/swift/examples/swift/tutorial/scott.sh" stdout=@filename(t);
+}
+
+messagefile outfile <"scott.txt">;
+
+outfile = greeting();
+
+
+2012-05-25 13:43:31,881-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-25 13:43:31,882-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-25 13:43:31,882-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-25 13:43:31,882-0500 DEBUG Loader Recompilation suppressed.
+2012-05-25 13:43:32,025-0500 DEBUG textfiles using default sites file
+2012-05-25 13:43:32,030-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-25 13:43:32,725-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-25 13:43:32,764-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-25 13:43:32,873-0500 WARN  File On line 24in File /usr/local/swift/bin/../etc/tc.data
+
+java.lang.IllegalStateException: Error : Illegal TCType defined. Please specify one of the predefined types 
+ [INSTALLED, SOURCE, STATIC_BINARY, DYNAMIC_BINARY, PACMAN_PACKAGE, SCRIPT]
+	at org.globus.swift.catalog.types.TCType.fromValue(TCType.java:73)
+	at org.globus.swift.catalog.types.TCType.fromString(TCType.java:85)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1085)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1034)
+	at org.globus.swift.catalog.transformation.File.<init>(File.java:149)
+	at org.globus.swift.catalog.transformation.File.getNonSingletonInstance(File.java:116)
+	at org.griphyn.vdl.karajan.VDSAdaptiveScheduler.setProperty(VDSAdaptiveScheduler.java:71)
+	at org.globus.cog.karajan.workflow.nodes.grid.SchedulerNode.newScheduler(SchedulerNode.java:104)
+	at org.globus.cog.karajan.workflow.nodes.grid.SchedulerNode.post(SchedulerNode.java:63)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.user.UserDefinedElement.completed(UserDefinedElement.java:286)
+	at org.globus.cog.karajan.workflow.nodes.user.SequentialImplicitExecutionUDE.completed(SequentialImplicitExecutionUDE.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.ExecuteFile.completed(ExecuteFile.java:158)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.completed(Sequential.java:24)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.user.UserDefinedElement.completed(UserDefinedElement.java:286)
+	at org.globus.cog.karajan.workflow.nodes.user.SequentialImplicitExecutionUDE.completed(SequentialImplicitExecutionUDE.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.PartialArgumentsContainer.nonArgChildCompleted(PartialArgumentsContainer.java:105)
+	at org.globus.cog.karajan.workflow.nodes.PartialArgumentsContainer.completed(PartialArgumentsContainer.java:86)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.Maybe.failed(Maybe.java:23)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failed(FlowNode.java:245)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:151)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.FlowElementWrapper.start(FlowElementWrapper.java:227)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-25 13:43:32,881-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-25 13:43:33,579-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-25 13:43:33,580-0500 INFO  unknown RUNID id=run:20120525-1343-bhpkl75a
+2012-05-25 13:43:33,614-0500 INFO  RootDataNode Found mapped data outfile:messagefile - Open.$
+2012-05-25 13:43:33,628-0500 DEBUG greeting PROCEDURE line=3 thread=0-1 name=greeting
+2012-05-25 13:43:33,635-0500 INFO  vdl:execute START thread=0-1 tr=sh
+2012-05-25 13:43:33,653-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-25 13:43:33,661-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-25 13:43:33,666-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,670-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,677-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-25 13:43:33,683-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,713-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,718-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,722-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,729-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,738-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:33,742-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-25 13:43:33,748-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-hyafjtrk thread=0-1-1 host=localhost replicationGroup=gyafjtrk
+2012-05-25 13:43:33,771-0500 INFO  vdl:createdirset START jobid=sh-hyafjtrk host=localhost - Initializing directory structure
+2012-05-25 13:43:33,773-0500 INFO  vdl:createdirset END jobid=sh-hyafjtrk - Done initializing directory structure
+2012-05-25 13:43:33,776-0500 INFO  vdl:dostagein START jobid=sh-hyafjtrk - Staging in files
+2012-05-25 13:43:33,787-0500 INFO  vdl:dostagein END jobid=sh-hyafjtrk - Staging in finished
+2012-05-25 13:43:33,792-0500 DEBUG vdl:execute2 JOB_START jobid=sh-hyafjtrk tr=sh arguments=[/home/skrieder/swift/examples/swift/tutorial/scott.sh] tmpdir=scott-20120525-1343-bhpkl75a/jobs/h/sh-hyafjtrk host=localhost
+2012-05-25 13:43:33,805-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/sh		INSTALLED	INTEL32::LINUX	null
+localhost	sleep		/bin/sleep	INSTALLED	INTEL32::LINUX	null
+localhost	tr		/usr/bin/tr	INSTALLED	INTEL32::LINUX	null
+localhost	scott.sh	/Users/scottkrieder/swift/examples/swift/tutorial/scott.sh	INTSALLED	INTEL32::LINUX	null
+
+
+2012-05-25 13:43:33,806-0500 DEBUG textfiles END TC:
+2012-05-25 13:43:33,813-0500 WARN  File On line 24in File /usr/local/swift/bin/../etc/tc.data
+
+java.lang.IllegalStateException: Error : Illegal TCType defined. Please specify one of the predefined types 
+ [INSTALLED, SOURCE, STATIC_BINARY, DYNAMIC_BINARY, PACMAN_PACKAGE, SCRIPT]
+	at org.globus.swift.catalog.types.TCType.fromValue(TCType.java:73)
+	at org.globus.swift.catalog.types.TCType.fromString(TCType.java:85)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1085)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1034)
+	at org.globus.swift.catalog.transformation.File.<init>(File.java:149)
+	at org.globus.swift.catalog.transformation.File.getNonSingletonInstance(File.java:116)
+	at org.griphyn.vdl.karajan.lib.VDLFunction.getTC(VDLFunction.java:492)
+	at org.griphyn.vdl.karajan.lib.Executable.function(Executable.java:24)
+	at org.griphyn.vdl.karajan.lib.VDLFunction.post(VDLFunction.java:62)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.FlowElementWrapper.start(FlowElementWrapper.java:227)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-25 13:43:33,844-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1337971412752) is /bin/bash shared/_swiftwrap sh-hyafjtrk -jobdir h -scratch  -e /bin/sh -out scott.txt -err stderr.txt -i -d  -if  -of scott.txt -k  -cdmfile  -status files -a /home/skrieder/swift/examples/swift/tutorial/scott.sh
+2012-05-25 13:43:33,859-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/scott-20120525-1343-bhpkl75a command: /bin/bash /var/tmp/scott-20120525-1343-bhpkl75a/shared/_swiftwrap sh-hyafjtrk -jobdir h -scratch  -e /bin/sh -out scott.txt -err stderr.txt -i -d  -if  -of scott.txt -k  -cdmfile  -status files -a /home/skrieder/swift/examples/swift/tutorial/scott.sh
+2012-05-25 13:43:34,113-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,120-0500 DEBUG vdl:checkjobstatus START jobid=sh-hyafjtrk
+2012-05-25 13:43:34,124-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,127-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sh-hyafjtrk - Success file found
+2012-05-25 13:43:34,130-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-hyafjtrk
+2012-05-25 13:43:34,134-0500 INFO  vdl:dostageout START jobid=sh-hyafjtrk - Staging out files
+2012-05-25 13:43:34,135-0500 DEBUG vdl:dostageout stageouts: [[$, outfile:messagefile - Open]]
+2012-05-25 13:43:34,153-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=scott.txt srcdir=scott-20120525-1343-bhpkl75a/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-25 13:43:34,156-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,177-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,179-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=scott.txt srcdir=scott-20120525-1343-bhpkl75a/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-05-25 13:43:34,188-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,205-0500 INFO  vdl:dostageout END jobid=sh-hyafjtrk - Staging out finished
+2012-05-25 13:43:34,210-0500 DEBUG vdl:execute2 JOB_END jobid=sh-hyafjtrk
+2012-05-25 13:43:34,211-0500 INFO  vdl:execute END_SUCCESS thread=0-1 tr=sh
+2012-05-25 13:43:34,212-0500 DEBUG greeting PROCEDURE_END line=3
+2012-05-25 13:43:34,232-0500 DEBUG vdl:mains Starting cleanups
+2012-05-25 13:43:34,233-0500 INFO  vdl:cleanups START cleanups=[[scott-20120525-1343-bhpkl75a, localhost]]
+2012-05-25 13:43:34,235-0500 INFO  vdl:cleanup START dir=scott-20120525-1343-bhpkl75a host=localhost
+2012-05-25 13:43:34,235-0500 DEBUG vdl:cleanup cdmfile 
+2012-05-25 13:43:34,238-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1337971412763) is /bin/rm -rf scott-20120525-1343-bhpkl75a
+2012-05-25 13:43:34,238-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp command: /bin/rm -rf scott-20120525-1343-bhpkl75a
+2012-05-25 13:43:34,239-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-25 13:43:34,241-0500 INFO  vdl:cleanup END dir=scott-20120525-1343-bhpkl75a host=localhost
+2012-05-25 13:43:34,242-0500 INFO  vdl:cleanups END cleanups=[[scott-20120525-1343-bhpkl75a, localhost]]
+2012-05-25 13:43:34,243-0500 DEBUG vdl:mains Ending cleanups
+2012-05-25 13:43:34,244-0500 INFO  Loader Swift finished with no errors

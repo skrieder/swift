@@ -1,0 +1,54 @@
+<program xmlns="http://ci.uchicago.edu/swift/2009/02/swiftscript"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <types>
+     	<type>
+     		<typename>messagefile</typename>
+     		<typealias>string</typealias>
+     		<typestructure></typestructure>
+     	</type>
+     	<type>
+     		<typename>countfile</typename>
+     		<typealias>string</typealias>
+     		<typestructure></typestructure>
+     	</type>   
+  </types>  
+  <procedure name="countwords" src="line 4">
+
+      <output 
+    name="t" type="countfile"
+
+     xsi:nil="true" />
+
+      <input 
+    name="f" type="messagefile"
+
+     xsi:nil="true" />
+    <binding>
+      <application src="line 4">
+        <executable>sh</executable>
+        <stdout><function name="filename">
+          <variableReference>t</variableReference></function></stdout><function name="filename">
+          <variableReference>f</variableReference></function>  </application>
+    </binding>
+  </procedure>
+  <variable name="inputNames" type="string" isGlobal="false" xsi:nil="true"/>
+  <assign src="line 10">
+   <variableReference>inputNames</variableReference>
+   <stringConstant>scott3a.sh</stringConstant>
+  </assign>
+  <variable name="inputfiles" type="messagefile[]" isGlobal="false">
+    <mapping descriptor="fixed_array_mapper">
+      <param name="files"><variableReference>inputNames</variableReference></param>
+    </mapping>
+  </variable>
+  <foreach var="f"  src="line 12">
+  <in><variableReference>inputfiles</variableReference></in>
+  <body><variable name="c" type="countfile" isGlobal="false" xsi:nil="true"/>
+    <call proc="countwords" src="line 14">
+      <output><variableReference>c</variableReference></output>
+      <input><variableReference>f</variableReference></input>
+    </call></body>
+  </foreach>
+</program>

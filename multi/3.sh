@@ -1,0 +1,1 @@
+time swift /home/skrieder/swift/multi/scott3.swift

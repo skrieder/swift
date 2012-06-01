@@ -1,1 +1,1 @@
-/home/skrieder/swift/cuda/cka2
+/home/skrieder/swift/cuda/1sm0ms

@@ -11,7 +11,7 @@
      </xs:schema>	 
   </types>
   <global name="swift#string#17000">
-    <vdl:new type="string" value="/home/skrieder/swift/examples/swift/tutorial/scott.sh" />
+    <vdl:new type="string" value="scott.sh" />
   </global>
   <element name="greeting" arguments="t">
     <parameterlog>

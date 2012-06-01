@@ -1,0 +1,253 @@
+2012-06-01 11:00:09,231-0500 DEBUG Loader arguments: [hello.swift]
+2012-06-01 11:00:09,231-0500 DEBUG Loader Max heap: 252248064
+2012-06-01 11:00:09,232-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile;
+
+app (messagefile t) greeting() { 
+    sh "scott.sh" stdout=@filename(t);
+}
+
+messagefile outfile <"final.txt">;
+
+outfile = greeting();
+
+
+
+2012-06-01 11:00:09,232-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-01 11:00:09,233-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 11:00:09,233-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 11:00:09,233-0500 DEBUG Loader Recompilation suppressed.
+2012-06-01 11:00:09,376-0500 DEBUG textfiles using default sites file
+2012-06-01 11:00:09,380-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift2/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-01 11:00:10,064-0500 INFO  unknown Using sites file: /usr/local/swift2/bin/../etc/sites.xml
+2012-06-01 11:00:10,098-0500 INFO  unknown Using tc.data: /usr/local/swift2/bin/../etc/tc.data
+2012-06-01 11:00:10,214-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-01 11:00:10,846-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-01 11:00:10,847-0500 INFO  unknown RUNID id=run:20120601-1100-kk4hjz41
+2012-06-01 11:00:10,883-0500 INFO  RootDataNode Found mapped data outfile:messagefile - Open.$
+2012-06-01 11:00:10,896-0500 DEBUG greeting PROCEDURE line=3 thread=0-1 name=greeting
+2012-06-01 11:00:10,902-0500 INFO  vdl:execute START thread=0-1 tr=sh
+2012-06-01 11:00:10,916-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-01 11:00:10,923-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-01 11:00:10,928-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,932-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,938-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-01 11:00:10,945-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,975-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,980-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,984-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:10,992-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,001-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,005-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-01 11:00:11,012-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-23sxu5sk thread=0-1-1 host=localhost replicationGroup=13sxu5sk
+2012-06-01 11:00:11,035-0500 INFO  vdl:createdirset START jobid=sh-23sxu5sk host=localhost - Initializing directory structure
+2012-06-01 11:00:11,037-0500 INFO  vdl:createdirset END jobid=sh-23sxu5sk - Done initializing directory structure
+2012-06-01 11:00:11,040-0500 INFO  vdl:dostagein START jobid=sh-23sxu5sk - Staging in files
+2012-06-01 11:00:11,050-0500 INFO  vdl:dostagein END jobid=sh-23sxu5sk - Staging in finished
+2012-06-01 11:00:11,055-0500 DEBUG vdl:execute2 JOB_START jobid=sh-23sxu5sk tr=sh arguments=[scott.sh] tmpdir=hello-20120601-1100-kk4hjz41/jobs/2/sh-23sxu5sk host=localhost
+2012-06-01 11:00:11,069-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-01 11:00:11,069-0500 DEBUG textfiles END TC:
+2012-06-01 11:00:11,100-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1338566410091) is /bin/bash shared/_swiftwrap sh-23sxu5sk -jobdir 2 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:11,119-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello-20120601-1100-kk4hjz41 command: /bin/bash /var/tmp/hello-20120601-1100-kk4hjz41/shared/_swiftwrap sh-23sxu5sk -jobdir 2 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:11,250-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,256-0500 DEBUG vdl:checkjobstatus START jobid=sh-23sxu5sk
+2012-06-01 11:00:11,269-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,272-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-23sxu5sk - Failure file found
+2012-06-01 11:00:11,276-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,280-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,282-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,285-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-23sxu5sk
+2012-06-01 11:00:11,289-0500 INFO  vdl:dostageout START jobid=sh-23sxu5sk - Staging out files
+2012-06-01 11:00:11,291-0500 DEBUG vdl:dostageout stageouts: [[$, outfile:messagefile - Open]]
+2012-06-01 11:00:11,309-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=final.txt srcdir=hello-20120601-1100-kk4hjz41/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 11:00:11,311-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,351-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:11,352-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-23sxu5sk - Error file missing
+2012-06-01 11:00:11,353-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-23sxu5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+2012-06-01 11:00:11,372-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,384-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 11:00:12,391-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-43sxu5sk thread=0-1-1 host=localhost replicationGroup=33sxu5sk
+2012-06-01 11:00:12,401-0500 INFO  vdl:createdirset START jobid=sh-43sxu5sk host=localhost - Initializing directory structure
+2012-06-01 11:00:12,402-0500 INFO  vdl:createdirset END jobid=sh-43sxu5sk - Done initializing directory structure
+2012-06-01 11:00:12,404-0500 INFO  vdl:dostagein START jobid=sh-43sxu5sk - Staging in files
+2012-06-01 11:00:12,406-0500 INFO  vdl:dostagein END jobid=sh-43sxu5sk - Staging in finished
+2012-06-01 11:00:12,408-0500 DEBUG vdl:execute2 JOB_START jobid=sh-43sxu5sk tr=sh arguments=[scott.sh] tmpdir=hello-20120601-1100-kk4hjz41/jobs/4/sh-43sxu5sk host=localhost
+2012-06-01 11:00:12,419-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1338566410131) is /bin/bash shared/_swiftwrap sh-43sxu5sk -jobdir 4 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:12,420-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello-20120601-1100-kk4hjz41 command: /bin/bash /var/tmp/hello-20120601-1100-kk4hjz41/shared/_swiftwrap sh-43sxu5sk -jobdir 4 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:12,544-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,547-0500 DEBUG vdl:checkjobstatus START jobid=sh-43sxu5sk
+2012-06-01 11:00:12,554-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,555-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-43sxu5sk - Failure file found
+2012-06-01 11:00:12,559-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,563-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,565-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,567-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-43sxu5sk
+2012-06-01 11:00:12,569-0500 INFO  vdl:dostageout START jobid=sh-43sxu5sk - Staging out files
+2012-06-01 11:00:12,569-0500 DEBUG vdl:dostageout stageouts: [[$, outfile:messagefile - Open]]
+2012-06-01 11:00:12,576-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=final.txt srcdir=hello-20120601-1100-kk4hjz41/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 11:00:12,578-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,597-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:12,597-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-43sxu5sk - Error file missing
+2012-06-01 11:00:12,599-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-43sxu5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+2012-06-01 11:00:12,629-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,646-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 11:00:19,657-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-63sxu5sk thread=0-1-1 host=localhost replicationGroup=53sxu5sk
+2012-06-01 11:00:19,678-0500 INFO  vdl:createdirset START jobid=sh-63sxu5sk host=localhost - Initializing directory structure
+2012-06-01 11:00:19,679-0500 INFO  vdl:createdirset END jobid=sh-63sxu5sk - Done initializing directory structure
+2012-06-01 11:00:19,683-0500 INFO  vdl:dostagein START jobid=sh-63sxu5sk - Staging in files
+2012-06-01 11:00:19,686-0500 INFO  vdl:dostagein END jobid=sh-63sxu5sk - Staging in finished
+2012-06-01 11:00:19,691-0500 DEBUG vdl:execute2 JOB_START jobid=sh-63sxu5sk tr=sh arguments=[scott.sh] tmpdir=hello-20120601-1100-kk4hjz41/jobs/6/sh-63sxu5sk host=localhost
+2012-06-01 11:00:19,705-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1338566410171) is /bin/bash shared/_swiftwrap sh-63sxu5sk -jobdir 6 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:19,706-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello-20120601-1100-kk4hjz41 command: /bin/bash /var/tmp/hello-20120601-1100-kk4hjz41/shared/_swiftwrap sh-63sxu5sk -jobdir 6 -scratch  -e /bin/wc -out final.txt -err stderr.txt -i -d  -if  -of final.txt -k  -cdmfile  -status files -a scott.sh
+2012-06-01 11:00:19,830-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,834-0500 DEBUG vdl:checkjobstatus START jobid=sh-63sxu5sk
+2012-06-01 11:00:19,842-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,843-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-63sxu5sk - Failure file found
+2012-06-01 11:00:19,847-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,851-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-01 11:00:19,853-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,856-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-63sxu5sk
+2012-06-01 11:00:19,859-0500 INFO  vdl:dostageout START jobid=sh-63sxu5sk - Staging out files
+2012-06-01 11:00:19,860-0500 DEBUG vdl:dostageout stageouts: [[$, outfile:messagefile - Open]]
+2012-06-01 11:00:19,870-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=final.txt srcdir=hello-20120601-1100-kk4hjz41/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 11:00:19,873-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,898-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,900-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-63sxu5sk - Error file missing
+2012-06-01 11:00:19,902-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-63sxu5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+2012-06-01 11:00:19,938-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 11:00:19,947-0500 INFO  vdl:execute END_FAILURE thread=0-1 tr=sh
+2012-06-01 11:00:19,954-0500 DEBUG VDL2ExecutionContext Exception in sh:
+Arguments: [scott.sh]
+Host: localhost
+Directory: hello-20120601-1100-kk4hjz41/jobs/6/sh-63sxu5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Exception in sh:
+Arguments: [scott.sh]
+Host: localhost
+Directory: hello-20120601-1100-kk4hjz41/jobs/6/sh-63sxu5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-01 11:00:20,099-0500 INFO  ExecutionContext Detailed exception: 
+Exception in sh:
+Arguments: [scott.sh]
+Host: localhost
+Directory: hello-20120601-1100-kk4hjz41/jobs/6/sh-63sxu5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello-20120601-1100-kk4hjz41/shared/final.txt
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-01 11:00:20,100-0500 INFO  Loader Swift finished with errors

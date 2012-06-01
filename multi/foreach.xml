@@ -14,7 +14,7 @@
      		<typestructure></typestructure>
      	</type>   
   </types>  
-  <procedure name="countwords" src="line 4">
+  <procedure name="countwords" src="line 5">
 
       <output 
     name="t" type="countfile"
@@ -26,7 +26,7 @@
 
      xsi:nil="true" />
     <binding>
-      <application src="line 4">
+      <application src="line 5">
         <executable>sh</executable>
         <stdout><function name="filename">
           <variableReference>t</variableReference></function></stdout><function name="filename">
@@ -34,19 +34,19 @@
     </binding>
   </procedure>
   <variable name="inputNames" type="string" isGlobal="false" xsi:nil="true"/>
-  <assign src="line 10">
+  <assign src="line 11">
    <variableReference>inputNames</variableReference>
-   <stringConstant>scott3a.sh scott3b.sh scott3c.sh</stringConstant>
+   <stringConstant>scott3a.sh</stringConstant>
   </assign>
   <variable name="inputfiles" type="messagefile[]" isGlobal="false">
     <mapping descriptor="fixed_array_mapper">
       <param name="files"><variableReference>inputNames</variableReference></param>
     </mapping>
   </variable>
-  <foreach var="f"  src="line 12">
+  <foreach var="f"  src="line 13">
   <in><variableReference>inputfiles</variableReference></in>
   <body><variable name="c" type="countfile" isGlobal="false" xsi:nil="true"/>
-    <call proc="countwords" src="line 14">
+    <call proc="countwords" src="line 15">
       <output><variableReference>c</variableReference></output>
       <input><variableReference>f</variableReference></input>
     </call></body>

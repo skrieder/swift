@@ -1,1 +1,1 @@
-/home/skrieder/swift/cuda/cka2
+/home/skrieder/swift/multi/hello

@@ -14,7 +14,7 @@
      </xs:schema>	 
   </types>
   <global name="swift#string#17000">
-    <vdl:new type="string" value="scott3a.sh scott3b.sh scott3c.sh" />
+    <vdl:new type="string" value="scott3a.sh" />
   </global>
   <element name="countwords" arguments="t,f">
     <parameterlog>
@@ -29,7 +29,7 @@
     <vdl:getdatasetprovenanceid var="{t}" />
     <string>{#thread}</string>
     </parameterlog>
-    <log level="debug" message="PROCEDURE line=4 thread={#thread} name=countwords"/>
+    <log level="debug" message="PROCEDURE line=5 thread={#thread} name=countwords"/>
     <vdl:execute>
       <vdl:tr>sh</vdl:tr>
       <vdl:stagein var="{f}"/>
@@ -46,7 +46,7 @@
       </vdl:stdout>
     </vdl:execute>
     <vdl:closedataset var="{t}"/>
-    <log level="debug" message="PROCEDURE_END line=4"/></element>
+    <log level="debug" message="PROCEDURE_END line=5"/></element>
 
   <set name="inputNames">
         <vdl:new type="string" dbgname="inputNames" waitfor="88000" />
@@ -93,13 +93,13 @@
 		            <set names="$$, f">
 		              <each items="{$}"/>
 		            </set>
-		          	<log level="debug" message="FOREACH_IT_START line=12 thread={#thread}"/>
+		          	<log level="debug" message="FOREACH_IT_START line=13 thread={#thread}"/>
 		          <log level="debug"><string>SCOPE thread={#thread}</string></log>
 
 		              <set name="c">
 		                <vdl:new type="countfile" dbgname="c" waitfor="88001">
 		                  <vdl:mapping descriptor="concurrent_mapper">
-		                    <vdl:parameter name="prefix">c-a6c9405f-a858-4be4-a55b-443dfcc11a20</vdl:parameter>
+		                    <vdl:parameter name="prefix">c-bbff9788-69f5-4f64-987c-f67360893ba2</vdl:parameter>
 		                  </vdl:mapping>
 		                </vdl:new>
 		              </set>
@@ -120,7 +120,7 @@
 		                        <partialCloseDataset var="{c}" closeID="88001" />
 		                    </sequential>
 		                </sequentialWithID>
-		              <log level="debug" message="FOREACH_IT_END line=12 thread={#thread}"/>
+		              <log level="debug" message="FOREACH_IT_END line=13 thread={#thread}"/>
 		          </vdl:tparallelFor>
 		        </sequential>
 		    </parallel>

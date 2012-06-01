@@ -1,0 +1,273 @@
+2012-06-01 10:44:05,011-0500 DEBUG Loader arguments: [foreach.swift]
+2012-06-01 10:44:05,012-0500 DEBUG Loader Max heap: 252248064
+2012-06-01 10:44:05,013-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     sh @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c;
+  c = countwords(f);
+}
+
+
+2012-06-01 10:44:05,013-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-01 10:44:05,013-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 10:44:05,013-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 10:44:05,013-0500 DEBUG Loader Recompilation suppressed.
+2012-06-01 10:44:05,157-0500 DEBUG textfiles using default sites file
+2012-06-01 10:44:05,161-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift2/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-01 10:44:05,829-0500 INFO  unknown Using sites file: /usr/local/swift2/bin/../etc/sites.xml
+2012-06-01 10:44:05,868-0500 INFO  unknown Using tc.data: /usr/local/swift2/bin/../etc/tc.data
+2012-06-01 10:44:05,976-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-01 10:44:06,566-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-01 10:44:06,567-0500 INFO  unknown RUNID id=run:20120601-1044-amk021d3
+2012-06-01 10:44:06,621-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh
+2012-06-01 10:44:06,638-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-01 10:44:06,641-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-01 10:44:06,642-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-01 10:44:06,649-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-01 10:44:06,654-0500 INFO  vdl:execute START thread=0-1-0-1 tr=sh
+2012-06-01 10:44:06,668-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-01 10:44:06,675-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-01 10:44:06,680-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,684-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,686-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-01 10:44:06,690-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,720-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,726-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,730-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,737-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,745-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,749-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-01 10:44:06,755-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-oyaau5sk thread=0-1-0-1-1 host=localhost replicationGroup=nyaau5sk
+2012-06-01 10:44:06,778-0500 INFO  vdl:createdirset START jobid=sh-oyaau5sk host=localhost - Initializing directory structure
+2012-06-01 10:44:06,785-0500 INFO  vdl:createdirs START path=_concurrent dir=foreach-20120601-1044-amk021d3/shared - Creating directory structure
+2012-06-01 10:44:06,788-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,790-0500 INFO  vdl:createdirset END jobid=sh-oyaau5sk - Done initializing directory structure
+2012-06-01 10:44:06,793-0500 INFO  vdl:dostagein START jobid=sh-oyaau5sk - Staging in files
+2012-06-01 10:44:06,817-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,830-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 10:44:06,846-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=foreach-20120601-1044-amk021d3/shared/ provider=file policy=DEFAULT
+2012-06-01 10:44:06,854-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:06,857-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=foreach-20120601-1044-amk021d3/shared/ provider=file
+2012-06-01 10:44:06,859-0500 INFO  vdl:dostagein END jobid=sh-oyaau5sk - Staging in finished
+2012-06-01 10:44:06,864-0500 DEBUG vdl:execute2 JOB_START jobid=sh-oyaau5sk tr=sh arguments=[scott3a.sh] tmpdir=foreach-20120601-1044-amk021d3/jobs/o/sh-oyaau5sk host=localhost
+2012-06-01 10:44:06,878-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-01 10:44:06,879-0500 DEBUG textfiles END TC:
+2012-06-01 10:44:06,913-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1338565445862) is /bin/bash shared/_swiftwrap sh-oyaau5sk -jobdir o -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:06,930-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/foreach-20120601-1044-amk021d3 command: /bin/bash /var/tmp/foreach-20120601-1044-amk021d3/shared/_swiftwrap sh-oyaau5sk -jobdir o -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:07,061-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,068-0500 DEBUG vdl:checkjobstatus START jobid=sh-oyaau5sk
+2012-06-01 10:44:07,080-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,082-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-oyaau5sk - Failure file found
+2012-06-01 10:44:07,086-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,090-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,092-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,096-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-oyaau5sk
+2012-06-01 10:44:07,099-0500 INFO  vdl:dostageout START jobid=sh-oyaau5sk - Staging out files
+2012-06-01 10:44:07,100-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 10:44:07,118-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 srcdir=foreach-20120601-1044-amk021d3/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-06-01 10:44:07,121-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,150-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:07,152-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-oyaau5sk - Error file missing
+2012-06-01 10:44:07,157-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-oyaau5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+2012-06-01 10:44:07,198-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,218-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 10:44:08,225-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-qyaau5sk thread=0-1-0-1-1 host=localhost replicationGroup=pyaau5sk
+2012-06-01 10:44:08,235-0500 INFO  vdl:createdirset START jobid=sh-qyaau5sk host=localhost - Initializing directory structure
+2012-06-01 10:44:08,237-0500 INFO  vdl:createdirset END jobid=sh-qyaau5sk - Done initializing directory structure
+2012-06-01 10:44:08,238-0500 INFO  vdl:dostagein START jobid=sh-qyaau5sk - Staging in files
+2012-06-01 10:44:08,245-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,246-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 10:44:08,247-0500 INFO  vdl:dostagein END jobid=sh-qyaau5sk - Staging in finished
+2012-06-01 10:44:08,247-0500 DEBUG vdl:execute2 JOB_START jobid=sh-qyaau5sk tr=sh arguments=[scott3a.sh] tmpdir=foreach-20120601-1044-amk021d3/jobs/q/sh-qyaau5sk host=localhost
+2012-06-01 10:44:08,250-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1338565445904) is /bin/bash shared/_swiftwrap sh-qyaau5sk -jobdir q -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:08,251-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/foreach-20120601-1044-amk021d3 command: /bin/bash /var/tmp/foreach-20120601-1044-amk021d3/shared/_swiftwrap sh-qyaau5sk -jobdir q -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:08,395-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,397-0500 DEBUG vdl:checkjobstatus START jobid=sh-qyaau5sk
+2012-06-01 10:44:08,402-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,403-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-qyaau5sk - Failure file found
+2012-06-01 10:44:08,406-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,409-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-01 10:44:08,410-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,413-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-qyaau5sk
+2012-06-01 10:44:08,414-0500 INFO  vdl:dostageout START jobid=sh-qyaau5sk - Staging out files
+2012-06-01 10:44:08,415-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 10:44:08,423-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 srcdir=foreach-20120601-1044-amk021d3/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-06-01 10:44:08,425-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,446-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:08,447-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-qyaau5sk - Error file missing
+2012-06-01 10:44:08,448-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-qyaau5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+2012-06-01 10:44:08,477-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:13,992-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 10:44:14,006-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-syaau5sk thread=0-1-0-1-1 host=localhost replicationGroup=ryaau5sk
+2012-06-01 10:44:14,024-0500 INFO  vdl:createdirset START jobid=sh-syaau5sk host=localhost - Initializing directory structure
+2012-06-01 10:44:14,027-0500 INFO  vdl:createdirset END jobid=sh-syaau5sk - Done initializing directory structure
+2012-06-01 10:44:14,031-0500 INFO  vdl:dostagein START jobid=sh-syaau5sk - Staging in files
+2012-06-01 10:44:14,044-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,047-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 10:44:14,051-0500 INFO  vdl:dostagein END jobid=sh-syaau5sk - Staging in finished
+2012-06-01 10:44:14,054-0500 DEBUG vdl:execute2 JOB_START jobid=sh-syaau5sk tr=sh arguments=[scott3a.sh] tmpdir=foreach-20120601-1044-amk021d3/jobs/s/sh-syaau5sk host=localhost
+2012-06-01 10:44:14,066-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1338565445946) is /bin/bash shared/_swiftwrap sh-syaau5sk -jobdir s -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:14,067-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/foreach-20120601-1044-amk021d3 command: /bin/bash /var/tmp/foreach-20120601-1044-amk021d3/shared/_swiftwrap sh-syaau5sk -jobdir s -scratch  -e /bin/wc -out _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-06-01 10:44:14,191-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,194-0500 DEBUG vdl:checkjobstatus START jobid=sh-syaau5sk
+2012-06-01 10:44:14,202-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,203-0500 INFO  vdl:checkerrorfile FAILURE jobid=sh-syaau5sk - Failure file found
+2012-06-01 10:44:14,207-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,212-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-01 10:44:14,213-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,216-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-syaau5sk
+2012-06-01 10:44:14,220-0500 INFO  vdl:dostageout START jobid=sh-syaau5sk - Staging out files
+2012-06-01 10:44:14,221-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 10:44:14,230-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0 srcdir=foreach-20120601-1044-amk021d3/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-06-01 10:44:14,232-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,257-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,258-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-syaau5sk - Error file missing
+2012-06-01 10:44:14,260-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-syaau5sk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+2012-06-01 10:44:14,296-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-01 10:44:14,304-0500 INFO  vdl:execute END_FAILURE thread=0-1-0-1 tr=sh
+2012-06-01 10:44:14,310-0500 DEBUG VDL2ExecutionContext Exception in sh:
+Arguments: [scott3a.sh]
+Host: localhost
+Directory: foreach-20120601-1044-amk021d3/jobs/s/sh-syaau5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Exception in sh:
+Arguments: [scott3a.sh]
+Host: localhost
+Directory: foreach-20120601-1044-amk021d3/jobs/s/sh-syaau5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-01 10:44:14,431-0500 INFO  ExecutionContext Detailed exception: 
+Exception in sh:
+Arguments: [scott3a.sh]
+Host: localhost
+Directory: foreach-20120601-1044-amk021d3/jobs/s/sh-syaau5sk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/foreach-20120601-1044-amk021d3/shared/_concurrent/c-bbff9788-69f5-4f64-987c-f67360893ba2-1-0
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-01 10:44:14,432-0500 INFO  Loader Swift finished with errors

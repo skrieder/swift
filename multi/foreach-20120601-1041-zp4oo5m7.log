@@ -1,0 +1,75 @@
+2012-06-01 10:41:20,700-0500 DEBUG Loader arguments: [foreach.swift]
+2012-06-01 10:41:20,700-0500 DEBUG Loader Max heap: 252248064
+2012-06-01 10:41:20,701-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     sh @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c;
+  c = countwords(f);
+}
+
+
+2012-06-01 10:41:20,701-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-01 10:41:20,701-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 10:41:20,701-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 10:41:20,702-0500 DEBUG Loader Recompilation suppressed.
+2012-06-01 10:41:20,847-0500 DEBUG textfiles using default sites file
+2012-06-01 10:41:20,851-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift2/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-01 10:41:21,531-0500 INFO  unknown Using sites file: /usr/local/swift2/bin/../etc/sites.xml
+2012-06-01 10:41:21,577-0500 INFO  unknown Using tc.data: /usr/local/swift2/bin/../etc/tc.data
+2012-06-01 10:41:21,688-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-01 10:41:22,419-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-01 10:41:22,420-0500 INFO  unknown RUNID id=run:20120601-1041-zp4oo5m7
+2012-06-01 10:41:22,468-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh
+2012-06-01 10:41:22,492-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-01 10:41:22,496-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-01 10:41:22,497-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-01 10:41:22,516-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-01 10:41:22,538-0500 INFO  vdl:execute START thread=0-1-0-1 tr=sh
+2012-06-01 10:41:22,586-0500 INFO  vdl:execute END_FAILURE thread=0-1-0-1 tr=sh
+2012-06-01 10:41:22,592-0500 DEBUG VDL2ExecutionContext The application "sh" is not available in the given site/pool in your tc.data catalog 
+The application "sh" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-06-01 10:41:22,622-0500 INFO  ExecutionContext Detailed exception: 
+The application "sh" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-06-01 10:41:22,623-0500 INFO  Loader Swift finished with errors

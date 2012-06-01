@@ -1,0 +1,12 @@
+[cka1] starting...
+
+> Using CUDA device [0]: GeForce GTX 580
+> Detected Compute SM 2.0 hardware with 16 multi-processors
+Expected time for serial execution of 8 kernels = 0.080s
+Expected time for concurrent execution of 8 kernels = 0.010s
+Measured time for sample = 0.010s
+[cka1] test results...
+PASSED
+
+> exiting in 0 seconds: done!
+

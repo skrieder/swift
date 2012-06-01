@@ -1,0 +1,255 @@
+2012-05-30 12:21:42,693-0500 DEBUG Loader arguments: [/home/skrieder/swift/multi/foreach.swift]
+2012-05-30 12:21:42,693-0500 DEBUG Loader Max heap: 252248064
+2012-05-30 12:21:42,694-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     sh @filename(f) stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3b.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c;
+  c = countwords(f);
+}
+
+
+2012-05-30 12:21:42,694-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-05-30 12:21:42,695-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-30 12:21:42,695-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-05-30 12:21:42,695-0500 DEBUG Loader Recompilation suppressed.
+2012-05-30 12:21:42,848-0500 DEBUG textfiles using default sites file
+2012-05-30 12:21:42,852-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-05-30 12:21:43,525-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-05-30 12:21:43,560-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-05-30 12:21:43,670-0500 WARN  File On line 24in File /usr/local/swift/bin/../etc/tc.data
+
+java.lang.IllegalStateException: Error : Illegal TCType defined. Please specify one of the predefined types 
+ [INSTALLED, SOURCE, STATIC_BINARY, DYNAMIC_BINARY, PACMAN_PACKAGE, SCRIPT]
+	at org.globus.swift.catalog.types.TCType.fromValue(TCType.java:73)
+	at org.globus.swift.catalog.types.TCType.fromString(TCType.java:85)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1085)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1034)
+	at org.globus.swift.catalog.transformation.File.<init>(File.java:149)
+	at org.globus.swift.catalog.transformation.File.getNonSingletonInstance(File.java:116)
+	at org.griphyn.vdl.karajan.VDSAdaptiveScheduler.setProperty(VDSAdaptiveScheduler.java:71)
+	at org.globus.cog.karajan.workflow.nodes.grid.SchedulerNode.newScheduler(SchedulerNode.java:104)
+	at org.globus.cog.karajan.workflow.nodes.grid.SchedulerNode.post(SchedulerNode.java:63)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.user.UserDefinedElement.completed(UserDefinedElement.java:286)
+	at org.globus.cog.karajan.workflow.nodes.user.SequentialImplicitExecutionUDE.completed(SequentialImplicitExecutionUDE.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.ExecuteFile.completed(ExecuteFile.java:158)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.completed(Sequential.java:24)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.user.UserDefinedElement.completed(UserDefinedElement.java:286)
+	at org.globus.cog.karajan.workflow.nodes.user.SequentialImplicitExecutionUDE.completed(SequentialImplicitExecutionUDE.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.PartialArgumentsContainer.nonArgChildCompleted(PartialArgumentsContainer.java:105)
+	at org.globus.cog.karajan.workflow.nodes.PartialArgumentsContainer.completed(PartialArgumentsContainer.java:86)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.Maybe.failed(Maybe.java:23)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failed(FlowNode.java:245)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:89)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:151)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.FlowElementWrapper.start(FlowElementWrapper.java:227)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-30 12:21:43,678-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-05-30 12:21:44,328-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-05-30 12:21:44,329-0500 INFO  unknown RUNID id=run:20120530-1221-3z61gbcf
+2012-05-30 12:21:44,386-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3b.sh
+2012-05-30 12:21:44,403-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-05-30 12:21:44,403-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-05-30 12:21:44,406-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-05-30 12:21:44,406-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-1
+2012-05-30 12:21:44,407-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-05-30 12:21:44,407-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-05-30 12:21:44,418-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-1-1 name=countwords
+2012-05-30 12:21:44,419-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-1 name=countwords
+2012-05-30 12:21:44,428-0500 INFO  vdl:execute START thread=0-1-0-1 tr=sh
+2012-05-30 12:21:44,428-0500 INFO  vdl:execute START thread=0-1-1-1 tr=sh
+2012-05-30 12:21:44,447-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-05-30 12:21:44,456-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-05-30 12:21:44,461-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,464-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,467-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-05-30 12:21:44,472-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,502-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,507-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,511-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,520-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,527-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,531-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-05-30 12:21:44,536-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-vhl1o2sk thread=0-1-1-1-1 host=localhost replicationGroup=thl1o2sk
+2012-05-30 12:21:44,542-0500 INFO  vdl:createdirset START jobid=sh-vhl1o2sk host=localhost - Initializing directory structure
+2012-05-30 12:21:44,543-0500 INFO  vdl:createdirs START path=_concurrent dir=foreach-20120530-1221-3z61gbcf/shared - Creating directory structure
+2012-05-30 12:21:44,545-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,547-0500 INFO  vdl:createdirset END jobid=sh-vhl1o2sk - Done initializing directory structure
+2012-05-30 12:21:44,550-0500 INFO  vdl:dostagein START jobid=sh-vhl1o2sk - Staging in files
+2012-05-30 12:21:44,575-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,588-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3b.sh : DEFAULT
+2012-05-30 12:21:44,603-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3b.sh srchost=localhost srcdir= srcname=scott3b.sh desthost=localhost destdir=foreach-20120530-1221-3z61gbcf/shared/ provider=file policy=DEFAULT
+2012-05-30 12:21:44,611-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:44,613-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3b.sh srchost=localhost srcdir= srcname=scott3b.sh desthost=localhost destdir=foreach-20120530-1221-3z61gbcf/shared/ provider=file
+2012-05-30 12:21:44,616-0500 INFO  vdl:dostagein END jobid=sh-vhl1o2sk - Staging in finished
+2012-05-30 12:21:44,621-0500 DEBUG vdl:execute2 JOB_START jobid=sh-vhl1o2sk tr=sh arguments=[scott3b.sh] tmpdir=foreach-20120530-1221-3z61gbcf/jobs/v/sh-vhl1o2sk host=localhost
+2012-05-30 12:21:44,634-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/sh		INSTALLED	INTEL32::LINUX	null
+localhost	sleep		/bin/sleep	INSTALLED	INTEL32::LINUX	null
+localhost	tr		/usr/bin/tr	INSTALLED	INTEL32::LINUX	null
+localhost	scott.sh	/Users/scottkrieder/swift/examples/swift/tutorial/scott.sh	INTSALLED	INTEL32::LINUX	null
+
+
+2012-05-30 12:21:44,635-0500 DEBUG textfiles END TC:
+2012-05-30 12:21:44,642-0500 WARN  File On line 24in File /usr/local/swift/bin/../etc/tc.data
+
+java.lang.IllegalStateException: Error : Illegal TCType defined. Please specify one of the predefined types 
+ [INSTALLED, SOURCE, STATIC_BINARY, DYNAMIC_BINARY, PACMAN_PACKAGE, SCRIPT]
+	at org.globus.swift.catalog.types.TCType.fromValue(TCType.java:73)
+	at org.globus.swift.catalog.types.TCType.fromString(TCType.java:85)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1085)
+	at org.globus.swift.catalog.transformation.File.populateTC(File.java:1034)
+	at org.globus.swift.catalog.transformation.File.<init>(File.java:149)
+	at org.globus.swift.catalog.transformation.File.getNonSingletonInstance(File.java:116)
+	at org.griphyn.vdl.karajan.lib.VDLFunction.getTC(VDLFunction.java:492)
+	at org.griphyn.vdl.karajan.lib.Executable.function(Executable.java:24)
+	at org.griphyn.vdl.karajan.lib.VDLFunction.post(VDLFunction.java:62)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.FlowElementWrapper.start(FlowElementWrapper.java:227)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+2012-05-30 12:21:44,674-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1338398503560) is /bin/bash shared/_swiftwrap sh-vhl1o2sk -jobdir v -scratch  -e /bin/sh -out _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 -err stderr.txt -i -d _concurrent -if scott3b.sh -of _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 -k  -cdmfile  -status files -a scott3b.sh
+2012-05-30 12:21:44,691-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/foreach-20120530-1221-3z61gbcf command: /bin/bash /var/tmp/foreach-20120530-1221-3z61gbcf/shared/_swiftwrap sh-vhl1o2sk -jobdir v -scratch  -e /bin/sh -out _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 -err stderr.txt -i -d _concurrent -if scott3b.sh -of _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 -k  -cdmfile  -status files -a scott3b.sh
+2012-05-30 12:21:45,046-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:45,053-0500 DEBUG vdl:checkjobstatus START jobid=sh-vhl1o2sk
+2012-05-30 12:21:45,056-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:45,058-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sh-vhl1o2sk - Success file found
+2012-05-30 12:21:45,060-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-vhl1o2sk
+2012-05-30 12:21:45,064-0500 INFO  vdl:dostageout START jobid=sh-vhl1o2sk - Staging out files
+2012-05-30 12:21:45,066-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-05-30 12:21:45,086-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 srcdir=foreach-20120530-1221-3z61gbcf/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-05-30 12:21:45,089-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:45,100-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:45,102-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-1 srcdir=foreach-20120530-1221-3z61gbcf/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-05-30 12:21:45,105-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-05-30 12:21:45,113-0500 INFO  vdl:dostageout END jobid=sh-vhl1o2sk - Staging out finished
+2012-05-30 12:21:45,123-0500 DEBUG vdl:execute2 JOB_END jobid=sh-vhl1o2sk
+2012-05-30 12:21:45,126-0500 INFO  vdl:execute END_SUCCESS thread=0-1-1-1 tr=sh
+2012-05-30 12:21:45,129-0500 DEBUG countwords PROCEDURE_END line=4
+2012-05-30 12:21:45,132-0500 DEBUG vdl:mains FOREACH_IT_END line=12 thread=0-1-1
+2012-05-30 12:21:45,606-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.995
+2012-05-30 12:21:45,613-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-xhl1o2sk thread=0-1-0-1-1 host=localhost replicationGroup=uhl1o2sk
+2012-05-30 12:21:45,622-0500 INFO  vdl:createdirset START jobid=sh-xhl1o2sk host=localhost - Initializing directory structure
+2012-05-30 12:21:45,624-0500 INFO  vdl:createdirset END jobid=sh-xhl1o2sk - Done initializing directory structure
+2012-05-30 12:21:45,626-0500 INFO  vdl:dostagein START jobid=sh-xhl1o2sk - Staging in files
+2012-05-30 12:21:45,633-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:45,634-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-05-30 12:21:45,639-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=foreach-20120530-1221-3z61gbcf/shared/ provider=file policy=DEFAULT
+2012-05-30 12:21:45,643-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:45,645-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=foreach-20120530-1221-3z61gbcf/shared/ provider=file
+2012-05-30 12:21:45,646-0500 INFO  vdl:dostagein END jobid=sh-xhl1o2sk - Staging in finished
+2012-05-30 12:21:45,648-0500 DEBUG vdl:execute2 JOB_START jobid=sh-xhl1o2sk tr=sh arguments=[scott3a.sh] tmpdir=foreach-20120530-1221-3z61gbcf/jobs/x/sh-xhl1o2sk host=localhost
+2012-05-30 12:21:45,658-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1338398503576) is /bin/bash shared/_swiftwrap sh-xhl1o2sk -jobdir x -scratch  -e /bin/sh -out _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-05-30 12:21:45,658-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/foreach-20120530-1221-3z61gbcf command: /bin/bash /var/tmp/foreach-20120530-1221-3z61gbcf/shared/_swiftwrap sh-xhl1o2sk -jobdir x -scratch  -e /bin/sh -out _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 -err stderr.txt -i -d _concurrent -if scott3a.sh -of _concurrent/c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 -k  -cdmfile  -status files -a scott3a.sh
+2012-05-30 12:21:46,026-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,030-0500 DEBUG vdl:checkjobstatus START jobid=sh-xhl1o2sk
+2012-05-30 12:21:46,032-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,033-0500 INFO  vdl:checkjobstatus SUCCESS jobid=sh-xhl1o2sk - Success file found
+2012-05-30 12:21:46,035-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sh-xhl1o2sk
+2012-05-30 12:21:46,037-0500 INFO  vdl:dostageout START jobid=sh-xhl1o2sk - Staging out files
+2012-05-30 12:21:46,038-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-05-30 12:21:46,046-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 srcdir=foreach-20120530-1221-3z61gbcf/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-05-30 12:21:46,048-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,054-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,055-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=c-e3bf9e4e-6ad7-4c16-99d8-79ef8a32889d-1-0 srcdir=foreach-20120530-1221-3z61gbcf/shared/_concurrent srchost=localhost destdir=_concurrent desthost=localhost provider=file
+2012-05-30 12:21:46,058-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,063-0500 INFO  vdl:dostageout END jobid=sh-xhl1o2sk - Staging out finished
+2012-05-30 12:21:46,067-0500 DEBUG vdl:execute2 JOB_END jobid=sh-xhl1o2sk
+2012-05-30 12:21:46,069-0500 INFO  vdl:execute END_SUCCESS thread=0-1-0-1 tr=sh
+2012-05-30 12:21:46,070-0500 DEBUG countwords PROCEDURE_END line=4
+2012-05-30 12:21:46,072-0500 DEBUG vdl:mains FOREACH_IT_END line=12 thread=0-1-0
+2012-05-30 12:21:46,092-0500 DEBUG vdl:mains Starting cleanups
+2012-05-30 12:21:46,092-0500 INFO  vdl:cleanups START cleanups=[[foreach-20120530-1221-3z61gbcf, localhost]]
+2012-05-30 12:21:46,094-0500 INFO  vdl:cleanup START dir=foreach-20120530-1221-3z61gbcf host=localhost
+2012-05-30 12:21:46,094-0500 DEBUG vdl:cleanup cdmfile 
+2012-05-30 12:21:46,096-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1338398503587) is /bin/rm -rf foreach-20120530-1221-3z61gbcf
+2012-05-30 12:21:46,097-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp command: /bin/rm -rf foreach-20120530-1221-3z61gbcf
+2012-05-30 12:21:46,098-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-05-30 12:21:46,099-0500 INFO  vdl:cleanup END dir=foreach-20120530-1221-3z61gbcf host=localhost
+2012-05-30 12:21:46,099-0500 INFO  vdl:cleanups END cleanups=[[foreach-20120530-1221-3z61gbcf, localhost]]
+2012-05-30 12:21:46,100-0500 DEBUG vdl:mains Ending cleanups
+2012-05-30 12:21:46,101-0500 INFO  Loader Swift finished with no errors

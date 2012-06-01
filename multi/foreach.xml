@@ -36,7 +36,7 @@
   <variable name="inputNames" type="string" isGlobal="false" xsi:nil="true"/>
   <assign src="line 10">
    <variableReference>inputNames</variableReference>
-   <stringConstant>scott3a.sh</stringConstant>
+   <stringConstant>scott3a.sh scott3b.sh scott3c.sh</stringConstant>
   </assign>
   <variable name="inputfiles" type="messagefile[]" isGlobal="false">
     <mapping descriptor="fixed_array_mapper">

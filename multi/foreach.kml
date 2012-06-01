@@ -14,7 +14,7 @@
      </xs:schema>	 
   </types>
   <global name="swift#string#17000">
-    <vdl:new type="string" value="scott3a.sh" />
+    <vdl:new type="string" value="scott3a.sh scott3b.sh scott3c.sh" />
   </global>
   <element name="countwords" arguments="t,f">
     <parameterlog>
@@ -99,7 +99,7 @@
 		              <set name="c">
 		                <vdl:new type="countfile" dbgname="c" waitfor="88001">
 		                  <vdl:mapping descriptor="concurrent_mapper">
-		                    <vdl:parameter name="prefix">c-60b67cb0-2021-41d6-a9a7-84386b30f0b8</vdl:parameter>
+		                    <vdl:parameter name="prefix">c-a6c9405f-a858-4be4-a55b-443dfcc11a20</vdl:parameter>
 		                  </vdl:mapping>
 		                </vdl:new>
 		              </set>

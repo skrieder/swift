@@ -1,1 +1,4 @@
-/home/skrieder/swift/multi/hello
+#!/bin/sh
+
+sleep 0
+echo "hello"

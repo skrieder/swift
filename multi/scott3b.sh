@@ -1,1 +1,4 @@
-/home/skrieder/swift/cuda/1sm0ms
+#!/bin/sh
+
+/home/skrieder/swift/cuda/cka
+echo "hello"

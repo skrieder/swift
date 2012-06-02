@@ -1,0 +1,35 @@
+Progress  2012-06-01 14:59:43.707711452-0500  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+PWD=/var/tmp/zhao-foreach-20120601-1459-tn2dtcf7
+DIR=jobs/k/cka-k2xh56sk
+EXEC=/home/skrieder/swift/cuda/1sm1ms
+STDIN=
+STDOUT=result.txt
+STDERR=stderr.txt
+DIRS=
+INF=scott3a.sh
+OUTF=result.txt
+KICKSTART=
+CDM_FILE=
+MPI_RANK=
+ARGS=
+ARGC=0
+Progress  2012-06-01 14:59:43.727907991-0500  CREATE_JOBDIR
+Created job directory: jobs/k/cka-k2xh56sk
+Progress  2012-06-01 14:59:43.738167047-0500  CREATE_INPUTDIR
+Progress  2012-06-01 14:59:43.742891534-0500  LINK_INPUTS
+Linked input: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/scott3a.sh to jobs/k/cka-k2xh56sk/scott3a.sh
+Progress  2012-06-01 14:59:43.752971122-0500  EXECUTE
+Moving back to workflow directory /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7
+Progress  2012-06-01 14:59:43.866681472-0500  EXECUTE_DONE
+Job ran successfully
+Progress  2012-06-01 14:59:43.870293929-0500  MOVING_OUTPUTS result.txt
+Progress  2012-06-01 14:59:43.877182455-0500  RM_JOBDIR
+Progress  2012-06-01 14:59:43.883126671-0500  TOUCH_SUCCESS
+Progress  2012-06-01 14:59:43.888896411-0500  END

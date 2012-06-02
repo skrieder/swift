@@ -1,0 +1,442 @@
+2012-06-01 14:59:36,640-0500 DEBUG Loader arguments: [-tc.file, tc.data, zhao-foreach.swift]
+2012-06-01 14:59:36,640-0500 DEBUG Loader Max heap: 252248064
+2012-06-01 14:59:36,641-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     cka stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f in inputfiles {
+  countfile c <"result.txt">;
+  c = countwords(f);
+}
+
+
+2012-06-01 14:59:36,641-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-01 14:59:36,642-0500 INFO  Loader zhao-foreach.swift: source file is new. Recompiling.
+2012-06-01 14:59:36,642-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 14:59:36,642-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-01 14:59:37,209-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-01 14:59:37,395-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-01 14:59:37,395-0500 DEBUG textfiles using default sites file
+2012-06-01 14:59:37,399-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-01 14:59:38,051-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-06-01 14:59:38,088-0500 INFO  unknown Using tc.data: tc.data
+2012-06-01 14:59:38,196-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-01 14:59:38,944-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-01 14:59:38,945-0500 INFO  unknown RUNID id=run:20120601-1459-tn2dtcf7
+2012-06-01 14:59:38,993-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh
+2012-06-01 14:59:39,002-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-01 14:59:39,002-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-01 14:59:39,002-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-01 14:59:39,002-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[3]
+2012-06-01 14:59:39,003-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[4]
+2012-06-01 14:59:39,003-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[5]
+2012-06-01 14:59:39,003-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[6]
+2012-06-01 14:59:39,003-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[7]
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-1
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-5
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-6
+2012-06-01 14:59:39,007-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-01 14:59:39,007-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-2
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-7
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-3
+2012-06-01 14:59:39,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-4
+2012-06-01 14:59:39,008-0500 DEBUG vdl:mains SCOPE thread=0-1-3
+2012-06-01 14:59:39,008-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-01 14:59:39,008-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-01 14:59:39,007-0500 DEBUG vdl:mains SCOPE thread=0-1-6
+2012-06-01 14:59:39,007-0500 DEBUG vdl:mains SCOPE thread=0-1-5
+2012-06-01 14:59:39,008-0500 DEBUG vdl:mains SCOPE thread=0-1-7
+2012-06-01 14:59:39,008-0500 DEBUG vdl:mains SCOPE thread=0-1-4
+2012-06-01 14:59:39,012-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,012-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,012-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,013-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,014-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,014-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,017-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,014-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-01 14:59:39,019-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-2-1 name=countwords
+2012-06-01 14:59:39,020-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-3-1 name=countwords
+2012-06-01 14:59:39,020-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-6-1 name=countwords
+2012-06-01 14:59:39,020-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-1-1 name=countwords
+2012-06-01 14:59:39,021-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-7-1 name=countwords
+2012-06-01 14:59:39,023-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-01 14:59:39,020-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-5-1 name=countwords
+2012-06-01 14:59:39,023-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-4-1 name=countwords
+2012-06-01 14:59:39,027-0500 INFO  vdl:execute START thread=0-1-6-1 tr=cka
+2012-06-01 14:59:39,028-0500 INFO  vdl:execute START thread=0-1-5-1 tr=cka
+2012-06-01 14:59:39,027-0500 INFO  vdl:execute START thread=0-1-2-1 tr=cka
+2012-06-01 14:59:39,028-0500 INFO  vdl:execute START thread=0-1-3-1 tr=cka
+2012-06-01 14:59:39,028-0500 INFO  vdl:execute START thread=0-1-0-1 tr=cka
+2012-06-01 14:59:39,028-0500 INFO  vdl:execute START thread=0-1-1-1 tr=cka
+2012-06-01 14:59:39,029-0500 INFO  vdl:execute START thread=0-1-7-1 tr=cka
+2012-06-01 14:59:39,030-0500 INFO  vdl:execute START thread=0-1-4-1 tr=cka
+2012-06-01 14:59:39,040-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-01 14:59:39,042-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-01 14:59:39,043-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,044-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,046-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-01 14:59:39,048-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,062-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,065-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,067-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,070-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,074-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,076-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-01 14:59:39,079-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-92xh56sk thread=0-1-4-1-1 host=localhost replicationGroup=82xh56sk
+2012-06-01 14:59:39,088-0500 INFO  vdl:createdirset START jobid=cka-92xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:39,089-0500 INFO  vdl:createdirset END jobid=cka-92xh56sk - Done initializing directory structure
+2012-06-01 14:59:39,089-0500 INFO  vdl:dostagein START jobid=cka-92xh56sk - Staging in files
+2012-06-01 14:59:39,104-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,108-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:39,115-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ provider=file policy=DEFAULT
+2012-06-01 14:59:39,120-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,121-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ provider=file
+2012-06-01 14:59:39,122-0500 INFO  vdl:dostagein END jobid=cka-92xh56sk - Staging in finished
+2012-06-01 14:59:39,124-0500 DEBUG vdl:execute2 JOB_START jobid=cka-92xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/9/cka-92xh56sk host=localhost
+2012-06-01 14:59:39,130-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	scott3a		/home/skrieder/swift/multi/scott3a.sh		INSTALLED	INTEL32::LINUX	null
+localhost	scott3b		/home/skrieder/swift/multi/scott3b.sh		INSTALLED	INTEL32::LINUX	null
+localhost	cka		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-01 14:59:39,130-0500 DEBUG textfiles END TC:
+2012-06-01 14:59:39,142-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-4-1-1-1338580778093) is /bin/bash shared/_swiftwrap cka-92xh56sk -jobdir 9 -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:39,160-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-92xh56sk -jobdir 9 -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:39,394-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,397-0500 DEBUG vdl:checkjobstatus START jobid=cka-92xh56sk
+2012-06-01 14:59:39,399-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,400-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-92xh56sk - Success file found
+2012-06-01 14:59:39,401-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-92xh56sk
+2012-06-01 14:59:39,403-0500 INFO  vdl:dostageout START jobid=cka-92xh56sk - Staging out files
+2012-06-01 14:59:39,403-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:39,413-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:39,414-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,423-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,425-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:39,428-0500 INFO  LateBindingScheduler JobQueue: 7
+2012-06-01 14:59:39,435-0500 INFO  vdl:dostageout END jobid=cka-92xh56sk - Staging out finished
+2012-06-01 14:59:39,444-0500 DEBUG vdl:execute2 JOB_END jobid=cka-92xh56sk
+2012-06-01 14:59:39,446-0500 INFO  vdl:execute END_SUCCESS thread=0-1-4-1 tr=cka
+2012-06-01 14:59:39,449-0500 DEBUG countwords PROCEDURE_END line=5
+2012-06-01 14:59:39,450-0500 DEBUG vdl:mains FOREACH_IT_END line=13 thread=0-1-4
+2012-06-01 14:59:39,930-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.887
+2012-06-01 14:59:39,935-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-a2xh56sk thread=0-1-7-1-1 host=localhost replicationGroup=62xh56sk
+2012-06-01 14:59:39,942-0500 INFO  vdl:createdirset START jobid=cka-a2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:39,943-0500 INFO  vdl:createdirset END jobid=cka-a2xh56sk - Done initializing directory structure
+2012-06-01 14:59:39,944-0500 INFO  vdl:dostagein START jobid=cka-a2xh56sk - Staging in files
+2012-06-01 14:59:39,950-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:39,951-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:39,954-0500 INFO  vdl:dostagein END jobid=cka-a2xh56sk - Staging in finished
+2012-06-01 14:59:39,956-0500 DEBUG vdl:execute2 JOB_START jobid=cka-a2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/a/cka-a2xh56sk host=localhost
+2012-06-01 14:59:39,965-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-7-1-1-1338580778106) is /bin/bash shared/_swiftwrap cka-a2xh56sk -jobdir a -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:39,965-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-a2xh56sk -jobdir a -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:40,191-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,195-0500 DEBUG vdl:checkjobstatus START jobid=cka-a2xh56sk
+2012-06-01 14:59:40,197-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,198-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-a2xh56sk - Success file found
+2012-06-01 14:59:40,199-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-a2xh56sk
+2012-06-01 14:59:40,201-0500 INFO  vdl:dostageout START jobid=cka-a2xh56sk - Staging out files
+2012-06-01 14:59:40,201-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:40,208-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,209-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,215-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,216-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,219-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,230-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,232-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-a2xh56sk - Error file missing
+2012-06-01 14:59:40,234-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-a2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:40,274-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,290-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.193
+2012-06-01 14:59:40,295-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-c2xh56sk thread=0-1-6-1-1 host=localhost replicationGroup=32xh56sk
+2012-06-01 14:59:40,302-0500 INFO  vdl:createdirset START jobid=cka-c2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:40,303-0500 INFO  vdl:createdirset END jobid=cka-c2xh56sk - Done initializing directory structure
+2012-06-01 14:59:40,304-0500 INFO  vdl:dostagein START jobid=cka-c2xh56sk - Staging in files
+2012-06-01 14:59:40,310-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,311-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:40,314-0500 INFO  vdl:dostagein END jobid=cka-c2xh56sk - Staging in finished
+2012-06-01 14:59:40,315-0500 DEBUG vdl:execute2 JOB_START jobid=cka-c2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/c/cka-c2xh56sk host=localhost
+2012-06-01 14:59:40,324-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-6-1-1-1338580778135) is /bin/bash shared/_swiftwrap cka-c2xh56sk -jobdir c -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:40,325-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-c2xh56sk -jobdir c -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:40,551-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,553-0500 DEBUG vdl:checkjobstatus START jobid=cka-c2xh56sk
+2012-06-01 14:59:40,556-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,558-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-c2xh56sk - Success file found
+2012-06-01 14:59:40,561-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-c2xh56sk
+2012-06-01 14:59:40,563-0500 INFO  vdl:dostageout START jobid=cka-c2xh56sk - Staging out files
+2012-06-01 14:59:40,563-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:40,571-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,573-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,579-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,582-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,585-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,594-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,597-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-c2xh56sk - Error file missing
+2012-06-01 14:59:40,600-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-c2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:40,634-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,648-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:40,652-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-e2xh56sk thread=0-1-2-1-1 host=localhost replicationGroup=22xh56sk
+2012-06-01 14:59:40,659-0500 INFO  vdl:createdirset START jobid=cka-e2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:40,660-0500 INFO  vdl:createdirset END jobid=cka-e2xh56sk - Done initializing directory structure
+2012-06-01 14:59:40,662-0500 INFO  vdl:dostagein START jobid=cka-e2xh56sk - Staging in files
+2012-06-01 14:59:40,669-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,671-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:40,673-0500 INFO  vdl:dostagein END jobid=cka-e2xh56sk - Staging in finished
+2012-06-01 14:59:40,675-0500 DEBUG vdl:execute2 JOB_START jobid=cka-e2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/e/cka-e2xh56sk host=localhost
+2012-06-01 14:59:40,685-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1338580778164) is /bin/bash shared/_swiftwrap cka-e2xh56sk -jobdir e -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:40,686-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-e2xh56sk -jobdir e -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:40,912-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,915-0500 DEBUG vdl:checkjobstatus START jobid=cka-e2xh56sk
+2012-06-01 14:59:40,918-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,919-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-e2xh56sk - Success file found
+2012-06-01 14:59:40,921-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-e2xh56sk
+2012-06-01 14:59:40,922-0500 INFO  vdl:dostageout START jobid=cka-e2xh56sk - Staging out files
+2012-06-01 14:59:40,923-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:40,929-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,931-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,936-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,937-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:40,940-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,948-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,950-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-e2xh56sk - Error file missing
+2012-06-01 14:59:40,952-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-e2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:40,983-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:40,995-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:41,001-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-g2xh56sk thread=0-1-5-1-1 host=localhost replicationGroup=72xh56sk
+2012-06-01 14:59:41,008-0500 INFO  vdl:createdirset START jobid=cka-g2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:41,008-0500 INFO  vdl:createdirset END jobid=cka-g2xh56sk - Done initializing directory structure
+2012-06-01 14:59:41,009-0500 INFO  vdl:dostagein START jobid=cka-g2xh56sk - Staging in files
+2012-06-01 14:59:41,016-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,017-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:41,020-0500 INFO  vdl:dostagein END jobid=cka-g2xh56sk - Staging in finished
+2012-06-01 14:59:41,020-0500 DEBUG vdl:execute2 JOB_START jobid=cka-g2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/g/cka-g2xh56sk host=localhost
+2012-06-01 14:59:41,028-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-5-1-1-1338580778193) is /bin/bash shared/_swiftwrap cka-g2xh56sk -jobdir g -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:41,029-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-g2xh56sk -jobdir g -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:41,254-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,257-0500 DEBUG vdl:checkjobstatus START jobid=cka-g2xh56sk
+2012-06-01 14:59:41,260-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,262-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-g2xh56sk - Success file found
+2012-06-01 14:59:41,263-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-g2xh56sk
+2012-06-01 14:59:41,265-0500 INFO  vdl:dostageout START jobid=cka-g2xh56sk - Staging out files
+2012-06-01 14:59:41,265-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:41,271-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:41,273-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,279-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,281-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:41,284-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,291-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:41,293-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-g2xh56sk - Error file missing
+2012-06-01 14:59:41,295-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-g2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:41,323-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,335-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:42,338-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-i2xh56sk thread=0-1-1-1-1 host=localhost replicationGroup=12xh56sk
+2012-06-01 14:59:42,345-0500 INFO  vdl:createdirset START jobid=cka-i2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:42,346-0500 INFO  vdl:createdirset END jobid=cka-i2xh56sk - Done initializing directory structure
+2012-06-01 14:59:42,347-0500 INFO  vdl:dostagein START jobid=cka-i2xh56sk - Staging in files
+2012-06-01 14:59:42,352-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,353-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:42,355-0500 INFO  vdl:dostagein END jobid=cka-i2xh56sk - Staging in finished
+2012-06-01 14:59:42,357-0500 DEBUG vdl:execute2 JOB_START jobid=cka-i2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/i/cka-i2xh56sk host=localhost
+2012-06-01 14:59:42,365-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1338580778222) is /bin/bash shared/_swiftwrap cka-i2xh56sk -jobdir i -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:42,366-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-i2xh56sk -jobdir i -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:42,572-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,574-0500 DEBUG vdl:checkjobstatus START jobid=cka-i2xh56sk
+2012-06-01 14:59:42,577-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,578-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-i2xh56sk - Success file found
+2012-06-01 14:59:42,579-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-i2xh56sk
+2012-06-01 14:59:42,580-0500 INFO  vdl:dostageout START jobid=cka-i2xh56sk - Staging out files
+2012-06-01 14:59:42,581-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:42,586-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:42,588-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,595-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,596-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:42,599-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,604-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:42,605-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-i2xh56sk - Error file missing
+2012-06-01 14:59:42,607-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-i2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:42,630-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,641-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:43,645-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-k2xh56sk thread=0-1-3-1-1 host=localhost replicationGroup=52xh56sk
+2012-06-01 14:59:43,650-0500 INFO  vdl:createdirset START jobid=cka-k2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:43,650-0500 INFO  vdl:createdirset END jobid=cka-k2xh56sk - Done initializing directory structure
+2012-06-01 14:59:43,652-0500 INFO  vdl:dostagein START jobid=cka-k2xh56sk - Staging in files
+2012-06-01 14:59:43,657-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,658-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:43,661-0500 INFO  vdl:dostagein END jobid=cka-k2xh56sk - Staging in finished
+2012-06-01 14:59:43,662-0500 DEBUG vdl:execute2 JOB_START jobid=cka-k2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/k/cka-k2xh56sk host=localhost
+2012-06-01 14:59:43,669-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-3-1-1-1338580778251) is /bin/bash shared/_swiftwrap cka-k2xh56sk -jobdir k -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:43,670-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-k2xh56sk -jobdir k -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:43,897-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,900-0500 DEBUG vdl:checkjobstatus START jobid=cka-k2xh56sk
+2012-06-01 14:59:43,902-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,903-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-k2xh56sk - Success file found
+2012-06-01 14:59:43,904-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-k2xh56sk
+2012-06-01 14:59:43,905-0500 INFO  vdl:dostageout START jobid=cka-k2xh56sk - Staging out files
+2012-06-01 14:59:43,906-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:43,909-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:43,911-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,916-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,918-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:43,920-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,926-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:43,927-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-k2xh56sk - Error file missing
+2012-06-01 14:59:43,928-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-k2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:43,976-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,481-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:45,485-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-m2xh56sk thread=0-1-0-1-1 host=localhost replicationGroup=42xh56sk
+2012-06-01 14:59:45,490-0500 INFO  vdl:createdirset START jobid=cka-m2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:45,490-0500 INFO  vdl:createdirset END jobid=cka-m2xh56sk - Done initializing directory structure
+2012-06-01 14:59:45,491-0500 INFO  vdl:dostagein START jobid=cka-m2xh56sk - Staging in files
+2012-06-01 14:59:45,495-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,496-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:45,498-0500 INFO  vdl:dostagein END jobid=cka-m2xh56sk - Staging in finished
+2012-06-01 14:59:45,498-0500 DEBUG vdl:execute2 JOB_START jobid=cka-m2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/m/cka-m2xh56sk host=localhost
+2012-06-01 14:59:45,505-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1338580778280) is /bin/bash shared/_swiftwrap cka-m2xh56sk -jobdir m -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:45,506-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-m2xh56sk -jobdir m -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:45,731-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,734-0500 DEBUG vdl:checkjobstatus START jobid=cka-m2xh56sk
+2012-06-01 14:59:45,736-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,737-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-m2xh56sk - Success file found
+2012-06-01 14:59:45,738-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-m2xh56sk
+2012-06-01 14:59:45,739-0500 INFO  vdl:dostageout START jobid=cka-m2xh56sk - Staging out files
+2012-06-01 14:59:45,740-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:45,748-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:45,749-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,756-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,757-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:45,759-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,764-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:45,765-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-m2xh56sk - Error file missing
+2012-06-01 14:59:45,766-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-m2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:45,787-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,295-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:48,298-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-o2xh56sk thread=0-1-7-1-1 host=localhost replicationGroup=b2xh56sk
+2012-06-01 14:59:48,302-0500 INFO  vdl:createdirset START jobid=cka-o2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:48,303-0500 INFO  vdl:createdirset END jobid=cka-o2xh56sk - Done initializing directory structure
+2012-06-01 14:59:48,304-0500 INFO  vdl:dostagein START jobid=cka-o2xh56sk - Staging in files
+2012-06-01 14:59:48,308-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,309-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:48,310-0500 INFO  vdl:dostagein END jobid=cka-o2xh56sk - Staging in finished
+2012-06-01 14:59:48,311-0500 DEBUG vdl:execute2 JOB_START jobid=cka-o2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/o/cka-o2xh56sk host=localhost
+2012-06-01 14:59:48,316-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-7-1-1-1338580778309) is /bin/bash shared/_swiftwrap cka-o2xh56sk -jobdir o -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:48,317-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-o2xh56sk -jobdir o -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:48,544-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,546-0500 DEBUG vdl:checkjobstatus START jobid=cka-o2xh56sk
+2012-06-01 14:59:48,548-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,549-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-o2xh56sk - Success file found
+2012-06-01 14:59:48,550-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-o2xh56sk
+2012-06-01 14:59:48,551-0500 INFO  vdl:dostageout START jobid=cka-o2xh56sk - Staging out files
+2012-06-01 14:59:48,551-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:48,554-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:48,556-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,560-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,562-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:48,564-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,569-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:48,570-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-o2xh56sk - Error file missing
+2012-06-01 14:59:48,570-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-o2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:48,592-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,603-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 14:59:53,607-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-q2xh56sk thread=0-1-6-1-1 host=localhost replicationGroup=d2xh56sk
+2012-06-01 14:59:53,612-0500 INFO  vdl:createdirset START jobid=cka-q2xh56sk host=localhost - Initializing directory structure
+2012-06-01 14:59:53,612-0500 INFO  vdl:createdirset END jobid=cka-q2xh56sk - Done initializing directory structure
+2012-06-01 14:59:53,613-0500 INFO  vdl:dostagein START jobid=cka-q2xh56sk - Staging in files
+2012-06-01 14:59:53,616-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,617-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 14:59:53,619-0500 INFO  vdl:dostagein END jobid=cka-q2xh56sk - Staging in finished
+2012-06-01 14:59:53,620-0500 DEBUG vdl:execute2 JOB_START jobid=cka-q2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/q/cka-q2xh56sk host=localhost
+2012-06-01 14:59:53,624-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-6-1-1-1338580778338) is /bin/bash shared/_swiftwrap cka-q2xh56sk -jobdir q -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:53,625-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-q2xh56sk -jobdir q -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 14:59:53,851-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,852-0500 DEBUG vdl:checkjobstatus START jobid=cka-q2xh56sk
+2012-06-01 14:59:53,854-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,855-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-q2xh56sk - Success file found
+2012-06-01 14:59:53,856-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-q2xh56sk
+2012-06-01 14:59:53,857-0500 INFO  vdl:dostageout START jobid=cka-q2xh56sk - Staging out files
+2012-06-01 14:59:53,857-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 14:59:53,860-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:53,861-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,866-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,867-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 14:59:53,869-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,874-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 14:59:53,875-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-q2xh56sk - Error file missing
+2012-06-01 14:59:53,876-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-q2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 14:59:53,898-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,408-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-01 15:00:01,412-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-s2xh56sk thread=0-1-2-1-1 host=localhost replicationGroup=f2xh56sk
+2012-06-01 15:00:01,416-0500 INFO  vdl:createdirset START jobid=cka-s2xh56sk host=localhost - Initializing directory structure
+2012-06-01 15:00:01,417-0500 INFO  vdl:createdirset END jobid=cka-s2xh56sk - Done initializing directory structure
+2012-06-01 15:00:01,418-0500 INFO  vdl:dostagein START jobid=cka-s2xh56sk - Staging in files
+2012-06-01 15:00:01,421-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,422-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-01 15:00:01,424-0500 INFO  vdl:dostagein END jobid=cka-s2xh56sk - Staging in finished
+2012-06-01 15:00:01,425-0500 DEBUG vdl:execute2 JOB_START jobid=cka-s2xh56sk tr=cka arguments=[] tmpdir=zhao-foreach-20120601-1459-tn2dtcf7/jobs/s/cka-s2xh56sk host=localhost
+2012-06-01 15:00:01,429-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1338580778367) is /bin/bash shared/_swiftwrap cka-s2xh56sk -jobdir s -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 15:00:01,430-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7 command: /bin/bash /var/tmp/zhao-foreach-20120601-1459-tn2dtcf7/shared/_swiftwrap cka-s2xh56sk -jobdir s -scratch  -e /home/skrieder/swift/cuda/1sm1ms -out result.txt -err stderr.txt -i -d  -if scott3a.sh -of result.txt -k  -cdmfile  -status files -a
+2012-06-01 15:00:01,656-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,658-0500 DEBUG vdl:checkjobstatus START jobid=cka-s2xh56sk
+2012-06-01 15:00:01,660-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,661-0500 INFO  vdl:checkjobstatus SUCCESS jobid=cka-s2xh56sk - Success file found
+2012-06-01 15:00:01,662-0500 DEBUG vdl:execute2 STAGING_OUT jobid=cka-s2xh56sk
+2012-06-01 15:00:01,663-0500 INFO  vdl:dostageout START jobid=cka-s2xh56sk - Staging out files
+2012-06-01 15:00:01,663-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-01 15:00:01,665-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 15:00:01,667-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,671-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,673-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=result.txt srcdir=zhao-foreach-20120601-1459-tn2dtcf7/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-01 15:00:01,675-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,679-0500 INFO  LateBindingScheduler JobQueue: 6
+2012-06-01 15:00:01,680-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-s2xh56sk - Error file missing
+2012-06-01 15:00:01,681-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-s2xh56sk - Application exception: The cache already contains localhost:zhao-foreach-20120601-1459-tn2dtcf7/shared/result.txt.
+
+2012-06-01 15:00:01,699-0500 INFO  LateBindingScheduler JobQueue: 6

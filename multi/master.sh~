@@ -1,0 +1,1 @@
+time swift -tc.file tc.data -sites.file 0- scott1sm100ms.swift

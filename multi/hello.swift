@@ -1,10 +1,10 @@
 type messagefile;
 
 app (messagefile t) greeting() { 
-    scott3a stdout=@filename(t);
+    echo "TEST TEST TEST" stdout=@filename(t);
 }
 
-messagefile outfile <"hello.txt">;
+messagefile outfile <"hello1.txt">;
 
 outfile = greeting();
 

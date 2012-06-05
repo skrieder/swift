@@ -17,12 +17,12 @@
      xsi:nil="true" />
     <binding>
       <application src="line 3">
-        <executable>scott3a</executable>
+        <executable>echo</executable>
         <stdout><function name="filename">
-          <variableReference>t</variableReference></function></stdout>  </application>
+          <variableReference>t</variableReference></function></stdout><stringConstant>TEST TEST TEST</stringConstant>  </application>
     </binding>
   </procedure>
-  <variable name="outfile" type="messagefile" isGlobal="false"><file name="hello.txt"/></variable>
+  <variable name="outfile" type="messagefile" isGlobal="false"><file name="hello1.txt"/></variable>
   <call proc="greeting" src="line 9">
     <output><variableReference>outfile</variableReference></output>
   </call>

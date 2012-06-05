@@ -10,6 +10,9 @@
       	   </xs:simpleType>  
      </xs:schema>	 
   </types>
+  <global name="swift#string#17000">
+    <vdl:new type="string" value="TEST TEST TEST" />
+  </global>
   <element name="greeting" arguments="t">
     <parameterlog>
     <string>output</string>
@@ -19,9 +22,10 @@
     </parameterlog>
     <log level="debug" message="PROCEDURE line=3 thread={#thread} name=greeting"/>
     <vdl:execute>
-      <vdl:tr>scott3a</vdl:tr>
+      <vdl:tr>echo</vdl:tr>
       <vdl:stageout var="{t}"/>
       <vdl:arguments>
+        <variable>swift#string#17000</variable>
       </vdl:arguments>
       <vdl:stdout>
         <swiftscript:filename>
@@ -35,7 +39,7 @@
   <set name="outfile">
         <vdl:new type="messagefile" dbgname="outfile" waitfor="88000">
           <vdl:mapping descriptor="single_file_mapper">
-            <vdl:parameter name="file" value="hello.txt"/>
+            <vdl:parameter name="file" value="hello1.txt"/>
           </vdl:mapping>
         </vdl:new>
   </set>

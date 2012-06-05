@@ -1,1 +1,1 @@
-time swift -tc.file tc.data -sites.file 0-throttle-sites.xml scott1sm100ms.swift
+time swift -tc.file tc.data -sites.file 16-throttle-sites.xml scott1sm100ms.swift

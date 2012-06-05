@@ -1,0 +1,469 @@
+rogress:  time: Tue, 05 Jun 2012 15:02:54 -0500  Active:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:02:55 -0500  Stage in:1  Finished successfully:62 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:02:56 -0500  Checking status:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:02:56 -0500  Finished successfully:64
+117.71user 20.73system 2:34.80elapsed 89%CPU (0avgtext+0avgdata 524000maxresident)k
+0inputs+5088outputs (0major+920331minor)pagefaults 0swaps
+3
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1502-xyxme6o5
+Progress:  time: Tue, 05 Jun 2012 15:02:59 -0500
+Progress:  time: Tue, 05 Jun 2012 15:03:00 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:03:11 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:03:12 -0500  Selecting site:59  Stage in:1  Finished successfully:3 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:13 -0500  Selecting site:58  Checking status:1  Finished successfully:4 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:14 -0500  Selecting site:56  Stage in:1  Finished successfully:6 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:15 -0500  Selecting site:55  Checking status:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:17 -0500  Selecting site:53  Stage in:1  Finished successfully:9 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:27 -0500  Selecting site:53  Checking status:1  Finished successfully:9 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:03:28 -0500  Selecting site:51  Checking status:1  Finished successfully:10 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:03:29 -0500  Selecting site:49  Stage in:1  Finished successfully:12 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:03:30 -0500  Selecting site:48  Checking status:1  Finished successfully:13 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:03:32 -0500  Selecting site:46  Stage in:1  Finished successfully:15 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:03:44 -0500  Selecting site:45  Checking status:1  Finished successfully:16 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:03:45 -0500  Selecting site:43  Checking status:1  Finished successfully:17 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:03:46 -0500  Selecting site:41  Stage in:1  Finished successfully:19 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:03:47 -0500  Selecting site:40  Checking status:1  Finished successfully:20 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:03:49 -0500  Selecting site:38  Stage in:1  Finished successfully:22 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:03:59 -0500  Selecting site:37  Active:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:04:01 -0500  Selecting site:37  Checking status:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:04:02 -0500  Selecting site:35  Checking status:1  Finished successfully:24 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:04:03 -0500  Selecting site:33  Stage in:1  Finished successfully:26 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:04:04 -0500  Selecting site:32  Checking status:1  Finished successfully:27 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:04:06 -0500  Selecting site:30  Stage in:1  Finished successfully:29 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:04:17 -0500  Selecting site:29  Checking status:1  Finished successfully:30 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:04:18 -0500  Selecting site:27  Checking status:1  Finished successfully:31 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:19 -0500  Selecting site:25  Stage in:1  Finished successfully:33 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:20 -0500  Selecting site:24  Checking status:1  Finished successfully:34 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:22 -0500  Selecting site:22  Stage in:1  Finished successfully:36 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:29 -0500  Selecting site:21  Active:1  Finished successfully:37 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:33 -0500  Selecting site:21  Checking status:1  Finished successfully:37 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:04:34 -0500  Selecting site:19  Checking status:1  Finished successfully:38 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:04:35 -0500  Selecting site:17  Stage in:1  Finished successfully:40 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:04:36 -0500  Selecting site:16  Checking status:1  Finished successfully:41 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:04:38 -0500  Selecting site:14  Stage in:1  Finished successfully:43 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:04:50 -0500  Selecting site:13  Checking status:1  Finished successfully:44 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:04:51 -0500  Selecting site:11  Checking status:1  Finished successfully:45 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:04:52 -0500  Selecting site:9  Stage in:1  Finished successfully:47 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:04:53 -0500  Selecting site:8  Checking status:1  Finished successfully:48 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:04:55 -0500  Selecting site:6  Stage in:1  Finished successfully:50 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:04:59 -0500  Selecting site:5  Active:1  Finished successfully:51 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:05:06 -0500  Selecting site:5  Checking status:1  Finished successfully:51 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:05:07 -0500  Selecting site:3  Checking status:1  Finished successfully:52 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:05:08 -0500  Selecting site:1  Stage in:1  Finished successfully:54 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:05:09 -0500  Checking status:1  Finished successfully:55 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:05:11 -0500  Stage in:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:05:12 -0500  Checking status:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:05:13 -0500  Stage in:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:05:14 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:05:16 -0500  Stage in:1  Finished successfully:63
+Progress:  time: Tue, 05 Jun 2012 15:05:29 -0500  Active:1  Finished successfully:63
+Progress:  time: Tue, 05 Jun 2012 15:05:31 -0500  Checking status:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:05:31 -0500  Finished successfully:64
+117.94user 20.93system 2:34.59elapsed 89%CPU (0avgtext+0avgdata 513024maxresident)k
+0inputs+5048outputs (0major+916917minor)pagefaults 0swaps
+4
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1505-mu157b3g
+Progress:  time: Tue, 05 Jun 2012 15:05:33 -0500
+Progress:  time: Tue, 05 Jun 2012 15:05:34 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:05:36 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:05:37 -0500  Selecting site:59  Stage in:1  Finished successfully:4
+Progress:  time: Tue, 05 Jun 2012 15:05:38 -0500  Selecting site:58  Checking status:1  Finished successfully:5
+Progress:  time: Tue, 05 Jun 2012 15:05:49 -0500  Selecting site:57  Checking status:1  Finished successfully:6
+Progress:  time: Tue, 05 Jun 2012 15:05:50 -0500  Selecting site:55  Stage in:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:05:51 -0500  Selecting site:54  Checking status:1  Finished successfully:8 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:05:52 -0500  Selecting site:52  Stage in:1  Finished successfully:10 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:05:53 -0500  Selecting site:51  Checking status:1  Finished successfully:11 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:05:55 -0500  Selecting site:49  Stage in:1  Finished successfully:13 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:06:03 -0500  Selecting site:49  Active:1  Finished successfully:13 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:06:05 -0500  Selecting site:49  Checking status:1  Finished successfully:13 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:06:06 -0500  Selecting site:47  Checking status:1  Finished successfully:14 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:07 -0500  Selecting site:45  Stage in:1  Finished successfully:16 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:08 -0500  Selecting site:44  Checking status:1  Finished successfully:17 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:10 -0500  Selecting site:42  Stage in:1  Finished successfully:19 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:11 -0500  Selecting site:41  Checking status:1  Finished successfully:20 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:12 -0500  Selecting site:39  Stage in:1  Finished successfully:22 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:14 -0500  Selecting site:38  Checking status:1  Finished successfully:23 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:15 -0500  Selecting site:36  Stage in:1  Finished successfully:25 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:29 -0500  Selecting site:36  Checking status:1  Finished successfully:25 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:06:30 -0500  Selecting site:34  Checking status:1  Finished successfully:26 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:06:31 -0500  Selecting site:32  Stage in:1  Finished successfully:28 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:06:32 -0500  Selecting site:31  Checking status:1  Finished successfully:29 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:06:34 -0500  Selecting site:29  Stage in:1  Finished successfully:31 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:06:46 -0500  Selecting site:28  Checking status:1  Finished successfully:32 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:06:47 -0500  Selecting site:26  Checking status:1  Finished successfully:33 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:06:48 -0500  Selecting site:24  Stage in:1  Finished successfully:35 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:06:49 -0500  Selecting site:23  Checking status:1  Finished successfully:36 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:06:51 -0500  Selecting site:21  Stage in:1  Finished successfully:38 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:07:03 -0500  Selecting site:20  Checking status:1  Finished successfully:39 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:07:04 -0500  Selecting site:18  Checking status:1  Finished successfully:40 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:05 -0500  Selecting site:16  Stage in:1  Finished successfully:42 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:06 -0500  Selecting site:15  Checking status:1  Finished successfully:43 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:08 -0500  Selecting site:13  Stage in:1  Finished successfully:45 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:19 -0500  Selecting site:13  Checking status:1  Finished successfully:45 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:20 -0500  Selecting site:11  Checking status:1  Finished successfully:46 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:21 -0500  Selecting site:9  Stage in:1  Finished successfully:48 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:22 -0500  Selecting site:8  Checking status:1  Finished successfully:49 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:24 -0500  Selecting site:6  Stage in:1  Finished successfully:51 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:25 -0500  Selecting site:5  Checking status:1  Finished successfully:52 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:26 -0500  Selecting site:3  Stage in:1  Finished successfully:54 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:28 -0500  Selecting site:2  Checking status:1  Finished successfully:55 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:29 -0500  Stage in:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:33 -0500  Active:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:45 -0500  Checking status:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:07:46 -0500  Checking status:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:07:47 -0500  Stage in:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:07:48 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:07:50 -0500  Stage in:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:07:50 -0500  Finished successfully:64
+104.45user 18.77system 2:19.29elapsed 88%CPU (0avgtext+0avgdata 556592maxresident)k
+0inputs+4784outputs (0major+894759minor)pagefaults 0swaps
+5
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1507-fumtomt8
+Progress:  time: Tue, 05 Jun 2012 15:07:52 -0500
+Progress:  time: Tue, 05 Jun 2012 15:08:08 -0500  Selecting site:63  Checking status:1
+Progress:  time: Tue, 05 Jun 2012 15:08:09 -0500  Selecting site:61  Stage in:1  Finished successfully:1 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:10 -0500  Selecting site:60  Checking status:1  Finished successfully:2 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:11 -0500  Selecting site:58  Stage in:1  Finished successfully:4 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:13 -0500  Selecting site:57  Checking status:1  Finished successfully:5 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:14 -0500  Selecting site:55  Stage in:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:22 -0500  Selecting site:55  Active:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:25 -0500  Selecting site:55  Checking status:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:08:26 -0500  Selecting site:54  Finished successfully:8 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:28 -0500  Selecting site:52  Stage in:1  Finished successfully:9 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:29 -0500  Selecting site:51  Checking status:1  Finished successfully:10 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:30 -0500  Selecting site:49  Stage in:1  Finished successfully:12 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:31 -0500  Selecting site:48  Checking status:1  Finished successfully:13 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:33 -0500  Selecting site:46  Stage in:1  Finished successfully:15 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:51 -0500  Selecting site:45  Checking status:1  Finished successfully:16 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:08:52 -0500  Selecting site:43  Checking status:1  Finished successfully:17 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:08:53 -0500  Selecting site:41  Stage in:1  Finished successfully:19 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:08:54 -0500  Selecting site:40  Checking status:1  Finished successfully:20 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:08:56 -0500  Selecting site:38  Stage in:1  Finished successfully:22 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:09:08 -0500  Selecting site:37  Checking status:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:09:09 -0500  Selecting site:35  Checking status:1  Finished successfully:24 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:10 -0500  Selecting site:33  Stage in:1  Finished successfully:26 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:11 -0500  Selecting site:32  Checking status:1  Finished successfully:27 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:13 -0500  Selecting site:30  Stage in:1  Finished successfully:29 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:14 -0500  Selecting site:29  Checking status:1  Finished successfully:30 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:15 -0500  Selecting site:27  Stage in:1  Finished successfully:32 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:17 -0500  Selecting site:26  Checking status:1  Finished successfully:33 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:18 -0500  Selecting site:24  Stage in:1  Finished successfully:35 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:22 -0500  Selecting site:24  Active:1  Finished successfully:35 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:32 -0500  Selecting site:24  Checking status:1  Finished successfully:35 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:09:33 -0500  Selecting site:22  Checking status:1  Finished successfully:36 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:09:34 -0500  Selecting site:20  Stage in:1  Finished successfully:38 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:09:35 -0500  Selecting site:19  Checking status:1  Finished successfully:39 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:09:37 -0500  Selecting site:17  Stage in:1  Finished successfully:41 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:09:49 -0500  Selecting site:16  Checking status:1  Finished successfully:42 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:09:50 -0500  Selecting site:14  Checking status:1  Finished successfully:43 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:09:51 -0500  Selecting site:12  Stage in:1  Finished successfully:45 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:09:52 -0500  Selecting site:11  Active:1  Finished successfully:46 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:09:54 -0500  Selecting site:9  Stage in:1  Finished successfully:48 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:10:07 -0500  Selecting site:8  Checking status:1  Finished successfully:49 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:10:08 -0500  Selecting site:6  Checking status:1  Finished successfully:50 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:10:09 -0500  Selecting site:4  Stage in:1  Finished successfully:52 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:10:10 -0500  Selecting site:3  Checking status:1  Finished successfully:53 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:10:12 -0500  Selecting site:1  Stage in:1  Finished successfully:55 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:10:13 -0500  Checking status:1  Finished successfully:56 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:10:14 -0500  Stage in:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:10:16 -0500  Checking status:1  Finished successfully:59 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:10:17 -0500  Stage in:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:10:22 -0500  Active:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:10:34 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:10:35 -0500  Checking status:1  Finished successfully:62 Failed but can retry:1
+Final status:  time: Tue, 05 Jun 2012 15:10:36 -0500  Finished successfully:64
+129.72user 19.49system 2:45.44elapsed 90%CPU (0avgtext+0avgdata 523056maxresident)k
+0inputs+4976outputs (0major+906816minor)pagefaults 0swaps
+6
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1510-fgra4mk2
+Progress:  time: Tue, 05 Jun 2012 15:10:38 -0500
+Progress:  time: Tue, 05 Jun 2012 15:10:39 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:10:40 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:10:42 -0500  Selecting site:59  Stage in:1  Finished successfully:4
+Progress:  time: Tue, 05 Jun 2012 15:10:58 -0500  Selecting site:59  Checking status:1  Finished successfully:4
+Progress:  time: Tue, 05 Jun 2012 15:10:59 -0500  Selecting site:57  Stage in:1  Finished successfully:5 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:00 -0500  Selecting site:56  Checking status:1  Finished successfully:6 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:01 -0500  Selecting site:54  Stage in:1  Finished successfully:8 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:02 -0500  Selecting site:53  Checking status:1  Finished successfully:9 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:04 -0500  Selecting site:51  Stage in:1  Finished successfully:11 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:08 -0500  Selecting site:51  Active:1  Finished successfully:11 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:14 -0500  Selecting site:51  Checking status:1  Finished successfully:11 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:11:15 -0500  Selecting site:49  Checking status:1  Finished successfully:12 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:11:16 -0500  Selecting site:47  Stage in:1  Finished successfully:14 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:11:18 -0500  Selecting site:46  Checking status:1  Finished successfully:15 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:11:19 -0500  Selecting site:44  Stage in:1  Finished successfully:17 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:11:30 -0500  Selecting site:43  Checking status:1  Finished successfully:18 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:11:31 -0500  Selecting site:41  Checking status:1  Finished successfully:19 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:32 -0500  Selecting site:39  Stage in:1  Finished successfully:21 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:33 -0500  Selecting site:38  Checking status:1  Finished successfully:22 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:35 -0500  Selecting site:36  Stage in:1  Finished successfully:24 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:38 -0500  Selecting site:35  Active:1  Finished successfully:25 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:46 -0500  Selecting site:35  Checking status:1  Finished successfully:25 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:11:47 -0500  Selecting site:33  Checking status:1  Finished successfully:26 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:11:48 -0500  Selecting site:31  Stage in:1  Finished successfully:28 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:11:49 -0500  Selecting site:30  Checking status:1  Finished successfully:29 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:11:51 -0500  Selecting site:28  Stage in:1  Finished successfully:31 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:12:03 -0500  Selecting site:27  Checking status:1  Finished successfully:32 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:12:04 -0500  Selecting site:25  Checking status:1  Finished successfully:33 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:12:05 -0500  Selecting site:23  Stage in:1  Finished successfully:35 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:12:06 -0500  Selecting site:22  Checking status:1  Finished successfully:36 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:12:08 -0500  Selecting site:20  Stage in:1  Finished successfully:38 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:12:21 -0500  Selecting site:19  Checking status:1  Finished successfully:39 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:12:22 -0500  Selecting site:17  Checking status:1  Finished successfully:40 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:12:23 -0500  Selecting site:15  Stage in:1  Finished successfully:42 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:12:24 -0500  Selecting site:14  Checking status:1  Finished successfully:43 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:12:26 -0500  Selecting site:12  Stage in:1  Finished successfully:45 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:12:38 -0500  Selecting site:11  Checking status:1  Finished successfully:46 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:12:39 -0500  Selecting site:9  Checking status:1  Finished successfully:47 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:40 -0500  Selecting site:7  Stage in:1  Finished successfully:49 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:41 -0500  Selecting site:6  Checking status:1  Finished successfully:50 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:43 -0500  Selecting site:4  Stage in:1  Finished successfully:52 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:56 -0500  Selecting site:3  Checking status:1  Finished successfully:53 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:57 -0500  Selecting site:1  Checking status:1  Finished successfully:54 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:12:58 -0500  Stage in:1  Finished successfully:56 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:12:59 -0500  Checking status:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:13:01 -0500  Stage in:1  Finished successfully:59 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:13:08 -0500  Active:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:13:13 -0500  Checking status:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:13:14 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:13:15 -0500  Stage in:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:13:16 -0500  Finished successfully:64
+123.11user 21.09system 2:39.89elapsed 90%CPU (0avgtext+0avgdata 533280maxresident)k
+0inputs+5104outputs (0major+918781minor)pagefaults 0swaps
+7
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1513-io8fnr64
+Progress:  time: Tue, 05 Jun 2012 15:13:18 -0500
+Progress:  time: Tue, 05 Jun 2012 15:13:19 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:13:20 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:13:37 -0500  Selecting site:60  Checking status:1  Finished successfully:3
+Progress:  time: Tue, 05 Jun 2012 15:13:38 -0500  Selecting site:58  Stage in:1  Finished successfully:4 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:39 -0500  Selecting site:57  Checking status:1  Finished successfully:5 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:40 -0500  Selecting site:55  Stage in:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:42 -0500  Selecting site:54  Checking status:1  Finished successfully:8 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:43 -0500  Selecting site:52  Stage in:1  Finished successfully:10 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:48 -0500  Selecting site:52  Active:1  Finished successfully:10 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:53 -0500  Selecting site:52  Checking status:1  Finished successfully:10 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:13:54 -0500  Selecting site:50  Checking status:1  Finished successfully:11 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:13:55 -0500  Selecting site:48  Stage in:1  Finished successfully:13 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:13:57 -0500  Selecting site:47  Checking status:1  Finished successfully:14 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:13:58 -0500  Selecting site:45  Stage in:1  Finished successfully:16 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:14:09 -0500  Selecting site:44  Checking status:1  Finished successfully:17 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:14:10 -0500  Selecting site:42  Checking status:1  Finished successfully:18 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:11 -0500  Selecting site:40  Stage in:1  Finished successfully:20 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:13 -0500  Selecting site:39  Checking status:1  Finished successfully:21 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:14 -0500  Selecting site:37  Stage in:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:18 -0500  Selecting site:36  Active:1  Finished successfully:24 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:25 -0500  Selecting site:36  Checking status:1  Finished successfully:24 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:14:26 -0500  Selecting site:34  Checking status:1  Finished successfully:25 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:14:27 -0500  Selecting site:32  Stage in:1  Finished successfully:27 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:14:29 -0500  Selecting site:31  Checking status:1  Finished successfully:28 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:14:30 -0500  Selecting site:29  Stage in:1  Finished successfully:30 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:14:41 -0500  Selecting site:28  Checking status:1  Finished successfully:31 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:14:42 -0500  Selecting site:26  Checking status:1  Finished successfully:32 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:43 -0500  Selecting site:24  Stage in:1  Finished successfully:34 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:45 -0500  Selecting site:23  Checking status:1  Finished successfully:35 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:46 -0500  Selecting site:21  Stage in:1  Finished successfully:37 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:48 -0500  Selecting site:20  Active:1  Finished successfully:38 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:58 -0500  Selecting site:20  Checking status:1  Finished successfully:38 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:14:59 -0500  Selecting site:18  Checking status:1  Finished successfully:39 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:15:00 -0500  Selecting site:16  Stage in:1  Finished successfully:41 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:15:01 -0500  Selecting site:15  Checking status:1  Finished successfully:42 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:15:03 -0500  Selecting site:13  Stage in:1  Finished successfully:44 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:15:16 -0500  Selecting site:12  Checking status:1  Finished successfully:45 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:15:17 -0500  Selecting site:10  Checking status:1  Finished successfully:46 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:18 -0500  Selecting site:8  Stage in:1  Finished successfully:48 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:20 -0500  Selecting site:7  Checking status:1  Finished successfully:49 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:21 -0500  Selecting site:5  Stage in:1  Finished successfully:51 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:32 -0500  Selecting site:4  Checking status:1  Finished successfully:52 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:33 -0500  Selecting site:2  Checking status:1  Finished successfully:53 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:15:34 -0500  Stage in:1  Finished successfully:55 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:15:35 -0500  Checking status:1  Finished successfully:56 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:15:37 -0500  Stage in:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:15:48 -0500  Active:1  Finished successfully:59 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:15:49 -0500  Checking status:1  Finished successfully:59 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:15:50 -0500  Stage in:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:15:52 -0500  Checking status:1  Finished successfully:62 Failed but can retry:1
+Final status:  time: Tue, 05 Jun 2012 15:15:52 -0500  Finished successfully:64
+119.91user 21.38system 2:36.87elapsed 90%CPU (0avgtext+0avgdata 547200maxresident)k
+8inputs+5064outputs (0major+924990minor)pagefaults 0swaps
+8
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1515-uh2arq1b
+Progress:  time: Tue, 05 Jun 2012 15:15:55 -0500
+Progress:  time: Tue, 05 Jun 2012 15:15:56 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:16:07 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:16:08 -0500  Selecting site:59  Stage in:1  Finished successfully:3 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:09 -0500  Selecting site:58  Checking status:1  Finished successfully:4 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:10 -0500  Selecting site:56  Stage in:1  Finished successfully:6 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:12 -0500  Selecting site:55  Checking status:1  Finished successfully:7 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:13 -0500  Selecting site:53  Stage in:1  Finished successfully:9 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:23 -0500  Selecting site:53  Checking status:1  Finished successfully:9 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:16:24 -0500  Selecting site:51  Checking status:1  Finished successfully:10 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:16:25 -0500  Selecting site:49  Stage in:1  Finished successfully:12 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:16:27 -0500  Selecting site:48  Checking status:1  Finished successfully:13 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:16:28 -0500  Selecting site:46  Stage in:1  Finished successfully:15 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:16:41 -0500  Selecting site:45  Checking status:1  Finished successfully:16 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:16:42 -0500  Selecting site:43  Checking status:1  Finished successfully:17 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:43 -0500  Selecting site:41  Stage in:1  Finished successfully:19 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:45 -0500  Selecting site:40  Checking status:1  Finished successfully:20 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:46 -0500  Selecting site:38  Stage in:1  Finished successfully:22 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:55 -0500  Selecting site:37  Active:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:57 -0500  Selecting site:37  Checking status:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:16:58 -0500  Selecting site:35  Checking status:1  Finished successfully:24 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:16:59 -0500  Selecting site:33  Stage in:1  Finished successfully:26 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:17:01 -0500  Selecting site:32  Checking status:1  Finished successfully:27 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:17:02 -0500  Selecting site:30  Stage in:1  Finished successfully:29 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:17:14 -0500  Selecting site:29  Checking status:1  Finished successfully:30 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:17:15 -0500  Selecting site:27  Checking status:1  Finished successfully:31 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:16 -0500  Selecting site:25  Stage in:1  Finished successfully:33 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:18 -0500  Selecting site:24  Checking status:1  Finished successfully:34 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:19 -0500  Selecting site:22  Stage in:1  Finished successfully:36 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:25 -0500  Selecting site:21  Active:1  Finished successfully:37 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:30 -0500  Selecting site:21  Checking status:1  Finished successfully:37 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:17:31 -0500  Selecting site:19  Checking status:1  Finished successfully:38 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:17:32 -0500  Selecting site:17  Stage in:1  Finished successfully:40 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:17:34 -0500  Selecting site:16  Checking status:1  Finished successfully:41 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:17:35 -0500  Selecting site:14  Stage in:1  Finished successfully:43 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:17:46 -0500  Selecting site:13  Checking status:1  Finished successfully:44 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:17:47 -0500  Selecting site:11  Checking status:1  Finished successfully:45 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:17:48 -0500  Selecting site:9  Stage in:1  Finished successfully:47 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:17:50 -0500  Selecting site:8  Checking status:1  Finished successfully:48 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:17:51 -0500  Selecting site:6  Stage in:1  Finished successfully:50 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:17:55 -0500  Selecting site:5  Active:1  Finished successfully:51 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:18:02 -0500  Selecting site:5  Checking status:1  Finished successfully:51 Failed but can retry:7
+Progress:  time: Tue, 05 Jun 2012 15:18:03 -0500  Selecting site:3  Checking status:1  Finished successfully:52 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:18:04 -0500  Selecting site:1  Stage in:1  Finished successfully:54 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:18:06 -0500  Checking status:1  Finished successfully:55 Failed but can retry:8
+Progress:  time: Tue, 05 Jun 2012 15:18:07 -0500  Stage in:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:18:19 -0500  Checking status:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:18:20 -0500  Checking status:1  Finished successfully:59 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:18:21 -0500  Stage in:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:18:22 -0500  Checking status:1  Finished successfully:62 Failed but can retry:1
+Final status:  time: Tue, 05 Jun 2012 15:18:23 -0500  Finished successfully:64
+114.13user 21.23system 2:30.88elapsed 89%CPU (0avgtext+0avgdata 548864maxresident)k
+0inputs+5040outputs (0major+922273minor)pagefaults 0swaps
+9
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1518-4himvd1e
+Progress:  time: Tue, 05 Jun 2012 15:18:26 -0500
+Progress:  time: Tue, 05 Jun 2012 15:18:27 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:18:37 -0500  Selecting site:62  Checking status:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:18:38 -0500  Selecting site:60  Stage in:1  Finished successfully:2 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:39 -0500  Selecting site:59  Checking status:1  Finished successfully:3 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:40 -0500  Selecting site:57  Stage in:1  Finished successfully:5 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:42 -0500  Selecting site:56  Checking status:1  Finished successfully:6 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:43 -0500  Selecting site:54  Stage in:1  Finished successfully:8 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:54 -0500  Selecting site:54  Checking status:1  Finished successfully:8 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:18:55 -0500  Selecting site:52  Checking status:1  Finished successfully:9 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:18:56 -0500  Selecting site:50  Stage in:1  Finished successfully:11 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:18:58 -0500  Selecting site:49  Checking status:1  Finished successfully:12 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:18:59 -0500  Selecting site:47  Stage in:1  Finished successfully:14 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:00 -0500  Selecting site:46  Checking status:1  Finished successfully:15 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:02 -0500  Selecting site:44  Stage in:1  Finished successfully:17 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:03 -0500  Selecting site:43  Checking status:1  Finished successfully:18 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:04 -0500  Selecting site:41  Stage in:1  Finished successfully:20 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:19 -0500  Selecting site:41  Checking status:1  Finished successfully:20 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:19:20 -0500  Selecting site:39  Checking status:1  Finished successfully:21 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:21 -0500  Selecting site:37  Stage in:1  Finished successfully:23 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:23 -0500  Selecting site:36  Checking status:1  Finished successfully:24 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:24 -0500  Selecting site:34  Stage in:1  Finished successfully:26 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:25 -0500  Selecting site:33  Checking status:1  Finished successfully:27 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:27 -0500  Selecting site:31  Stage in:1  Finished successfully:29 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:28 -0500  Selecting site:30  Checking status:1  Finished successfully:30 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:29 -0500  Selecting site:28  Stage in:1  Finished successfully:32 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:43 -0500  Selecting site:28  Checking status:1  Finished successfully:32 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:19:44 -0500  Selecting site:26  Checking status:1  Finished successfully:33 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:45 -0500  Selecting site:24  Stage in:1  Finished successfully:35 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:47 -0500  Selecting site:23  Checking status:1  Finished successfully:36 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:48 -0500  Selecting site:21  Stage in:1  Finished successfully:38 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:49 -0500  Selecting site:20  Checking status:1  Finished successfully:39 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:51 -0500  Selecting site:18  Stage in:1  Finished successfully:41 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:52 -0500  Selecting site:17  Checking status:1  Finished successfully:42 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:53 -0500  Selecting site:15  Stage in:1  Finished successfully:44 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:19:56 -0500  Selecting site:15  Active:1  Finished successfully:44 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:20:08 -0500  Selecting site:15  Checking status:1  Finished successfully:44 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:20:09 -0500  Selecting site:13  Checking status:1  Finished successfully:45 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:10 -0500  Selecting site:11  Stage in:1  Finished successfully:47 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:12 -0500  Selecting site:10  Checking status:1  Finished successfully:48 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:13 -0500  Selecting site:8  Stage in:1  Finished successfully:50 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:24 -0500  Selecting site:7  Checking status:1  Finished successfully:51 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:25 -0500  Selecting site:5  Checking status:1  Finished successfully:52 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:20:26 -0500  Selecting site:3  Stage in:1  Finished successfully:54 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:20:28 -0500  Selecting site:2  Checking status:1  Finished successfully:55 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:20:29 -0500  Stage in:1  Finished successfully:57 Failed but can retry:6
+Progress:  time: Tue, 05 Jun 2012 15:20:30 -0500  Checking status:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:20:32 -0500  Stage in:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:20:33 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:20:34 -0500  Stage in:1  Finished successfully:63
+Progress:  time: Tue, 05 Jun 2012 15:20:50 -0500  Checking status:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:20:50 -0500  Finished successfully:64
+112.31user 18.48system 2:26.76elapsed 89%CPU (0avgtext+0avgdata 538048maxresident)k
+0inputs+4800outputs (0major+906166minor)pagefaults 0swaps
+10
+Swift 0.93 swift-r5483 cog-r3339
+
+RunID: 20120605-1520-pneuf30g
+Progress:  time: Tue, 05 Jun 2012 15:20:52 -0500
+Progress:  time: Tue, 05 Jun 2012 15:20:54 -0500  Selecting site:62  Stage in:1  Finished successfully:1
+Progress:  time: Tue, 05 Jun 2012 15:20:55 -0500  Selecting site:61  Checking status:1  Finished successfully:2
+Progress:  time: Tue, 05 Jun 2012 15:20:56 -0500  Selecting site:59  Stage in:1  Finished successfully:4
+Progress:  time: Tue, 05 Jun 2012 15:20:57 -0500  Selecting site:58  Checking status:1  Finished successfully:5
+Progress:  time: Tue, 05 Jun 2012 15:20:59 -0500  Selecting site:56  Stage in:1  Finished successfully:7
+Progress:  time: Tue, 05 Jun 2012 15:21:00 -0500  Selecting site:55  Checking status:1  Finished successfully:8
+Progress:  time: Tue, 05 Jun 2012 15:21:01 -0500  Selecting site:53  Stage in:1  Finished successfully:10
+Progress:  time: Tue, 05 Jun 2012 15:21:14 -0500  Selecting site:52  Checking status:1  Finished successfully:11
+Progress:  time: Tue, 05 Jun 2012 15:21:15 -0500  Selecting site:50  Stage in:1  Finished successfully:12 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:16 -0500  Selecting site:49  Checking status:1  Finished successfully:13 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:17 -0500  Selecting site:47  Stage in:1  Finished successfully:15 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:19 -0500  Selecting site:46  Checking status:1  Finished successfully:16 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:20 -0500  Selecting site:44  Stage in:1  Finished successfully:18 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:21 -0500  Selecting site:43  Checking status:1  Finished successfully:19 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:22 -0500  Selecting site:42  Finished successfully:21 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:23 -0500  Selecting site:40  Stage in:1  Finished successfully:22 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:38 -0500  Selecting site:39  Checking status:1  Finished successfully:23 Failed but can retry:1
+Progress:  time: Tue, 05 Jun 2012 15:21:39 -0500  Selecting site:37  Checking status:1  Finished successfully:24 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:40 -0500  Selecting site:35  Stage in:1  Finished successfully:26 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:42 -0500  Selecting site:34  Checking status:1  Finished successfully:27 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:43 -0500  Selecting site:32  Stage in:1  Finished successfully:29 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:44 -0500  Selecting site:31  Checking status:1  Finished successfully:30 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:46 -0500  Selecting site:29  Stage in:1  Finished successfully:32 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:47 -0500  Selecting site:28  Checking status:1  Finished successfully:33 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:48 -0500  Selecting site:26  Stage in:1  Finished successfully:35 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:21:52 -0500  Selecting site:26  Active:1  Finished successfully:35 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:22:02 -0500  Selecting site:26  Checking status:1  Finished successfully:35 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:22:03 -0500  Selecting site:24  Checking status:1  Finished successfully:36 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:04 -0500  Selecting site:22  Stage in:1  Finished successfully:38 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:06 -0500  Selecting site:21  Checking status:1  Finished successfully:39 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:07 -0500  Selecting site:19  Stage in:1  Finished successfully:41 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:08 -0500  Selecting site:18  Checking status:1  Finished successfully:42 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:10 -0500  Selecting site:16  Stage in:1  Finished successfully:44 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:11 -0500  Selecting site:15  Checking status:1  Finished successfully:45 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:12 -0500  Selecting site:13  Stage in:1  Finished successfully:47 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:22 -0500  Selecting site:13  Active:1  Finished successfully:47 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:25 -0500  Selecting site:13  Checking status:1  Finished successfully:47 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:26 -0500  Selecting site:11  Checking status:1  Finished successfully:48 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:22:27 -0500  Selecting site:9  Stage in:1  Finished successfully:50 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:22:29 -0500  Selecting site:8  Checking status:1  Finished successfully:51 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:22:30 -0500  Selecting site:6  Stage in:1  Finished successfully:53 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:22:42 -0500  Selecting site:5  Checking status:1  Finished successfully:54 Failed but can retry:4
+Progress:  time: Tue, 05 Jun 2012 15:22:43 -0500  Selecting site:3  Checking status:1  Finished successfully:55 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:22:44 -0500  Selecting site:1  Stage in:1  Finished successfully:57 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:22:46 -0500  Checking status:1  Finished successfully:58 Failed but can retry:5
+Progress:  time: Tue, 05 Jun 2012 15:22:47 -0500  Stage in:1  Finished successfully:60 Failed but can retry:3
+Progress:  time: Tue, 05 Jun 2012 15:22:48 -0500  Checking status:1  Finished successfully:61 Failed but can retry:2
+Progress:  time: Tue, 05 Jun 2012 15:22:50 -0500  Stage in:1  Finished successfully:63
+Final status:  time: Tue, 05 Jun 2012 15:22:50 -0500  Finished successfully:64
+87.41user 16.13system 1:59.73elapsed 86%CPU (0avgtext+0avgdata 535136maxresident)k
+0inputs+4512outputs (0major+875663minor)pagefaults 0swaps

@@ -10,9 +10,6 @@
       	   </xs:simpleType>  
      </xs:schema>	 
   </types>
-  <global name="swift#string#17002">
-    <vdl:new type="string" value=".result" />
-  </global>
   <global name="swift#string#17000">
     <vdl:new type="string" value="a1sm1ms b1sm1ms c1sm1ms" />
   </global>
@@ -29,7 +26,7 @@
     <vdl:getdatasetprovenanceid var="{t}" />
     <string>{#thread}</string>
     </parameterlog>
-    <log level="debug" message="PROCEDURE line=4 thread={#thread} name=countwords"/>
+    <log level="debug" message="PROCEDURE line=3 thread={#thread} name=countwords"/>
     <vdl:execute>
       <vdl:tr>sh</vdl:tr>
       <vdl:stagein var="{f}"/>
@@ -46,7 +43,7 @@
       </vdl:stdout>
     </vdl:execute>
     <vdl:closedataset var="{t}"/>
-    <log level="debug" message="PROCEDURE_END line=4"/></element>
+    <log level="debug" message="PROCEDURE_END line=3"/></element>
 
   <set name="outputNames">
         <vdl:new type="string" dbgname="outputNames" waitfor="88000" />
@@ -95,22 +92,13 @@
 		            </set>
 		              <set name="i">
 		                <vdl:new type="int" value="{$$}"/>
-		              </set>	<log level="debug" message="FOREACH_IT_START line=12 thread={#thread}"/>
+		              </set>	<log level="debug" message="FOREACH_IT_START line=11 thread={#thread}"/>
 		          <log level="debug"><string>SCOPE thread={#thread}</string></log>
 
-		              <set name="swift#mapper#17001">
-		                    <vdl:new type="string" dbgname="swift#mapper#17001" waitfor="" />
-		              </set>
-		              <parameterlog>
-		              <string>intermediate</string>
-		              <string>swift#mapper#17001</string>
-		              <vdl:getdatasetprovenanceid var="{swift#mapper#17001}" />
-		              <string>{#thread}</string>
-		              </parameterlog>
 		              <set name="c">
 		                <vdl:new type="messagefile" dbgname="c" waitfor="88001">
-		                  <vdl:mapping descriptor="single_file_mapper">
-		                    <vdl:parameter name="file"><variable>swift#mapper#17001</variable></vdl:parameter>
+		                  <vdl:mapping descriptor="concurrent_mapper">
+		                    <vdl:parameter name="prefix">c-6ce5f8ea-d839-45aa-a3da-0fa2100c7a37</vdl:parameter>
 		                  </vdl:mapping>
 		                </vdl:new>
 		              </set>
@@ -120,19 +108,7 @@
 		              <vdl:getdatasetprovenanceid var="{c}" />
 		              <string>{#thread}</string>
 		              </parameterlog>
-		                <parallel>
-		                    <sequential>
-		                         <vdl:setfieldvalue>
-		                           <argument name="var">
-		                             <variable>swift#mapper#17001</variable>
-		                           </argument>
-		                           <argument name="value">
-		                             <swiftscript:strcat>
-		                              <variable>i</variable><variable>swift#string#17002</variable> 
-		                             </swiftscript:strcat>
-		                           </argument>
-		                         </vdl:setfieldvalue>
-		                    </sequential>
+		                <sequentialWithID>
 		                    <sequential>
 		                      <countwords>
 		                        <parallel>
@@ -142,8 +118,8 @@
 		                      </countwords>
 		                        <partialCloseDataset var="{c}" closeID="88001" />
 		                    </sequential>
-		                </parallel>
-		              <log level="debug" message="FOREACH_IT_END line=12 thread={#thread}"/>
+		                </sequentialWithID>
+		              <log level="debug" message="FOREACH_IT_END line=11 thread={#thread}"/>
 		          </vdl:tparallelFor>
 		        </sequential>
 		    </parallel>

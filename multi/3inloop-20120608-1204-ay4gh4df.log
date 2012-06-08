@@ -1,0 +1,43 @@
+2012-06-08 12:04:05,936-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, 3inloop.swift]
+2012-06-08 12:04:05,936-0500 DEBUG Loader Max heap: 252248064
+2012-06-08 12:04:05,937-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+type messagefile; 
+
+app (messagefile t) countwords (messagefile f) {   
+    sh @filename(f) stdout=@filename(t);
+}
+
+string outputNames = "a1sm1ms b1sm1ms c1sm1ms";
+
+messagefile outputfiles[] <fixed_array_mapper;files=outputNames>;
+
+foreach f,i in outputfiles {
+  //messagefile c <single_file_mapper; file=@strcat(i, ".result")>;
+  messagefile c = outputFile.txt;
+  c = countwords(f);
+}
+
+
+2012-06-08 12:04:05,937-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-08 12:04:05,937-0500 INFO  Loader 3inloop.swift: source file is new. Recompiling.
+2012-06-08 12:04:06,516-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-08 12:04:06,589-0500 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Compile error in foreach statement at line 11: Compile error in assignment at line 14: Variable outputFile is undefined.
+	at org.griphyn.vdl.engine.Karajan.foreachStat(Karajan.java:791)
+	at org.griphyn.vdl.engine.Karajan.statement(Karajan.java:529)
+	at org.griphyn.vdl.engine.Karajan.statements(Karajan.java:493)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:270)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:106)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:310)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: org.griphyn.vdl.karajan.CompilationException: Compile error in assignment at line 14: Variable outputFile is undefined.
+	at org.griphyn.vdl.engine.Karajan.assign(Karajan.java:475)
+	at org.griphyn.vdl.engine.Karajan.statement(Karajan.java:523)
+	at org.griphyn.vdl.engine.Karajan.statements(Karajan.java:493)
+	at org.griphyn.vdl.engine.Karajan.foreachStat(Karajan.java:780)
+	... 6 more
+Caused by: org.griphyn.vdl.karajan.CompilationException: Variable outputFile is undefined.
+	at org.griphyn.vdl.engine.Karajan.expressionToKarajan(Karajan.java:1118)
+	at org.griphyn.vdl.engine.Karajan.expressionToKarajan(Karajan.java:1159)
+	at org.griphyn.vdl.engine.Karajan.assign(Karajan.java:464)
+	... 9 more

@@ -9,7 +9,7 @@
      		<typestructure></typestructure>
      	</type>   
   </types>  
-  <procedure name="countwords" src="line 4">
+  <procedure name="countwords" src="line 3">
 
       <output 
     name="t" type="messagefile"
@@ -21,7 +21,7 @@
 
      xsi:nil="true" />
     <binding>
-      <application src="line 4">
+      <application src="line 3">
         <executable>sh</executable>
         <stdout><function name="filename">
           <variableReference>t</variableReference></function></stdout><function name="filename">
@@ -29,7 +29,7 @@
     </binding>
   </procedure>
   <variable name="outputNames" type="string" isGlobal="false" xsi:nil="true"/>
-  <assign src="line 10">
+  <assign src="line 9">
    <variableReference>outputNames</variableReference>
    <stringConstant>a1sm1ms b1sm1ms c1sm1ms</stringConstant>
   </assign>
@@ -38,14 +38,9 @@
       <param name="files"><variableReference>outputNames</variableReference></param>
     </mapping>
   </variable>
-  <foreach var="f"  indexVar="i" src="line 12">
+  <foreach var="f"  indexVar="i" src="line 11">
   <in><variableReference>outputfiles</variableReference></in>
-  <body><variable name="c" type="messagefile" isGlobal="false">
-      <mapping descriptor="single_file_mapper">
-        <param name="file"><function name="strcat">
-          <variableReference>i</variableReference><stringConstant>.result</stringConstant></function></param>
-      </mapping>
-    </variable>
+  <body><variable name="c" type="messagefile" isGlobal="false" xsi:nil="true"/>
     <call proc="countwords" src="line 14">
       <output><variableReference>c</variableReference></output>
       <input><variableReference>f</variableReference></input>

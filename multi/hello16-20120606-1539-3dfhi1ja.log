@@ -1,0 +1,36 @@
+2012-06-06 15:39:01,572-0500 DEBUG Loader arguments: [-tc.file, tc.data, hello16.swift]
+2012-06-06 15:39:01,572-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 15:39:01,573-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     hello stdout=@filename(t);
+}
+
+//string inputNames = "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f, i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 15:39:01,573-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 15:39:01,573-0500 INFO  Loader hello16.swift: source file is new. Recompiling.
+2012-06-06 15:39:01,573-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:39:01,573-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:39:02,135-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 15:39:02,194-0500 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Variable inputNames is undefined.
+	at org.griphyn.vdl.engine.Karajan.expressionToKarajan(Karajan.java:1118)
+	at org.griphyn.vdl.engine.Karajan.variable(Karajan.java:391)
+	at org.griphyn.vdl.engine.Karajan.statement(Karajan.java:520)
+	at org.griphyn.vdl.engine.Karajan.statements(Karajan.java:493)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:270)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:106)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:310)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)

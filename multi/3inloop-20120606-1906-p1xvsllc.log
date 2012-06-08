@@ -1,0 +1,478 @@
+2012-06-06 19:06:53,077-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, 3inloop.swift]
+2012-06-06 19:06:53,077-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 19:06:53,078-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     a1sm10ms stdout=@filename(t);
+}
+
+string inputNames = "test1 test2 test3";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+//messagefile inputfiles[];
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 19:06:53,078-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 19:06:53,078-0500 INFO  Loader 3inloop.swift: source file is new. Recompiling.
+2012-06-06 19:06:53,639-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 19:06:53,828-0500 DEBUG Loader setting: sites.file to: 0-throttle-sites.xml
+2012-06-06 19:06:53,829-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-06 19:06:53,830-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+<!-- sites.xml specifies details of the sites that Swift can run on.
+
+The first entry entry, for localhost, should work on most linux-like systems
+without any change.
+
+It may be necessary to change the two occurences of /var/tmp to a different
+working directory.
+
+The jobThrottle profile is set to 0 so that Swift will not try to run more
+than two jobs at once (the minimum) when using the local sites. This is
+appropriate for local execution, but make sure if/when using another
+execution mechanism to submit to an HPC resource that this jobThrottle
+is removed.
+
+-->
+
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">.01</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
+  </pool>
+
+
+
+
+
+<!-- The remainder of this file is commented out by default. It contains
+example site definitions for a number of sites on TeraGrid and OSG.
+
+How this list was constructed:
+
+1. Teragrid
+http://www.teragrid.org/userinfo/hardware/resources.php
+fill out the gatekeeper info and the gridftp hostname
+for the storage/workspace, login into the machine, and make yourself a
+temporary directory
+
+2. OSG
+http://osg-cat.grid.iu.edu/index.php?site_name=osgcat
+sort by CPUs
+Add the gatekeeper hostname into the jobmanager name and into the gridftp url
+Add the ($TMP) or ($WNTMP) to the storage element in the gridftp url AND
+into the workspace element
+
+TODO by user:
+customize the storage and workdirectory to use your personal working directories
+
+-->
+
+
+<!--
+  <pool handle="skynet" >
+    <gridftp url="gsiftp://skynet-login.isi.edu" > 
+    </gridftp>
+    <jobmanager universe="vanilla" url="skynet-login.isi.edu/jobmanager-fork" major="2" />
+    <workdirectory >/nfs/scratch01/tiberius</workdirectory>
+  </pool>
+-->
+<!--
+  <pool handle="teraport" >
+    <gridftp  url="gsiftp://tp-grid1.uchicago.edu" /> 
+    <jobmanager universe="vanilla" url="tp-grid1.uchicago.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/home/tiberius/scratch/SWIFT-WORK</workdirectory>
+  </pool>
+-->
+<!--
+<pool handle="ncsa_32" >
+    <gridftp  url="gsiftp://login-w.ncsa.teragrid.org" />
+    <jobmanager universe="vanilla" url="grid-w.ncsa.teragrid.org/jobmanager" major="2" /> 
+    <workdirectory >/u/ac/tstef</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="purdue" >
+    <gridftp  url="gsiftp://tg-data.purdue.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-gatekeeper.purdue.teragrid.org" major="2" />
+    <workdirectory >/scratch/teragrid/stef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="tacc" >
+    <gridftp  url="gsiftp://tg-gridftp.lonestar.tacc.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-login.tacc.teragrid.org/jobmanager-lsf" major="2" />
+    <workdirectory >/work/teragrid/tstef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="UC" >
+    <gridftp url="gsiftp://tg-gridftp.uc.teragrid.org" />
+    <execution provider="gt4" jobmanager="PBS" url="tg-grid.uc.teragrid.org" />
+    <workdirectory >/disks/scratchgpfs1/tstef</workdirectory>
+</pool>
+ -->
+ 
+<!-- OSG SITES -->
+<!-- 
+<pool handle="OSG_LIGO_PSU" >
+    <gridftp  url="gsiftp://grid3.aset.psu.edu" />
+    <jobmanager universe="vanilla" url="grid3.aset.psu.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/usr1/grid3/data</workdirectory>
+</pool>
+ -->
+<!-- 
+<pool handle="fnal" >
+    <gridftp  url="gsiftp://fngp-osg.fnal.gov" />
+    <jobmanager universe="vanilla" url="fngp-osg.fnal.gov/jobmanager-pbs" major="2" minor="2" />
+    <workdirectory >/grid/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="prod_slac" >
+    <gridftp  url="gsiftp://osgserv01.slac.stanford.edu" />
+    <jobmanager universe="vanilla" url="osgserv01.slac.stanford.edu/jobmanager-lsf" major="2" />
+    <workdirectory >/nfs/slac/g/grid/osg/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="bnl_atlas_2" >
+    <gridftp  url="gsiftp://gridgk02.racf.bnl.gov" />
+    <jobmanager universe="vanilla" url="gridgk02.racf.bnl.gov/jobmanager-condor" major="2" />
+    <workdirectory >/usatlas/prodjob/share/</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="unm_hpc" >
+    <gridftp  url="gsiftp://milta.alliance.unm.edu" />
+    <jobmanager universe="vanilla" url="milta.alliance.unm.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+<!--  
+<pool handle="UWM_CMS" >
+    <gridftp  url="gsiftp://cmsgrid02.hep.wisc.edu" />
+    <jobmanager universe="vanilla" url="cmsgrid02.hep.wisc.edu/jobmanager-condor" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+
+</config>
+
+
+2012-06-06 19:06:53,831-0500 DEBUG textfiles END SITES:
+2012-06-06 19:06:53,835-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 19:06:54,467-0500 INFO  unknown Using sites file: 0-throttle-sites.xml
+2012-06-06 19:06:54,514-0500 INFO  unknown Using tc.data: tc.data
+2012-06-06 19:06:54,629-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 19:06:55,232-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 19:06:55,233-0500 INFO  unknown RUNID id=run:20120606-1906-p1xvsllc
+2012-06-06 19:06:55,290-0500 INFO  SetFieldValue Set: inputNames=test1 test2 test3
+2012-06-06 19:06:55,307-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 19:06:55,307-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-06 19:06:55,307-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-06 19:06:55,310-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-1-0
+2012-06-06 19:06:55,311-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 19:06:55,311-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-1-1
+2012-06-06 19:06:55,311-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-06 19:06:55,311-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-1-2
+2012-06-06 19:06:55,312-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-06 19:06:55,319-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 19:06:55,319-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-06 19:06:55,319-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-06 19:06:55,323-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-1-1 name=countwords
+2012-06-06 19:06:55,323-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 19:06:55,323-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-2-1 name=countwords
+2012-06-06 19:06:55,325-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 19:06:55,325-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 19:06:55,325-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 19:06:55,332-0500 INFO  vdl:execute START thread=0-1-2-1 tr=a1sm10ms
+2012-06-06 19:06:55,333-0500 INFO  vdl:execute START thread=0-1-0-1 tr=a1sm10ms
+2012-06-06 19:06:55,333-0500 INFO  vdl:execute START thread=0-1-1-1 tr=a1sm10ms
+2012-06-06 19:06:55,353-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-06 19:06:55,356-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-06 19:06:55,360-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-06 19:06:55,365-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,368-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,374-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-06 19:06:55,380-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,411-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,415-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,419-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,427-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,434-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,438-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-06 19:06:55,445-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-6iq9nesk thread=0-1-0-1-1 host=localhost replicationGroup=4iq9nesk
+2012-06-06 19:06:55,445-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-5iq9nesk thread=0-1-2-1-1 host=localhost replicationGroup=3iq9nesk
+2012-06-06 19:06:55,469-0500 INFO  vdl:createdirset START jobid=a1sm10ms-6iq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:55,469-0500 INFO  vdl:createdirset START jobid=a1sm10ms-5iq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:55,471-0500 INFO  vdl:createdirset END jobid=a1sm10ms-6iq9nesk - Done initializing directory structure
+2012-06-06 19:06:55,471-0500 INFO  vdl:createdirset END jobid=a1sm10ms-5iq9nesk - Done initializing directory structure
+2012-06-06 19:06:55,474-0500 INFO  vdl:dostagein START jobid=a1sm10ms-5iq9nesk - Staging in files
+2012-06-06 19:06:55,474-0500 INFO  vdl:dostagein START jobid=a1sm10ms-6iq9nesk - Staging in files
+2012-06-06 19:06:55,503-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,503-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,515-0500 DEBUG vdl:dostagein CDM: file://localhost/test3 : DEFAULT
+2012-06-06 19:06:55,515-0500 DEBUG vdl:dostagein CDM: file://localhost/test1 : DEFAULT
+2012-06-06 19:06:55,532-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test3 srchost=localhost srcdir= srcname=test3 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file policy=DEFAULT
+2012-06-06 19:06:55,532-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test1 srchost=localhost srcdir= srcname=test1 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file policy=DEFAULT
+2012-06-06 19:06:55,540-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,541-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:55,543-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=test1 srchost=localhost srcdir= srcname=test1 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file
+2012-06-06 19:06:55,543-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=test3 srchost=localhost srcdir= srcname=test3 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file
+2012-06-06 19:06:55,545-0500 INFO  vdl:dostagein END jobid=a1sm10ms-6iq9nesk - Staging in finished
+2012-06-06 19:06:55,545-0500 INFO  vdl:dostagein END jobid=a1sm10ms-5iq9nesk - Staging in finished
+2012-06-06 19:06:55,551-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-5iq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/5/a1sm10ms-5iq9nesk host=localhost
+2012-06-06 19:06:55,551-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-6iq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/6/a1sm10ms-6iq9nesk host=localhost
+2012-06-06 19:06:55,566-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	scott3a		/home/skrieder/swift/multi/scott3a.sh		INSTALLED	INTEL32::LINUX	null
+localhost	scott3b		/home/skrieder/swift/multi/scott3b.sh		INSTALLED	INTEL32::LINUX	null
+localhost	cka		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm0ms		/home/skrieder/swift/cuda/1sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm1ms		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm10ms	/home/skrieder/swift/cuda/1sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm100ms	/home/skrieder/swift/cuda/1sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm0ms		/home/skrieder/swift/cuda/2sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm1ms		/home/skrieder/swift/cuda/2sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm10ms	/home/skrieder/swift/cuda/2sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm100ms	/home/skrieder/swift/cuda/2sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm0ms		/home/skrieder/swift/cuda/4sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm1ms		/home/skrieder/swift/cuda/4sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm10ms	/home/skrieder/swift/cuda/4sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm100ms	/home/skrieder/swift/cuda/4sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm0ms		/home/skrieder/swift/cuda/8sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm1ms		/home/skrieder/swift/cuda/8sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm10ms	/home/skrieder/swift/cuda/8sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm100ms	/home/skrieder/swift/cuda/8sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm0ms	/home/skrieder/swift/cuda/16sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm1ms	/home/skrieder/swift/cuda/16sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm10ms	/home/skrieder/swift/cuda/16sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm100ms	/home/skrieder/swift/cuda/16sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep0ms	/home/skrieder/swift/c/sleep0ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1ms	/home/skrieder/swift/c/sleep1ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10ms	/home/skrieder/swift/c/sleep10ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep100ms	/home/skrieder/swift/c/sleep100ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1000ms	/home/skrieder/swift/c/sleep1000ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10000ms	/home/skrieder/swift/c/sleep10000ms			INSTALLED	INTEL32::LINUX	null
+localhost	hello		/home/skrieder/swift/multi/hello			INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-06 19:06:55,566-0500 DEBUG textfiles END TC:
+2012-06-06 19:06:55,604-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339027614517) is /bin/bash shared/_swiftwrap a1sm10ms-5iq9nesk -jobdir 5 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 2.result -err stderr.txt -i -d  -if test3 -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:55,604-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339027614516) is /bin/bash shared/_swiftwrap a1sm10ms-6iq9nesk -jobdir 6 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 0.result -err stderr.txt -i -d  -if test1 -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:55,622-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-6iq9nesk -jobdir 6 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 0.result -err stderr.txt -i -d  -if test1 -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:55,622-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-5iq9nesk -jobdir 5 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 2.result -err stderr.txt -i -d  -if test3 -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,019-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,019-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,025-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-5iq9nesk
+2012-06-06 19:06:56,025-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-6iq9nesk
+2012-06-06 19:06:56,039-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,039-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,041-0500 INFO  vdl:checkerrorfile FAILURE jobid=a1sm10ms-6iq9nesk - Failure file found
+2012-06-06 19:06:56,041-0500 INFO  vdl:checkerrorfile FAILURE jobid=a1sm10ms-5iq9nesk - Failure file found
+2012-06-06 19:06:56,045-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,046-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,049-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,050-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,052-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,052-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,056-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-6iq9nesk
+2012-06-06 19:06:56,056-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-5iq9nesk
+2012-06-06 19:06:56,060-0500 INFO  vdl:dostageout START jobid=a1sm10ms-5iq9nesk - Staging out files
+2012-06-06 19:06:56,060-0500 INFO  vdl:dostageout START jobid=a1sm10ms-6iq9nesk - Staging out files
+2012-06-06 19:06:56,062-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:56,062-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:56,082-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:56,082-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:56,085-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,085-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,115-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,116-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,117-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-5iq9nesk - Error file missing
+2012-06-06 19:06:56,117-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-6iq9nesk - Error file missing
+2012-06-06 19:06:56,122-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-5iq9nesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/2.result
+2012-06-06 19:06:56,122-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-6iq9nesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/0.result
+2012-06-06 19:06:56,145-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,146-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,150-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,150-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,156-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,156-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,159-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,160-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,170-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,170-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,192-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 19:06:56,193-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 19:06:56,198-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-9iq9nesk thread=0-1-1-1-1 host=localhost replicationGroup=2iq9nesk
+2012-06-06 19:06:56,199-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-aiq9nesk thread=0-1-0-1-1 host=localhost replicationGroup=7iq9nesk
+2012-06-06 19:06:56,208-0500 INFO  vdl:createdirset START jobid=a1sm10ms-9iq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:56,209-0500 INFO  vdl:createdirset END jobid=a1sm10ms-9iq9nesk - Done initializing directory structure
+2012-06-06 19:06:56,210-0500 INFO  vdl:createdirset START jobid=a1sm10ms-aiq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:56,211-0500 INFO  vdl:dostagein START jobid=a1sm10ms-9iq9nesk - Staging in files
+2012-06-06 19:06:56,211-0500 INFO  vdl:createdirset END jobid=a1sm10ms-aiq9nesk - Done initializing directory structure
+2012-06-06 19:06:56,213-0500 INFO  vdl:dostagein START jobid=a1sm10ms-aiq9nesk - Staging in files
+2012-06-06 19:06:56,218-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,220-0500 DEBUG vdl:dostagein CDM: file://localhost/test2 : DEFAULT
+2012-06-06 19:06:56,220-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,222-0500 DEBUG vdl:dostagein CDM: file://localhost/test1 : DEFAULT
+2012-06-06 19:06:56,224-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test2 srchost=localhost srcdir= srcname=test2 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file policy=DEFAULT
+2012-06-06 19:06:56,225-0500 INFO  vdl:dostagein END jobid=a1sm10ms-aiq9nesk - Staging in finished
+2012-06-06 19:06:56,228-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-aiq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/a/a1sm10ms-aiq9nesk host=localhost
+2012-06-06 19:06:56,229-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,231-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=test2 srchost=localhost srcdir= srcname=test2 desthost=localhost destdir=3inloop-20120606-1906-p1xvsllc/shared/ provider=file
+2012-06-06 19:06:56,232-0500 INFO  vdl:dostagein END jobid=a1sm10ms-9iq9nesk - Staging in finished
+2012-06-06 19:06:56,234-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-9iq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/9/a1sm10ms-9iq9nesk host=localhost
+2012-06-06 19:06:56,239-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339027614603) is /bin/bash shared/_swiftwrap a1sm10ms-aiq9nesk -jobdir a -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 0.result -err stderr.txt -i -d  -if test1 -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,240-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-aiq9nesk -jobdir a -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 0.result -err stderr.txt -i -d  -if test1 -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,247-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339027614605) is /bin/bash shared/_swiftwrap a1sm10ms-9iq9nesk -jobdir 9 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 1.result -err stderr.txt -i -d  -if test2 -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,248-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-9iq9nesk -jobdir 9 -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 1.result -err stderr.txt -i -d  -if test2 -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,594-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,599-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-9iq9nesk
+2012-06-06 19:06:56,606-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,607-0500 INFO  vdl:checkerrorfile FAILURE jobid=a1sm10ms-9iq9nesk - Failure file found
+2012-06-06 19:06:56,608-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,631-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-aiq9nesk
+2012-06-06 19:06:56,631-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,632-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-06 19:06:56,633-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-06 19:06:56,633-0500 INFO  vdl:checkjobstatus SUCCESS jobid=a1sm10ms-aiq9nesk - Success file found
+2012-06-06 19:06:56,633-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,633-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-aiq9nesk
+2012-06-06 19:06:56,634-0500 INFO  vdl:dostageout START jobid=a1sm10ms-aiq9nesk - Staging out files
+2012-06-06 19:06:56,634-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-9iq9nesk
+2012-06-06 19:06:56,634-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:56,635-0500 INFO  vdl:dostageout START jobid=a1sm10ms-9iq9nesk - Staging out files
+2012-06-06 19:06:56,635-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:56,638-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:56,639-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:56,639-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-06 19:06:56,640-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,642-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,644-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=0.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:56,646-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-06 19:06:56,650-0500 INFO  vdl:dostageout END jobid=a1sm10ms-aiq9nesk - Staging out finished
+2012-06-06 19:06:56,650-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,651-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-9iq9nesk - Error file missing
+2012-06-06 19:06:56,653-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-9iq9nesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/1.result
+2012-06-06 19:06:56,656-0500 DEBUG vdl:execute2 JOB_END jobid=a1sm10ms-aiq9nesk
+2012-06-06 19:06:56,657-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 19:06:56,658-0500 INFO  vdl:execute END_SUCCESS thread=0-1-0-1 tr=a1sm10ms
+2012-06-06 19:06:56,660-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,660-0500 DEBUG countwords PROCEDURE_END line=5
+2012-06-06 19:06:56,661-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-biq9nesk thread=0-1-2-1-1 host=localhost replicationGroup=8iq9nesk
+2012-06-06 19:06:56,661-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-1-0
+2012-06-06 19:06:56,662-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,667-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,669-0500 INFO  vdl:createdirset START jobid=a1sm10ms-biq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:56,669-0500 INFO  vdl:createdirset END jobid=a1sm10ms-biq9nesk - Done initializing directory structure
+2012-06-06 19:06:56,670-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,670-0500 INFO  vdl:dostagein START jobid=a1sm10ms-biq9nesk - Staging in files
+2012-06-06 19:06:56,674-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-06 19:06:56,675-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,676-0500 DEBUG vdl:dostagein CDM: file://localhost/test3 : DEFAULT
+2012-06-06 19:06:56,678-0500 INFO  vdl:dostagein END jobid=a1sm10ms-biq9nesk - Staging in finished
+2012-06-06 19:06:56,678-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-biq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/b/a1sm10ms-biq9nesk host=localhost
+2012-06-06 19:06:56,683-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339027614655) is /bin/bash shared/_swiftwrap a1sm10ms-biq9nesk -jobdir b -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 2.result -err stderr.txt -i -d  -if test3 -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,684-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-biq9nesk -jobdir b -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 2.result -err stderr.txt -i -d  -if test3 -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,684-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 19:06:56,687-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-diq9nesk thread=0-1-1-1-1 host=localhost replicationGroup=ciq9nesk
+2012-06-06 19:06:56,689-0500 INFO  vdl:createdirset START jobid=a1sm10ms-diq9nesk host=localhost - Initializing directory structure
+2012-06-06 19:06:56,689-0500 INFO  vdl:createdirset END jobid=a1sm10ms-diq9nesk - Done initializing directory structure
+2012-06-06 19:06:56,690-0500 INFO  vdl:dostagein START jobid=a1sm10ms-diq9nesk - Staging in files
+2012-06-06 19:06:56,692-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:56,693-0500 DEBUG vdl:dostagein CDM: file://localhost/test2 : DEFAULT
+2012-06-06 19:06:56,694-0500 INFO  vdl:dostagein END jobid=a1sm10ms-diq9nesk - Staging in finished
+2012-06-06 19:06:56,695-0500 DEBUG vdl:execute2 JOB_START jobid=a1sm10ms-diq9nesk tr=a1sm10ms arguments=[] tmpdir=3inloop-20120606-1906-p1xvsllc/jobs/d/a1sm10ms-diq9nesk host=localhost
+2012-06-06 19:06:56,698-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339027614660) is /bin/bash shared/_swiftwrap a1sm10ms-diq9nesk -jobdir d -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 1.result -err stderr.txt -i -d  -if test2 -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:56,699-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120606-1906-p1xvsllc command: /bin/bash /var/tmp/3inloop-20120606-1906-p1xvsllc/shared/_swiftwrap a1sm10ms-diq9nesk -jobdir d -scratch  -e /home/skrieder/swift/cuda/1sm10ms -out 1.result -err stderr.txt -i -d  -if test2 -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 19:06:57,010-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,014-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-biq9nesk
+2012-06-06 19:06:57,016-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,019-0500 INFO  vdl:checkjobstatus SUCCESS jobid=a1sm10ms-biq9nesk - Success file found
+2012-06-06 19:06:57,022-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-biq9nesk
+2012-06-06 19:06:57,026-0500 INFO  vdl:dostageout START jobid=a1sm10ms-biq9nesk - Staging out files
+2012-06-06 19:06:57,027-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:57,051-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:57,054-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,065-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,067-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,071-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=2.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:57,071-0500 DEBUG vdl:checkjobstatus START jobid=a1sm10ms-diq9nesk
+2012-06-06 19:06:57,075-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,076-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,077-0500 INFO  vdl:checkjobstatus SUCCESS jobid=a1sm10ms-diq9nesk - Success file found
+2012-06-06 19:06:57,079-0500 DEBUG vdl:execute2 STAGING_OUT jobid=a1sm10ms-diq9nesk
+2012-06-06 19:06:57,082-0500 INFO  vdl:dostageout END jobid=a1sm10ms-biq9nesk - Staging out finished
+2012-06-06 19:06:57,082-0500 INFO  vdl:dostageout START jobid=a1sm10ms-diq9nesk - Staging out files
+2012-06-06 19:06:57,084-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 19:06:57,090-0500 DEBUG vdl:execute2 JOB_END jobid=a1sm10ms-biq9nesk
+2012-06-06 19:06:57,093-0500 INFO  vdl:execute END_SUCCESS thread=0-1-2-1 tr=a1sm10ms
+2012-06-06 19:06:57,095-0500 DEBUG countwords PROCEDURE_END line=5
+2012-06-06 19:06:57,098-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-1-2
+2012-06-06 19:06:57,099-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:57,101-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,109-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,111-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_END srcname=1.result srcdir=3inloop-20120606-1906-p1xvsllc/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 19:06:57,115-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,119-0500 INFO  vdl:dostageout END jobid=a1sm10ms-diq9nesk - Staging out finished
+2012-06-06 19:06:57,124-0500 DEBUG vdl:execute2 JOB_END jobid=a1sm10ms-diq9nesk
+2012-06-06 19:06:57,126-0500 INFO  vdl:execute END_SUCCESS thread=0-1-1-1 tr=a1sm10ms
+2012-06-06 19:06:57,127-0500 DEBUG countwords PROCEDURE_END line=5
+2012-06-06 19:06:57,128-0500 DEBUG vdl:mains FOREACH_IT_END line=14 thread=0-1-1
+2012-06-06 19:06:57,156-0500 DEBUG vdl:mains Starting cleanups
+2012-06-06 19:06:57,157-0500 INFO  vdl:cleanups START cleanups=[[3inloop-20120606-1906-p1xvsllc, localhost]]
+2012-06-06 19:06:57,158-0500 INFO  vdl:cleanup START dir=3inloop-20120606-1906-p1xvsllc host=localhost
+2012-06-06 19:06:57,158-0500 DEBUG vdl:cleanup cdmfile 
+2012-06-06 19:06:57,160-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1339027614680) is /bin/rm -rf 3inloop-20120606-1906-p1xvsllc
+2012-06-06 19:06:57,162-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp command: /bin/rm -rf 3inloop-20120606-1906-p1xvsllc
+2012-06-06 19:06:57,162-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 19:06:57,165-0500 INFO  vdl:cleanup END dir=3inloop-20120606-1906-p1xvsllc host=localhost
+2012-06-06 19:06:57,167-0500 INFO  vdl:cleanups END cleanups=[[3inloop-20120606-1906-p1xvsllc, localhost]]
+2012-06-06 19:06:57,168-0500 DEBUG vdl:mains Ending cleanups
+2012-06-06 19:06:57,169-0500 INFO  Loader Swift finished with no errors

@@ -1,0 +1,92 @@
+2012-06-06 15:40:34,275-0500 DEBUG Loader arguments: [-tc.file, tc.data, hello16.swift]
+2012-06-06 15:40:34,275-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 15:40:34,276-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     cka stdout=@filename(t);
+}
+
+//string inputNames = "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16";
+string inputNames = "a";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f, i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 15:40:34,276-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 15:40:34,276-0500 INFO  Loader hello16.swift: source file is new. Recompiling.
+2012-06-06 15:40:34,277-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:40:34,277-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:40:34,837-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 15:40:35,028-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-06 15:40:35,028-0500 DEBUG textfiles using default sites file
+2012-06-06 15:40:35,032-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 15:40:35,695-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-06-06 15:40:35,731-0500 INFO  unknown Using tc.data: tc.data
+2012-06-06 15:40:35,835-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 15:40:36,444-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 15:40:36,448-0500 INFO  unknown RUNID id=run:20120606-1540-hx6qun79
+2012-06-06 15:40:36,513-0500 INFO  SetFieldValue Set: inputNames=a
+2012-06-06 15:40:36,524-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 15:40:36,527-0500 DEBUG vdl:mains FOREACH_IT_START line=14 thread=0-1-0
+2012-06-06 15:40:36,527-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 15:40:36,531-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 15:40:36,533-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 15:40:36,539-0500 INFO  vdl:execute START thread=0-1-0-1 tr=cka
+2012-06-06 15:40:36,552-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:40:36,559-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-06 15:40:36,563-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,565-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,568-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-06 15:40:36,571-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,583-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,586-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,589-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,594-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,600-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,601-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-06 15:40:36,604-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-nc11fesk thread=0-1-0-1-1 host=localhost replicationGroup=mc11fesk
+2012-06-06 15:40:36,613-0500 INFO  vdl:createdirset START jobid=cka-nc11fesk host=localhost - Initializing directory structure
+2012-06-06 15:40:36,614-0500 INFO  vdl:createdirset END jobid=cka-nc11fesk - Done initializing directory structure
+2012-06-06 15:40:36,615-0500 INFO  vdl:dostagein START jobid=cka-nc11fesk - Staging in files
+2012-06-06 15:40:36,628-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,639-0500 DEBUG vdl:dostagein CDM: file://localhost/a : DEFAULT
+2012-06-06 15:40:36,651-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=a srchost=localhost srcdir= srcname=a desthost=localhost destdir=hello16-20120606-1540-hx6qun79/shared/ provider=file policy=DEFAULT
+2012-06-06 15:40:36,677-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:36,679-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-nc11fesk - Error file missing
+2012-06-06 15:40:36,684-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-nc11fesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a
+2012-06-06 15:40:36,732-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job cka-nc11fesk
+2012-06-06 15:40:36,733-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from hello16-20120606-1540-hx6qun79/info/n on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1540-hx6qun79/info/n/cka-nc11fesk-info
+2012-06-06 15:40:38,254-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 15:40:38,267-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=cka-pc11fesk thread=0-1-0-1-1 host=localhost replicationGroup=oc11fesk
+2012-06-06 15:40:38,286-0500 INFO  vdl:createdirset START jobid=cka-pc11fesk host=localhost - Initializing directory structure
+2012-06-06 15:40:38,288-0500 INFO  vdl:createdirset END jobid=cka-pc11fesk - Done initializing directory structure
+2012-06-06 15:40:38,290-0500 INFO  vdl:dostagein START jobid=cka-pc11fesk - Staging in files
+2012-06-06 15:40:38,305-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:38,307-0500 DEBUG vdl:dostagein CDM: file://localhost/a : DEFAULT
+2012-06-06 15:40:38,312-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=a srchost=localhost srcdir= srcname=a desthost=localhost destdir=hello16-20120606-1540-hx6qun79/shared/ provider=file policy=DEFAULT
+2012-06-06 15:40:38,336-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 15:40:38,337-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=cka-pc11fesk - Error file missing
+2012-06-06 15:40:38,340-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=cka-pc11fesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a
+2012-06-06 15:40:38,376-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job cka-pc11fesk
+2012-06-06 15:40:38,377-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from hello16-20120606-1540-hx6qun79/info/p on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1540-hx6qun79/info/p/cka-pc11fesk-info

@@ -1,0 +1,1344 @@
+2012-06-06 15:27:03,719-0500 DEBUG Loader arguments: [-tc.file, tc.data, hello16.swift]
+2012-06-06 15:27:03,719-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 15:27:03,720-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     hello stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f, i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 15:27:03,720-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 15:27:03,721-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:27:03,721-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:27:03,721-0500 DEBUG Loader Recompilation suppressed.
+2012-06-06 15:27:03,869-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-06 15:27:03,869-0500 DEBUG textfiles using default sites file
+2012-06-06 15:27:03,873-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 15:27:04,546-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-06-06 15:27:04,595-0500 INFO  unknown Using tc.data: tc.data
+2012-06-06 15:27:04,700-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 15:27:05,473-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 15:27:05,474-0500 INFO  unknown RUNID id=run:20120606-1527-85dq6iod
+2012-06-06 15:27:05,521-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh
+2012-06-06 15:27:05,531-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[3]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[4]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[5]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[6]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[7]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[8]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[9]
+2012-06-06 15:27:05,532-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[10]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[11]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[12]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[13]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[14]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[15]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[16]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[17]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[18]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[19]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[20]
+2012-06-06 15:27:05,533-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[21]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[22]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[23]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[24]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[25]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[26]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[27]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[28]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[29]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[30]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[31]
+2012-06-06 15:27:05,534-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[32]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[33]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[34]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[35]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[36]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[37]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[38]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[39]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[40]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[41]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[42]
+2012-06-06 15:27:05,535-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[43]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[44]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[45]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[46]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[47]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[48]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[49]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[50]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[51]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[52]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[53]
+2012-06-06 15:27:05,536-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[54]
+2012-06-06 15:27:05,537-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[55]
+2012-06-06 15:27:05,541-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-3
+2012-06-06 15:27:05,541-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-4
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains SCOPE thread=0-1-3
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains SCOPE thread=0-1-4
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-5
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-1
+2012-06-06 15:27:05,543-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-2
+2012-06-06 15:27:05,542-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 15:27:05,544-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-6
+2012-06-06 15:27:05,546-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-06 15:27:05,546-0500 DEBUG vdl:mains SCOPE thread=0-1-5
+2012-06-06 15:27:05,549-0500 DEBUG vdl:mains SCOPE thread=0-1-6
+2012-06-06 15:27:05,550-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-06 15:27:05,551-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-7
+2012-06-06 15:27:05,551-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-11
+2012-06-06 15:27:05,551-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-14
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-15
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-22
+2012-06-06 15:27:05,553-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-32
+2012-06-06 15:27:05,551-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-18
+2012-06-06 15:27:05,551-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-9
+2012-06-06 15:27:05,553-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-30
+2012-06-06 15:27:05,553-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-29
+2012-06-06 15:27:05,553-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-31
+2012-06-06 15:27:05,553-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-8
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-10
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-26
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-27
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-19
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-21
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-13
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-20
+2012-06-06 15:27:05,552-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-12
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-43
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-37
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-39
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-38
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-25
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-34
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-16
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains SCOPE thread=0-1-11
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-28
+2012-06-06 15:27:05,555-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-24
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-15
+2012-06-06 15:27:05,554-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-17
+2012-06-06 15:27:05,554-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-33
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-14
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-42
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-35
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-30
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-23
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-48
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-45
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains SCOPE thread=0-1-7
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-41
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-50
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-49
+2012-06-06 15:27:05,556-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-47
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains SCOPE thread=0-1-10
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains SCOPE thread=0-1-8
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains SCOPE thread=0-1-31
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains SCOPE thread=0-1-29
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-26
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-27
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-19
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-20
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-36
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-40
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-9
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-18
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-32
+2012-06-06 15:27:05,557-0500 DEBUG vdl:mains SCOPE thread=0-1-22
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-25
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-16
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-38
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-39
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-37
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-17
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-43
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-33
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-12
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-13
+2012-06-06 15:27:05,559-0500 DEBUG vdl:mains SCOPE thread=0-1-21
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-46
+2012-06-06 15:27:05,558-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-44
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-35
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-48
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-42
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-55
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-41
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-54
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-53
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-52
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-51
+2012-06-06 15:27:05,562-0500 DEBUG vdl:mains SCOPE thread=0-1-36
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-24
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-46
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-55
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-54
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-52
+2012-06-06 15:27:05,565-0500 DEBUG vdl:mains SCOPE thread=0-1-51
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-28
+2012-06-06 15:27:05,560-0500 DEBUG vdl:mains SCOPE thread=0-1-34
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-53
+2012-06-06 15:27:05,564-0500 DEBUG vdl:mains SCOPE thread=0-1-44
+2012-06-06 15:27:05,562-0500 DEBUG vdl:mains SCOPE thread=0-1-40
+2012-06-06 15:27:05,562-0500 DEBUG vdl:mains SCOPE thread=0-1-47
+2012-06-06 15:27:05,562-0500 DEBUG vdl:mains SCOPE thread=0-1-49
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-50
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-45
+2012-06-06 15:27:05,561-0500 DEBUG vdl:mains SCOPE thread=0-1-23
+2012-06-06 15:27:05,590-0500 INFO  SetFieldValue Set: swift#mapper#17001=5.result
+2012-06-06 15:27:05,590-0500 INFO  SetFieldValue Set: swift#mapper#17001=6.result
+2012-06-06 15:27:05,590-0500 INFO  SetFieldValue Set: swift#mapper#17001=4.result
+2012-06-06 15:27:05,592-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-06 15:27:05,592-0500 INFO  SetFieldValue Set: swift#mapper#17001=3.result
+2012-06-06 15:27:05,593-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=27.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=32.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=38.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=13.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=20.result
+2012-06-06 15:27:05,596-0500 INFO  SetFieldValue Set: swift#mapper#17001=16.result
+2012-06-06 15:27:05,596-0500 INFO  SetFieldValue Set: swift#mapper#17001=33.result
+2012-06-06 15:27:05,596-0500 INFO  SetFieldValue Set: swift#mapper#17001=30.result
+2012-06-06 15:27:05,597-0500 INFO  SetFieldValue Set: swift#mapper#17001=36.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 15:27:05,597-0500 INFO  SetFieldValue Set: swift#mapper#17001=21.result
+2012-06-06 15:27:05,597-0500 INFO  SetFieldValue Set: swift#mapper#17001=39.result
+2012-06-06 15:27:05,598-0500 INFO  SetFieldValue Set: swift#mapper#17001=48.result
+2012-06-06 15:27:05,598-0500 INFO  SetFieldValue Set: swift#mapper#17001=18.result
+2012-06-06 15:27:05,599-0500 INFO  SetFieldValue Set: swift#mapper#17001=31.result
+2012-06-06 15:27:05,599-0500 INFO  SetFieldValue Set: swift#mapper#17001=42.result
+2012-06-06 15:27:05,599-0500 INFO  SetFieldValue Set: swift#mapper#17001=29.result
+2012-06-06 15:27:05,600-0500 INFO  SetFieldValue Set: swift#mapper#17001=51.result
+2012-06-06 15:27:05,600-0500 INFO  SetFieldValue Set: swift#mapper#17001=14.result
+2012-06-06 15:27:05,601-0500 INFO  SetFieldValue Set: swift#mapper#17001=37.result
+2012-06-06 15:27:05,601-0500 INFO  SetFieldValue Set: swift#mapper#17001=7.result
+2012-06-06 15:27:05,602-0500 INFO  SetFieldValue Set: swift#mapper#17001=54.result
+2012-06-06 15:27:05,602-0500 INFO  SetFieldValue Set: swift#mapper#17001=10.result
+2012-06-06 15:27:05,602-0500 INFO  SetFieldValue Set: swift#mapper#17001=24.result
+2012-06-06 15:27:05,603-0500 INFO  SetFieldValue Set: swift#mapper#17001=19.result
+2012-06-06 15:27:05,597-0500 INFO  SetFieldValue Set: swift#mapper#17001=8.result
+2012-06-06 15:27:05,595-0500 INFO  SetFieldValue Set: swift#mapper#17001=15.result
+2012-06-06 15:27:05,603-0500 INFO  SetFieldValue Set: swift#mapper#17001=17.result
+2012-06-06 15:27:05,604-0500 INFO  SetFieldValue Set: swift#mapper#17001=46.result
+2012-06-06 15:27:05,604-0500 INFO  SetFieldValue Set: swift#mapper#17001=34.result
+2012-06-06 15:27:05,604-0500 INFO  SetFieldValue Set: swift#mapper#17001=43.result
+2012-06-06 15:27:05,605-0500 INFO  SetFieldValue Set: swift#mapper#17001=53.result
+2012-06-06 15:27:05,605-0500 INFO  SetFieldValue Set: swift#mapper#17001=40.result
+2012-06-06 15:27:05,606-0500 INFO  SetFieldValue Set: swift#mapper#17001=50.result
+2012-06-06 15:27:05,606-0500 INFO  SetFieldValue Set: swift#mapper#17001=35.result
+2012-06-06 15:27:05,603-0500 INFO  SetFieldValue Set: swift#mapper#17001=41.result
+2012-06-06 15:27:05,599-0500 INFO  SetFieldValue Set: swift#mapper#17001=11.result
+2012-06-06 15:27:05,598-0500 INFO  SetFieldValue Set: swift#mapper#17001=22.result
+2012-06-06 15:27:05,607-0500 INFO  SetFieldValue Set: swift#mapper#17001=52.result
+2012-06-06 15:27:05,608-0500 INFO  SetFieldValue Set: swift#mapper#17001=49.result
+2012-06-06 15:27:05,597-0500 INFO  SetFieldValue Set: swift#mapper#17001=9.result
+2012-06-06 15:27:05,607-0500 INFO  SetFieldValue Set: swift#mapper#17001=47.result
+2012-06-06 15:27:05,606-0500 INFO  SetFieldValue Set: swift#mapper#17001=28.result
+2012-06-06 15:27:05,606-0500 INFO  SetFieldValue Set: swift#mapper#17001=55.result
+2012-06-06 15:27:05,608-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-1-1 name=countwords
+2012-06-06 15:27:05,609-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-15-1 name=countwords
+2012-06-06 15:27:05,609-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-3-1 name=countwords
+2012-06-06 15:27:05,609-0500 INFO  SetFieldValue Set: swift#mapper#17001=25.result
+2012-06-06 15:27:05,609-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-6-1 name=countwords
+2012-06-06 15:27:05,609-0500 INFO  SetFieldValue Set: swift#mapper#17001=12.result
+2012-06-06 15:27:05,609-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-9-1 name=countwords
+2012-06-06 15:27:05,608-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-4-1 name=countwords
+2012-06-06 15:27:05,608-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-5-1 name=countwords
+2012-06-06 15:27:05,608-0500 INFO  SetFieldValue Set: swift#mapper#17001=26.result
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-30-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-21-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-36-1 name=countwords
+2012-06-06 15:27:05,611-0500 INFO  SetFieldValue Set: swift#mapper#17001=44.result
+2012-06-06 15:27:05,611-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-20-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-39-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-8-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-48-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-16-1 name=countwords
+2012-06-06 15:27:05,610-0500 INFO  SetFieldValue Set: swift#mapper#17001=45.result
+2012-06-06 15:27:05,611-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-13-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-38-1 name=countwords
+2012-06-06 15:27:05,610-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-2-1 name=countwords
+2012-06-06 15:27:05,611-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-42-1 name=countwords
+2012-06-06 15:27:05,612-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-31-1 name=countwords
+2012-06-06 15:27:05,612-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-14-1 name=countwords
+2012-06-06 15:27:05,611-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-29-1 name=countwords
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-32-1 name=countwords
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-27-1 name=countwords
+2012-06-06 15:27:05,613-0500 INFO  SetFieldValue Set: swift#mapper#17001=23.result
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-18-1 name=countwords
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-54-1 name=countwords
+2012-06-06 15:27:05,611-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-11-1 name=countwords
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-7-1 name=countwords
+2012-06-06 15:27:05,613-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-51-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-37-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-22-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-41-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-10-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-24-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-46-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-34-1 name=countwords
+2012-06-06 15:27:05,614-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-43-1 name=countwords
+2012-06-06 15:27:05,615-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-17-1 name=countwords
+2012-06-06 15:27:05,615-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-33-1 name=countwords
+2012-06-06 15:27:05,615-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-40-1 name=countwords
+2012-06-06 15:27:05,617-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-47-1 name=countwords
+2012-06-06 15:27:05,617-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-53-1 name=countwords
+2012-06-06 15:27:05,617-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-19-1 name=countwords
+2012-06-06 15:27:05,617-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-50-1 name=countwords
+2012-06-06 15:27:05,618-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-49-1 name=countwords
+2012-06-06 15:27:05,618-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-55-1 name=countwords
+2012-06-06 15:27:05,618-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-12-1 name=countwords
+2012-06-06 15:27:05,618-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-52-1 name=countwords
+2012-06-06 15:27:05,617-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-26-1 name=countwords
+2012-06-06 15:27:05,619-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-28-1 name=countwords
+2012-06-06 15:27:05,618-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-35-1 name=countwords
+2012-06-06 15:27:05,619-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-45-1 name=countwords
+2012-06-06 15:27:05,620-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-44-1 name=countwords
+2012-06-06 15:27:05,621-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-25-1 name=countwords
+2012-06-06 15:27:05,621-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-23-1 name=countwords
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-48-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-0-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-22-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-24-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-3-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-30-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-9-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-42-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-27-1 tr=hello
+2012-06-06 15:27:05,640-0500 INFO  vdl:execute START thread=0-1-2-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-41-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-46-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-43-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-55-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-47-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-7-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-18-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-13-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-11-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-49-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-33-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-15-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-32-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-40-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-4-1 tr=hello
+2012-06-06 15:27:05,643-0500 INFO  vdl:execute START thread=0-1-19-1 tr=hello
+2012-06-06 15:27:05,643-0500 INFO  vdl:execute START thread=0-1-45-1 tr=hello
+2012-06-06 15:27:05,644-0500 INFO  vdl:execute START thread=0-1-12-1 tr=hello
+2012-06-06 15:27:05,644-0500 INFO  vdl:execute START thread=0-1-8-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-52-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-26-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-38-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-53-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-21-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-39-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-17-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-50-1 tr=hello
+2012-06-06 15:27:05,641-0500 INFO  vdl:execute START thread=0-1-34-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-37-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-29-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-5-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-20-1 tr=hello
+2012-06-06 15:27:05,647-0500 INFO  vdl:execute START thread=0-1-1-1 tr=hello
+2012-06-06 15:27:05,648-0500 INFO  vdl:execute START thread=0-1-10-1 tr=hello
+2012-06-06 15:27:05,648-0500 INFO  vdl:execute START thread=0-1-6-1 tr=hello
+2012-06-06 15:27:05,648-0500 INFO  vdl:execute START thread=0-1-54-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-36-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-35-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-23-1 tr=hello
+2012-06-06 15:27:05,649-0500 INFO  vdl:execute START thread=0-1-14-1 tr=hello
+2012-06-06 15:27:05,645-0500 INFO  vdl:execute START thread=0-1-25-1 tr=hello
+2012-06-06 15:27:05,643-0500 INFO  vdl:execute START thread=0-1-28-1 tr=hello
+2012-06-06 15:27:05,642-0500 INFO  vdl:execute START thread=0-1-16-1 tr=hello
+2012-06-06 15:27:05,648-0500 INFO  vdl:execute START thread=0-1-31-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-44-1 tr=hello
+2012-06-06 15:27:05,646-0500 INFO  vdl:execute START thread=0-1-51-1 tr=hello
+2012-06-06 15:27:05,678-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,679-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,679-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,679-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,679-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,680-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,681-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,681-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,681-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,681-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,681-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,682-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 15:27:05,683-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-06 15:27:05,685-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:05,686-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:05,690-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-06 15:27:05,691-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:05,692-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.060
+2012-06-06 15:27:05,701-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:05,702-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.124
+2012-06-06 15:27:05,704-0500 INFO  LateBindingScheduler JobQueue: 37
+2012-06-06 15:27:05,704-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.192
+2012-06-06 15:27:05,705-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.192
+2012-06-06 15:27:05,706-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:05,707-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.264
+2012-06-06 15:27:05,709-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:05,710-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.339
+2012-06-06 15:27:05,713-0500 INFO  LateBindingScheduler JobQueue: 33
+2012-06-06 15:27:05,713-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.419
+2012-06-06 15:27:05,714-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-06 15:27:05,720-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-194heesk thread=0-1-2-1-1 host=localhost replicationGroup=a74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-s84heesk thread=0-1-18-1-1 host=localhost replicationGroup=g74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-394heesk thread=0-1-10-1-1 host=localhost replicationGroup=784heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-494heesk thread=0-1-8-1-1 host=localhost replicationGroup=084heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-z84heesk thread=0-1-35-1-1 host=localhost replicationGroup=d84heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-794heesk thread=0-1-22-1-1 host=localhost replicationGroup=574heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-a94heesk thread=0-1-53-1-1 host=localhost replicationGroup=k74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-994heesk thread=0-1-32-1-1 host=localhost replicationGroup=v74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-b94heesk thread=0-1-30-1-1 host=localhost replicationGroup=a84heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-594heesk thread=0-1-23-1-1 host=localhost replicationGroup=e84heesk
+2012-06-06 15:27:05,720-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-x84heesk thread=0-1-41-1-1 host=localhost replicationGroup=484heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-294heesk thread=0-1-34-1-1 host=localhost replicationGroup=s74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-t84heesk thread=0-1-27-1-1 host=localhost replicationGroup=g84heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-y84heesk thread=0-1-33-1-1 host=localhost replicationGroup=u74heesk
+2012-06-06 15:27:05,720-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-u84heesk thread=0-1-7-1-1 host=localhost replicationGroup=d74heesk
+2012-06-06 15:27:05,720-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-p84heesk thread=0-1-54-1-1 host=localhost replicationGroup=984heesk
+2012-06-06 15:27:05,722-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-c94heesk thread=0-1-26-1-1 host=localhost replicationGroup=z74heesk
+2012-06-06 15:27:05,722-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-d94heesk thread=0-1-6-1-1 host=localhost replicationGroup=884heesk
+2012-06-06 15:27:05,722-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-q84heesk thread=0-1-1-1-1 host=localhost replicationGroup=584heesk
+2012-06-06 15:27:05,722-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-094heesk thread=0-1-0-1-1 host=localhost replicationGroup=c84heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-v84heesk thread=0-1-49-1-1 host=localhost replicationGroup=h74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-894heesk thread=0-1-42-1-1 host=localhost replicationGroup=874heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-694heesk thread=0-1-40-1-1 host=localhost replicationGroup=x74heesk
+2012-06-06 15:27:05,721-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-r84heesk thread=0-1-21-1-1 host=localhost replicationGroup=j74heesk
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-594heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-v84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-x84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-b94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset END jobid=hello-594heesk - Done initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-994heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-094heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-794heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-q84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-p84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-b94heesk - Done initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-694heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-894heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-r84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset START jobid=hello-a94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset END jobid=hello-v84heesk - Done initializing directory structure
+2012-06-06 15:27:05,734-0500 INFO  vdl:createdirset END jobid=hello-x84heesk - Done initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-494heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-394heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,733-0500 INFO  vdl:createdirset START jobid=hello-y84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-894heesk - Done initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-r84heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-694heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset START jobid=hello-u84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-p84heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-q84heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-794heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-094heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset START jobid=hello-s84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset END jobid=hello-994heesk - Done initializing directory structure
+2012-06-06 15:27:05,735-0500 INFO  vdl:createdirset START jobid=hello-z84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,737-0500 INFO  vdl:createdirset END jobid=hello-u84heesk - Done initializing directory structure
+2012-06-06 15:27:05,737-0500 INFO  vdl:dostagein START jobid=hello-v84heesk - Staging in files
+2012-06-06 15:27:05,736-0500 INFO  vdl:dostagein START jobid=hello-b94heesk - Staging in files
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-y84heesk - Done initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:dostagein START jobid=hello-594heesk - Staging in files
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-494heesk - Done initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-394heesk - Done initializing directory structure
+2012-06-06 15:27:05,737-0500 INFO  vdl:createdirset END jobid=hello-z84heesk - Done initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset START jobid=hello-t84heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset START jobid=hello-294heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,736-0500 INFO  vdl:createdirset END jobid=hello-a94heesk - Done initializing directory structure
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-q84heesk - Staging in files
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-p84heesk - Staging in files
+2012-06-06 15:27:05,737-0500 INFO  vdl:dostagein START jobid=hello-694heesk - Staging in files
+2012-06-06 15:27:05,737-0500 INFO  vdl:dostagein START jobid=hello-r84heesk - Staging in files
+2012-06-06 15:27:05,737-0500 INFO  vdl:dostagein START jobid=hello-894heesk - Staging in files
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-u84heesk - Staging in files
+2012-06-06 15:27:05,737-0500 INFO  vdl:dostagein START jobid=hello-x84heesk - Staging in files
+2012-06-06 15:27:05,737-0500 INFO  vdl:createdirset END jobid=hello-s84heesk - Done initializing directory structure
+2012-06-06 15:27:05,737-0500 INFO  vdl:createdirset START jobid=hello-d94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:createdirset END jobid=hello-294heesk - Done initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:createdirset END jobid=hello-t84heesk - Done initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:dostagein START jobid=hello-494heesk - Staging in files
+2012-06-06 15:27:05,739-0500 INFO  vdl:dostagein START jobid=hello-394heesk - Staging in files
+2012-06-06 15:27:05,739-0500 INFO  vdl:dostagein START jobid=hello-a94heesk - Staging in files
+2012-06-06 15:27:05,740-0500 INFO  vdl:createdirset START jobid=hello-c94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-994heesk - Staging in files
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-094heesk - Staging in files
+2012-06-06 15:27:05,740-0500 INFO  vdl:dostagein START jobid=hello-s84heesk - Staging in files
+2012-06-06 15:27:05,740-0500 INFO  vdl:dostagein START jobid=hello-294heesk - Staging in files
+2012-06-06 15:27:05,740-0500 INFO  vdl:dostagein START jobid=hello-t84heesk - Staging in files
+2012-06-06 15:27:05,738-0500 INFO  vdl:dostagein START jobid=hello-794heesk - Staging in files
+2012-06-06 15:27:05,740-0500 INFO  vdl:createdirset END jobid=hello-c94heesk - Done initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:dostagein START jobid=hello-z84heesk - Staging in files
+2012-06-06 15:27:05,739-0500 INFO  vdl:createdirset END jobid=hello-d94heesk - Done initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:createdirset START jobid=hello-194heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,739-0500 INFO  vdl:dostagein START jobid=hello-y84heesk - Staging in files
+2012-06-06 15:27:05,746-0500 INFO  vdl:createdirset END jobid=hello-194heesk - Done initializing directory structure
+2012-06-06 15:27:05,746-0500 INFO  vdl:dostagein START jobid=hello-c94heesk - Staging in files
+2012-06-06 15:27:05,747-0500 INFO  vdl:dostagein START jobid=hello-194heesk - Staging in files
+2012-06-06 15:27:05,748-0500 INFO  vdl:dostagein START jobid=hello-d94heesk - Staging in files
+2012-06-06 15:27:05,750-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:05,750-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:05,750-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:05,751-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,751-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,751-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,751-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,752-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,752-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,752-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:05,753-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:05,753-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:05,753-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,753-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,753-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,755-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,756-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,756-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,756-0500 INFO  LateBindingScheduler JobQueue: 33
+2012-06-06 15:27:05,756-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,754-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:05,757-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,758-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,758-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,758-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,757-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,759-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,759-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,759-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,759-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,760-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,760-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,760-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,760-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=hello16-20120606-1527-85dq6iod/shared/ provider=file policy=DEFAULT
+2012-06-06 15:27:05,758-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,760-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,760-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,761-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,762-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,763-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.503
+2012-06-06 15:27:05,763-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=hello16-20120606-1527-85dq6iod/shared/ provider=file
+2012-06-06 15:27:05,763-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.503
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-394heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-r84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-294heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-s84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-q84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-z84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-u84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-v84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-t84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-y84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-794heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-594heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-494heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-c94heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-b94heesk - Staging in finished
+2012-06-06 15:27:05,767-0500 INFO  vdl:dostagein END jobid=hello-d94heesk - Staging in finished
+2012-06-06 15:27:05,767-0500 INFO  vdl:dostagein END jobid=hello-994heesk - Staging in finished
+2012-06-06 15:27:05,767-0500 INFO  vdl:dostagein END jobid=hello-894heesk - Staging in finished
+2012-06-06 15:27:05,767-0500 INFO  vdl:dostagein END jobid=hello-194heesk - Staging in finished
+2012-06-06 15:27:05,768-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-e94heesk thread=0-1-5-1-1 host=localhost replicationGroup=284heesk
+2012-06-06 15:27:05,767-0500 INFO  vdl:dostagein END jobid=hello-094heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-a94heesk - Staging in finished
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-t84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/t/hello-t84heesk host=localhost
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-694heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-x84heesk - Staging in finished
+2012-06-06 15:27:05,766-0500 INFO  vdl:dostagein END jobid=hello-p84heesk - Staging in finished
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-994heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/9/hello-994heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-394heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/3/hello-394heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-d94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/d/hello-d94heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-194heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/1/hello-194heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-894heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/8/hello-894heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-c94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/c/hello-c94heesk host=localhost
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-594heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/5/hello-594heesk host=localhost
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-q84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/q/hello-q84heesk host=localhost
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-s84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/s/hello-s84heesk host=localhost
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-z84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/z/hello-z84heesk host=localhost
+2012-06-06 15:27:05,771-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-f94heesk thread=0-1-29-1-1 host=localhost replicationGroup=184heesk
+2012-06-06 15:27:05,772-0500 DEBUG vdl:execute2 JOB_START jobid=hello-094heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/0/hello-094heesk host=localhost
+2012-06-06 15:27:05,772-0500 DEBUG vdl:execute2 JOB_START jobid=hello-a94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/a/hello-a94heesk host=localhost
+2012-06-06 15:27:05,772-0500 DEBUG vdl:execute2 JOB_START jobid=hello-x84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/x/hello-x84heesk host=localhost
+2012-06-06 15:27:05,769-0500 DEBUG vdl:execute2 JOB_START jobid=hello-494heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/4/hello-494heesk host=localhost
+2012-06-06 15:27:05,772-0500 DEBUG vdl:execute2 JOB_START jobid=hello-p84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/p/hello-p84heesk host=localhost
+2012-06-06 15:27:05,772-0500 DEBUG vdl:execute2 JOB_START jobid=hello-694heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/6/hello-694heesk host=localhost
+2012-06-06 15:27:05,771-0500 DEBUG vdl:execute2 JOB_START jobid=hello-b94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/b/hello-b94heesk host=localhost
+2012-06-06 15:27:05,771-0500 DEBUG vdl:execute2 JOB_START jobid=hello-v84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/v/hello-v84heesk host=localhost
+2012-06-06 15:27:05,771-0500 DEBUG vdl:execute2 JOB_START jobid=hello-r84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/r/hello-r84heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-u84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/u/hello-u84heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-y84heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/y/hello-y84heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-794heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/7/hello-794heesk host=localhost
+2012-06-06 15:27:05,770-0500 DEBUG vdl:execute2 JOB_START jobid=hello-294heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/2/hello-294heesk host=localhost
+2012-06-06 15:27:05,778-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	scott3a		/home/skrieder/swift/multi/scott3a.sh		INSTALLED	INTEL32::LINUX	null
+localhost	scott3b		/home/skrieder/swift/multi/scott3b.sh		INSTALLED	INTEL32::LINUX	null
+localhost	cka		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm0ms		/home/skrieder/swift/cuda/1sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm1ms		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm10ms	/home/skrieder/swift/cuda/1sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm100ms	/home/skrieder/swift/cuda/1sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm0ms		/home/skrieder/swift/cuda/2sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm1ms		/home/skrieder/swift/cuda/2sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm10ms	/home/skrieder/swift/cuda/2sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm100ms	/home/skrieder/swift/cuda/2sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm0ms		/home/skrieder/swift/cuda/4sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm1ms		/home/skrieder/swift/cuda/4sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm10ms	/home/skrieder/swift/cuda/4sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm100ms	/home/skrieder/swift/cuda/4sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm0ms		/home/skrieder/swift/cuda/8sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm1ms		/home/skrieder/swift/cuda/8sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm10ms	/home/skrieder/swift/cuda/8sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm100ms	/home/skrieder/swift/cuda/8sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm0ms	/home/skrieder/swift/cuda/16sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm1ms	/home/skrieder/swift/cuda/16sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm10ms	/home/skrieder/swift/cuda/16sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm100ms	/home/skrieder/swift/cuda/16sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep0ms	/home/skrieder/swift/c/sleep0ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1ms	/home/skrieder/swift/c/sleep1ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10ms	/home/skrieder/swift/c/sleep10ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep100ms	/home/skrieder/swift/c/sleep100ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1000ms	/home/skrieder/swift/c/sleep1000ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10000ms	/home/skrieder/swift/c/sleep10000ms			INSTALLED	INTEL32::LINUX	null
+localhost	hello		/home/skrieder/swift/multi/hello			INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-06 15:27:05,779-0500 DEBUG textfiles END TC:
+2012-06-06 15:27:05,786-0500 INFO  vdl:createdirset START jobid=hello-e94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,787-0500 INFO  vdl:createdirset END jobid=hello-e94heesk - Done initializing directory structure
+2012-06-06 15:27:05,789-0500 INFO  vdl:dostagein START jobid=hello-e94heesk - Staging in files
+2012-06-06 15:27:05,790-0500 INFO  vdl:createdirset START jobid=hello-f94heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:05,790-0500 INFO  vdl:createdirset END jobid=hello-f94heesk - Done initializing directory structure
+2012-06-06 15:27:05,792-0500 INFO  vdl:dostagein START jobid=hello-f94heesk - Staging in files
+2012-06-06 15:27:05,796-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-18-1-1-1339014424701) is /bin/bash shared/_swiftwrap hello-s84heesk -jobdir s -scratch  -e /home/skrieder/swift/multi/hello -out 18.result -err stderr.txt -i -d  -if scott3a.sh -of 18.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-40-1-1-1339014424710) is /bin/bash shared/_swiftwrap hello-694heesk -jobdir 6 -scratch  -e /home/skrieder/swift/multi/hello -out 40.result -err stderr.txt -i -d  -if scott3a.sh -of 40.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-27-1-1-1339014424706) is /bin/bash shared/_swiftwrap hello-t84heesk -jobdir t -scratch  -e /home/skrieder/swift/multi/hello -out 27.result -err stderr.txt -i -d  -if scott3a.sh -of 27.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-42-1-1-1339014424715) is /bin/bash shared/_swiftwrap hello-894heesk -jobdir 8 -scratch  -e /home/skrieder/swift/multi/hello -out 42.result -err stderr.txt -i -d  -if scott3a.sh -of 42.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-33-1-1-1339014424718) is /bin/bash shared/_swiftwrap hello-y84heesk -jobdir y -scratch  -e /home/skrieder/swift/multi/hello -out 33.result -err stderr.txt -i -d  -if scott3a.sh -of 33.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-7-1-1-1339014424704) is /bin/bash shared/_swiftwrap hello-u84heesk -jobdir u -scratch  -e /home/skrieder/swift/multi/hello -out 7.result -err stderr.txt -i -d  -if scott3a.sh -of 7.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-22-1-1-1339014424721) is /bin/bash shared/_swiftwrap hello-794heesk -jobdir 7 -scratch  -e /home/skrieder/swift/multi/hello -out 22.result -err stderr.txt -i -d  -if scott3a.sh -of 22.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-34-1-1-1339014424723) is /bin/bash shared/_swiftwrap hello-294heesk -jobdir 2 -scratch  -e /home/skrieder/swift/multi/hello -out 34.result -err stderr.txt -i -d  -if scott3a.sh -of 34.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-8-1-1-1339014424727) is /bin/bash shared/_swiftwrap hello-494heesk -jobdir 4 -scratch  -e /home/skrieder/swift/multi/hello -out 8.result -err stderr.txt -i -d  -if scott3a.sh -of 8.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-41-1-1-1339014424707) is /bin/bash shared/_swiftwrap hello-x84heesk -jobdir x -scratch  -e /home/skrieder/swift/multi/hello -out 41.result -err stderr.txt -i -d  -if scott3a.sh -of 41.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,802-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-49-1-1-1339014424702) is /bin/bash shared/_swiftwrap hello-v84heesk -jobdir v -scratch  -e /home/skrieder/swift/multi/hello -out 49.result -err stderr.txt -i -d  -if scott3a.sh -of 49.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,802-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339014424733) is /bin/bash shared/_swiftwrap hello-094heesk -jobdir 0 -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if scott3a.sh -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,802-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-10-1-1-1339014424736) is /bin/bash shared/_swiftwrap hello-394heesk -jobdir 3 -scratch  -e /home/skrieder/swift/multi/hello -out 10.result -err stderr.txt -i -d  -if scott3a.sh -of 10.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339014424712) is /bin/bash shared/_swiftwrap hello-194heesk -jobdir 1 -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if scott3a.sh -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-30-1-1-1339014424713) is /bin/bash shared/_swiftwrap hello-b94heesk -jobdir b -scratch  -e /home/skrieder/swift/multi/hello -out 30.result -err stderr.txt -i -d  -if scott3a.sh -of 30.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,803-0500 INFO  vdl:dostagein END jobid=hello-e94heesk - Staging in finished
+2012-06-06 15:27:05,802-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-21-1-1-1339014424739) is /bin/bash shared/_swiftwrap hello-r84heesk -jobdir r -scratch  -e /home/skrieder/swift/multi/hello -out 21.result -err stderr.txt -i -d  -if scott3a.sh -of 21.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,802-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-54-1-1-1339014424737) is /bin/bash shared/_swiftwrap hello-p84heesk -jobdir p -scratch  -e /home/skrieder/swift/multi/hello -out 54.result -err stderr.txt -i -d  -if scott3a.sh -of 54.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-6-1-1-1339014424703) is /bin/bash shared/_swiftwrap hello-d94heesk -jobdir d -scratch  -e /home/skrieder/swift/multi/hello -out 6.result -err stderr.txt -i -d  -if scott3a.sh -of 6.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339014424729) is /bin/bash shared/_swiftwrap hello-q84heesk -jobdir q -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if scott3a.sh -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,801-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-35-1-1-1339014424726) is /bin/bash shared/_swiftwrap hello-z84heesk -jobdir z -scratch  -e /home/skrieder/swift/multi/hello -out 35.result -err stderr.txt -i -d  -if scott3a.sh -of 35.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-32-1-1-1339014424719) is /bin/bash shared/_swiftwrap hello-994heesk -jobdir 9 -scratch  -e /home/skrieder/swift/multi/hello -out 32.result -err stderr.txt -i -d  -if scott3a.sh -of 32.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,800-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-23-1-1-1339014424708) is /bin/bash shared/_swiftwrap hello-594heesk -jobdir 5 -scratch  -e /home/skrieder/swift/multi/hello -out 23.result -err stderr.txt -i -d  -if scott3a.sh -of 23.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-53-1-1-1339014424709) is /bin/bash shared/_swiftwrap hello-a94heesk -jobdir a -scratch  -e /home/skrieder/swift/multi/hello -out 53.result -err stderr.txt -i -d  -if scott3a.sh -of 53.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,799-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-26-1-1-1339014424711) is /bin/bash shared/_swiftwrap hello-c94heesk -jobdir c -scratch  -e /home/skrieder/swift/multi/hello -out 26.result -err stderr.txt -i -d  -if scott3a.sh -of 26.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,803-0500 DEBUG vdl:execute2 JOB_START jobid=hello-e94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/e/hello-e94heesk host=localhost
+2012-06-06 15:27:05,804-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-s84heesk -jobdir s -scratch  -e /home/skrieder/swift/multi/hello -out 18.result -err stderr.txt -i -d  -if scott3a.sh -of 18.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,804-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-b94heesk -jobdir b -scratch  -e /home/skrieder/swift/multi/hello -out 30.result -err stderr.txt -i -d  -if scott3a.sh -of 30.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,805-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-194heesk -jobdir 1 -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if scott3a.sh -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,805-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-c94heesk -jobdir c -scratch  -e /home/skrieder/swift/multi/hello -out 26.result -err stderr.txt -i -d  -if scott3a.sh -of 26.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,806-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-694heesk -jobdir 6 -scratch  -e /home/skrieder/swift/multi/hello -out 40.result -err stderr.txt -i -d  -if scott3a.sh -of 40.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,806-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-a94heesk -jobdir a -scratch  -e /home/skrieder/swift/multi/hello -out 53.result -err stderr.txt -i -d  -if scott3a.sh -of 53.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,807-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-594heesk -jobdir 5 -scratch  -e /home/skrieder/swift/multi/hello -out 23.result -err stderr.txt -i -d  -if scott3a.sh -of 23.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,807-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-5-1-1-1339014424741) is /bin/bash shared/_swiftwrap hello-e94heesk -jobdir e -scratch  -e /home/skrieder/swift/multi/hello -out 5.result -err stderr.txt -i -d  -if scott3a.sh -of 5.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,807-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,807-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-894heesk -jobdir 8 -scratch  -e /home/skrieder/swift/multi/hello -out 42.result -err stderr.txt -i -d  -if scott3a.sh -of 42.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,807-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-t84heesk -jobdir t -scratch  -e /home/skrieder/swift/multi/hello -out 27.result -err stderr.txt -i -d  -if scott3a.sh -of 27.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,807-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:05,808-0500 INFO  vdl:dostagein END jobid=hello-f94heesk - Staging in finished
+2012-06-06 15:27:05,808-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-y84heesk -jobdir y -scratch  -e /home/skrieder/swift/multi/hello -out 33.result -err stderr.txt -i -d  -if scott3a.sh -of 33.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,808-0500 DEBUG vdl:execute2 JOB_START jobid=hello-f94heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/f/hello-f94heesk host=localhost
+2012-06-06 15:27:05,810-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-29-1-1-1339014424743) is /bin/bash shared/_swiftwrap hello-f94heesk -jobdir f -scratch  -e /home/skrieder/swift/multi/hello -out 29.result -err stderr.txt -i -d  -if scott3a.sh -of 29.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,811-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-994heesk -jobdir 9 -scratch  -e /home/skrieder/swift/multi/hello -out 32.result -err stderr.txt -i -d  -if scott3a.sh -of 32.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,813-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-u84heesk -jobdir u -scratch  -e /home/skrieder/swift/multi/hello -out 7.result -err stderr.txt -i -d  -if scott3a.sh -of 7.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,824-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-794heesk -jobdir 7 -scratch  -e /home/skrieder/swift/multi/hello -out 22.result -err stderr.txt -i -d  -if scott3a.sh -of 22.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,830-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-294heesk -jobdir 2 -scratch  -e /home/skrieder/swift/multi/hello -out 34.result -err stderr.txt -i -d  -if scott3a.sh -of 34.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,840-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-z84heesk -jobdir z -scratch  -e /home/skrieder/swift/multi/hello -out 35.result -err stderr.txt -i -d  -if scott3a.sh -of 35.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,841-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-494heesk -jobdir 4 -scratch  -e /home/skrieder/swift/multi/hello -out 8.result -err stderr.txt -i -d  -if scott3a.sh -of 8.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,841-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-x84heesk -jobdir x -scratch  -e /home/skrieder/swift/multi/hello -out 41.result -err stderr.txt -i -d  -if scott3a.sh -of 41.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,844-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-q84heesk -jobdir q -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if scott3a.sh -of 1.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,845-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-d94heesk -jobdir d -scratch  -e /home/skrieder/swift/multi/hello -out 6.result -err stderr.txt -i -d  -if scott3a.sh -of 6.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,871-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-v84heesk -jobdir v -scratch  -e /home/skrieder/swift/multi/hello -out 49.result -err stderr.txt -i -d  -if scott3a.sh -of 49.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,900-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-094heesk -jobdir 0 -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if scott3a.sh -of 0.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,913-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-394heesk -jobdir 3 -scratch  -e /home/skrieder/swift/multi/hello -out 10.result -err stderr.txt -i -d  -if scott3a.sh -of 10.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,913-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,915-0500 DEBUG vdl:checkjobstatus START jobid=hello-194heesk
+2012-06-06 15:27:05,924-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,925-0500 DEBUG vdl:checkjobstatus START jobid=hello-b94heesk
+2012-06-06 15:27:05,929-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-p84heesk -jobdir p -scratch  -e /home/skrieder/swift/multi/hello -out 54.result -err stderr.txt -i -d  -if scott3a.sh -of 54.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,930-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-r84heesk -jobdir r -scratch  -e /home/skrieder/swift/multi/hello -out 21.result -err stderr.txt -i -d  -if scott3a.sh -of 21.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,932-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-e94heesk -jobdir e -scratch  -e /home/skrieder/swift/multi/hello -out 5.result -err stderr.txt -i -d  -if scott3a.sh -of 5.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,933-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,934-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,934-0500 DEBUG vdl:checkjobstatus START jobid=hello-c94heesk
+2012-06-06 15:27:05,935-0500 DEBUG vdl:checkjobstatus START jobid=hello-s84heesk
+2012-06-06 15:27:05,938-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-f94heesk -jobdir f -scratch  -e /home/skrieder/swift/multi/hello -out 29.result -err stderr.txt -i -d  -if scott3a.sh -of 29.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:05,948-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,949-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,949-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,949-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-c94heesk - Failure file found
+2012-06-06 15:27:05,949-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-b94heesk - Failure file found
+2012-06-06 15:27:05,950-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-s84heesk - Failure file found
+2012-06-06 15:27:05,950-0500 INFO  LateBindingScheduler JobQueue: 33
+2012-06-06 15:27:05,950-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-194heesk - Failure file found
+2012-06-06 15:27:05,956-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,958-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,958-0500 DEBUG vdl:checkjobstatus START jobid=hello-694heesk
+2012-06-06 15:27:05,960-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,960-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,960-0500 DEBUG vdl:checkjobstatus START jobid=hello-t84heesk
+2012-06-06 15:27:05,960-0500 DEBUG vdl:checkjobstatus START jobid=hello-a94heesk
+2012-06-06 15:27:05,961-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,962-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,964-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,968-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,969-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,970-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,969-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-c94heesk
+2012-06-06 15:27:05,970-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-s84heesk
+2012-06-06 15:27:05,970-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,971-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,971-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-694heesk - Failure file found
+2012-06-06 15:27:05,970-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,971-0500 INFO  vdl:dostageout START jobid=hello-c94heesk - Staging out files
+2012-06-06 15:27:05,971-0500 INFO  vdl:dostageout START jobid=hello-s84heesk - Staging out files
+2012-06-06 15:27:05,971-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-t84heesk - Failure file found
+2012-06-06 15:27:05,972-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,972-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:05,972-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:05,972-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-a94heesk - Failure file found
+2012-06-06 15:27:05,973-0500 DEBUG vdl:checkjobstatus START jobid=hello-794heesk
+2012-06-06 15:27:05,974-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,976-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=18.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:05,977-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=26.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:05,979-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,979-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,981-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,981-0500 DEBUG vdl:checkjobstatus START jobid=hello-y84heesk
+2012-06-06 15:27:05,985-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,986-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,987-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,987-0500 DEBUG vdl:checkjobstatus START jobid=hello-994heesk
+2012-06-06 15:27:05,988-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,988-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-b94heesk
+2012-06-06 15:27:05,988-0500 INFO  vdl:dostageout START jobid=hello-b94heesk - Staging out files
+2012-06-06 15:27:05,988-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:05,989-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=30.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:05,990-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,990-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:05,991-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,994-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,995-0500 DEBUG vdl:checkjobstatus START jobid=hello-q84heesk
+2012-06-06 15:27:05,995-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,997-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,997-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:05,998-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-194heesk
+2012-06-06 15:27:05,998-0500 DEBUG vdl:checkjobstatus START jobid=hello-z84heesk
+2012-06-06 15:27:05,998-0500 INFO  vdl:dostageout START jobid=hello-194heesk - Staging out files
+2012-06-06 15:27:05,998-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:05,999-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:05,999-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:05,999-0500 DEBUG vdl:checkjobstatus START jobid=hello-594heesk
+2012-06-06 15:27:06,000-0500 INFO  LateBindingScheduler JobQueue: 32
+2012-06-06 15:27:06,001-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:06,002-0500 INFO  LateBindingScheduler JobQueue: 31
+2012-06-06 15:27:06,002-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:06,002-0500 INFO  LateBindingScheduler JobQueue: 30
+2012-06-06 15:27:06,003-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-794heesk - Failure file found
+2012-06-06 15:27:06,003-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-y84heesk - Failure file found
+2012-06-06 15:27:06,003-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-694heesk
+2012-06-06 15:27:06,004-0500 INFO  vdl:dostageout START jobid=hello-694heesk - Staging out files
+2012-06-06 15:27:06,004-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,005-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=40.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,005-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,006-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-994heesk - Failure file found
+2012-06-06 15:27:06,006-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,006-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,006-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-t84heesk
+2012-06-06 15:27:06,007-0500 INFO  vdl:dostageout START jobid=hello-t84heesk - Staging out files
+2012-06-06 15:27:06,007-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,008-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,008-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-q84heesk - Failure file found
+2012-06-06 15:27:06,008-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=27.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,010-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,010-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,011-0500 INFO  LateBindingScheduler JobQueue: 34
+2012-06-06 15:27:06,014-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,014-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,014-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,015-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,015-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-z84heesk - Failure file found
+2012-06-06 15:27:06,015-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-594heesk - Failure file found
+2012-06-06 15:27:06,015-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-a94heesk
+2012-06-06 15:27:06,016-0500 DEBUG vdl:checkjobstatus START jobid=hello-494heesk
+2012-06-06 15:27:06,016-0500 INFO  vdl:dostageout START jobid=hello-a94heesk - Staging out files
+2012-06-06 15:27:06,016-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,016-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=53.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,017-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,018-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,018-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,018-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,019-0500 INFO  LateBindingScheduler JobQueue: 37
+2012-06-06 15:27:06,021-0500 DEBUG vdl:checkjobstatus START jobid=hello-u84heesk
+2012-06-06 15:27:06,022-0500 INFO  LateBindingScheduler JobQueue: 36
+2012-06-06 15:27:06,022-0500 INFO  LateBindingScheduler JobQueue: 36
+2012-06-06 15:27:06,023-0500 INFO  LateBindingScheduler JobQueue: 36
+2012-06-06 15:27:06,024-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,025-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,025-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-994heesk
+2012-06-06 15:27:06,025-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,025-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-794heesk
+2012-06-06 15:27:06,025-0500 INFO  vdl:dostageout START jobid=hello-994heesk - Staging out files
+2012-06-06 15:27:06,025-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,026-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-y84heesk
+2012-06-06 15:27:06,026-0500 INFO  LateBindingScheduler JobQueue: 35
+2012-06-06 15:27:06,026-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-494heesk - Failure file found
+2012-06-06 15:27:06,026-0500 INFO  vdl:dostageout START jobid=hello-y84heesk - Staging out files
+2012-06-06 15:27:06,027-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,027-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=32.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,027-0500 INFO  LateBindingScheduler JobQueue: 37
+2012-06-06 15:27:06,028-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=33.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,028-0500 DEBUG vdl:checkjobstatus START jobid=hello-894heesk
+2012-06-06 15:27:06,026-0500 INFO  vdl:dostageout START jobid=hello-794heesk - Staging out files
+2012-06-06 15:27:06,028-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,028-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,029-0500 DEBUG vdl:checkjobstatus START jobid=hello-294heesk
+2012-06-06 15:27:06,029-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,029-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,029-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,029-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=22.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,030-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-u84heesk - Failure file found
+2012-06-06 15:27:06,031-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,032-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,032-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,034-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,034-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,036-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,036-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-894heesk - Failure file found
+2012-06-06 15:27:06,037-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,038-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,038-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,038-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-294heesk - Failure file found
+2012-06-06 15:27:06,038-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-z84heesk
+2012-06-06 15:27:06,039-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-q84heesk
+2012-06-06 15:27:06,039-0500 INFO  vdl:dostageout START jobid=hello-z84heesk - Staging out files
+2012-06-06 15:27:06,039-0500 INFO  vdl:dostageout START jobid=hello-q84heesk - Staging out files
+2012-06-06 15:27:06,039-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,039-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,039-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,040-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=35.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,040-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,040-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,040-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,041-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,042-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,043-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,043-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,043-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-c94heesk - Error file missing
+2012-06-06 15:27:06,045-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,045-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-c94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/26.result
+2012-06-06 15:27:06,046-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-u84heesk
+2012-06-06 15:27:06,046-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,046-0500 INFO  vdl:dostageout START jobid=hello-u84heesk - Staging out files
+2012-06-06 15:27:06,046-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,046-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-594heesk
+2012-06-06 15:27:06,047-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,047-0500 INFO  vdl:dostageout START jobid=hello-594heesk - Staging out files
+2012-06-06 15:27:06,047-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,048-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=7.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,048-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=23.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,048-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,048-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,049-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,050-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,050-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-s84heesk - Error file missing
+2012-06-06 15:27:06,050-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,050-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-s84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/18.result
+2012-06-06 15:27:06,051-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-494heesk
+2012-06-06 15:27:06,051-0500 INFO  vdl:dostageout START jobid=hello-494heesk - Staging out files
+2012-06-06 15:27:06,051-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,052-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=8.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,052-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,054-0500 INFO  LateBindingScheduler JobQueue: 43
+2012-06-06 15:27:06,057-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,059-0500 DEBUG vdl:checkjobstatus START jobid=hello-d94heesk
+2012-06-06 15:27:06,060-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,063-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,063-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,064-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,064-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-b94heesk - Error file missing
+2012-06-06 15:27:06,064-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,065-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-194heesk - Error file missing
+2012-06-06 15:27:06,065-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-b94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/30.result
+2012-06-06 15:27:06,065-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-894heesk
+2012-06-06 15:27:06,066-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-194heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/2.result
+2012-06-06 15:27:06,066-0500 INFO  vdl:dostageout START jobid=hello-894heesk - Staging out files
+2012-06-06 15:27:06,066-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,066-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,066-0500 INFO  LateBindingScheduler JobQueue: 38
+2012-06-06 15:27:06,067-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=42.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,067-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,067-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,067-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-294heesk
+2012-06-06 15:27:06,068-0500 INFO  vdl:dostageout START jobid=hello-294heesk - Staging out files
+2012-06-06 15:27:06,068-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,068-0500 DEBUG vdl:checkjobstatus START jobid=hello-x84heesk
+2012-06-06 15:27:06,068-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,068-0500 INFO  LateBindingScheduler JobQueue: 39
+2012-06-06 15:27:06,068-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,068-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,068-0500 INFO  LateBindingScheduler JobQueue: 40
+2012-06-06 15:27:06,068-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-d94heesk - Failure file found
+2012-06-06 15:27:06,069-0500 DEBUG vdl:checkjobstatus START jobid=hello-094heesk
+2012-06-06 15:27:06,069-0500 DEBUG vdl:checkjobstatus START jobid=hello-394heesk
+2012-06-06 15:27:06,069-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=34.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,070-0500 INFO  LateBindingScheduler JobQueue: 42
+2012-06-06 15:27:06,072-0500 INFO  LateBindingScheduler JobQueue: 44
+2012-06-06 15:27:06,073-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-y84heesk - Error file missing
+2012-06-06 15:27:06,073-0500 INFO  LateBindingScheduler JobQueue: 43
+2012-06-06 15:27:06,073-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-y84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/33.result
+2012-06-06 15:27:06,073-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,073-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-694heesk - Error file missing
+2012-06-06 15:27:06,074-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-694heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/40.result
+2012-06-06 15:27:06,074-0500 INFO  LateBindingScheduler JobQueue: 41
+2012-06-06 15:27:06,075-0500 INFO  LateBindingScheduler JobQueue: 44
+2012-06-06 15:27:06,075-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-394heesk - Failure file found
+2012-06-06 15:27:06,075-0500 INFO  LateBindingScheduler JobQueue: 44
+2012-06-06 15:27:06,076-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-x84heesk - Failure file found
+2012-06-06 15:27:06,077-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,077-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,077-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-094heesk - Failure file found
+2012-06-06 15:27:06,077-0500 DEBUG vdl:checkjobstatus START jobid=hello-e94heesk
+2012-06-06 15:27:06,077-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,078-0500 DEBUG vdl:checkjobstatus START jobid=hello-f94heesk
+2012-06-06 15:27:06,079-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,079-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-t84heesk - Error file missing
+2012-06-06 15:27:06,079-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-t84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/27.result
+2012-06-06 15:27:06,080-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,081-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,081-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,081-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,081-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,081-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,082-0500 DEBUG vdl:checkjobstatus START jobid=hello-r84heesk
+2012-06-06 15:27:06,082-0500 DEBUG vdl:checkjobstatus START jobid=hello-p84heesk
+2012-06-06 15:27:06,081-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-f94heesk - Failure file found
+2012-06-06 15:27:06,081-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-e94heesk - Failure file found
+2012-06-06 15:27:06,082-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,082-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,083-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,083-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,083-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-a94heesk - Error file missing
+2012-06-06 15:27:06,083-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,083-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-a94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/53.result
+2012-06-06 15:27:06,083-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,084-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-d94heesk
+2012-06-06 15:27:06,085-0500 INFO  vdl:dostageout START jobid=hello-d94heesk - Staging out files
+2012-06-06 15:27:06,085-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,085-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=6.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,085-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,086-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,086-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,086-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,086-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,087-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,087-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,088-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,088-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-q84heesk - Error file missing
+2012-06-06 15:27:06,088-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,088-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-q84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/1.result
+2012-06-06 15:27:06,088-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-r84heesk - Failure file found
+2012-06-06 15:27:06,088-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,088-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,088-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-p84heesk - Failure file found
+2012-06-06 15:27:06,089-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,089-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,090-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,090-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-e94heesk
+2012-06-06 15:27:06,090-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-f94heesk
+2012-06-06 15:27:06,090-0500 INFO  vdl:dostageout START jobid=hello-e94heesk - Staging out files
+2012-06-06 15:27:06,091-0500 INFO  vdl:dostageout START jobid=hello-f94heesk - Staging out files
+2012-06-06 15:27:06,091-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,091-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,091-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,091-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=5.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,091-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=29.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,092-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,092-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,092-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,092-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,093-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,093-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,093-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,094-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,094-0500 DEBUG vdl:checkjobstatus START jobid=hello-v84heesk
+2012-06-06 15:27:06,094-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,095-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,095-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-094heesk
+2012-06-06 15:27:06,095-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-p84heesk
+2012-06-06 15:27:06,095-0500 INFO  vdl:dostageout START jobid=hello-p84heesk - Staging out files
+2012-06-06 15:27:06,096-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,095-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,095-0500 INFO  vdl:dostageout START jobid=hello-094heesk - Staging out files
+2012-06-06 15:27:06,096-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,096-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=54.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,097-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,097-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,098-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,098-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,098-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-v84heesk - Failure file found
+2012-06-06 15:27:06,098-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,098-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,098-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-494heesk - Error file missing
+2012-06-06 15:27:06,099-0500 INFO  LateBindingScheduler JobQueue: 45
+2012-06-06 15:27:06,099-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-494heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/8.result
+2012-06-06 15:27:06,099-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,099-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,100-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,099-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,099-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,100-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,100-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-994heesk - Error file missing
+2012-06-06 15:27:06,101-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-994heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/32.result
+2012-06-06 15:27:06,101-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,102-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,102-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,102-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,103-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,103-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-394heesk
+2012-06-06 15:27:06,103-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,103-0500 INFO  vdl:dostageout START jobid=hello-394heesk - Staging out files
+2012-06-06 15:27:06,103-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-x84heesk
+2012-06-06 15:27:06,103-0500 INFO  vdl:dostageout START jobid=hello-x84heesk - Staging out files
+2012-06-06 15:27:06,103-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,103-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,104-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=41.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,104-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=10.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,105-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,105-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,105-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,105-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-z84heesk - Error file missing
+2012-06-06 15:27:06,105-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,105-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-z84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/35.result
+2012-06-06 15:27:06,106-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,105-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,105-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-794heesk - Error file missing
+2012-06-06 15:27:06,105-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-v84heesk
+2012-06-06 15:27:06,106-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-794heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/22.result
+2012-06-06 15:27:06,106-0500 INFO  vdl:dostageout START jobid=hello-v84heesk - Staging out files
+2012-06-06 15:27:06,107-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,107-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,107-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,107-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=49.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,108-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,108-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,109-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,109-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,109-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,109-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,109-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,110-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,110-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,110-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,111-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,112-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,112-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,113-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,114-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,114-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,114-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,114-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,114-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-r84heesk
+2012-06-06 15:27:06,114-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-594heesk - Error file missing
+2012-06-06 15:27:06,115-0500 INFO  vdl:dostageout START jobid=hello-r84heesk - Staging out files
+2012-06-06 15:27:06,115-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:06,115-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-594heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/23.result
+2012-06-06 15:27:06,116-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,116-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=21.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:06,116-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,121-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,122-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-894heesk - Error file missing
+2012-06-06 15:27:06,122-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-894heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/42.result
+2012-06-06 15:27:06,122-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,122-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,137-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,137-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,137-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,137-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,138-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,138-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-u84heesk - Error file missing
+2012-06-06 15:27:06,138-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-u84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/7.result
+2012-06-06 15:27:06,138-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,140-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,140-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,140-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,143-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,143-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,143-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,143-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,144-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,144-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-e94heesk - Error file missing
+2012-06-06 15:27:06,144-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-294heesk - Error file missing
+2012-06-06 15:27:06,144-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,144-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-294heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/34.result
+2012-06-06 15:27:06,145-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-e94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/5.result
+2012-06-06 15:27:06,145-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,146-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,147-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,148-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,148-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,149-0500 INFO  LateBindingScheduler JobQueue: 54
+2012-06-06 15:27:06,149-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-d94heesk - Error file missing
+2012-06-06 15:27:06,149-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,150-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,150-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-d94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/6.result
+2012-06-06 15:27:06,152-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,152-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,153-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,154-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,154-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,154-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,155-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,155-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-f94heesk - Error file missing
+2012-06-06 15:27:06,155-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-f94heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/29.result
+2012-06-06 15:27:06,156-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,156-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,156-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,157-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,159-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,159-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,160-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-x84heesk - Error file missing
+2012-06-06 15:27:06,160-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,160-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,160-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-x84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/41.result
+2012-06-06 15:27:06,162-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,162-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,162-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,162-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-394heesk - Error file missing
+2012-06-06 15:27:06,163-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,163-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-394heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/10.result
+2012-06-06 15:27:06,163-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,164-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,165-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,165-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,166-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,166-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,167-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,169-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,169-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,169-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,169-0500 INFO  LateBindingScheduler JobQueue: 46
+2012-06-06 15:27:06,170-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-094heesk - Error file missing
+2012-06-06 15:27:06,170-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,170-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,170-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,170-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-p84heesk - Error file missing
+2012-06-06 15:27:06,170-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-v84heesk - Error file missing
+2012-06-06 15:27:06,170-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-p84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/54.result
+2012-06-06 15:27:06,170-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-v84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/49.result
+2012-06-06 15:27:06,171-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,171-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,171-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,171-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-094heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/0.result
+2012-06-06 15:27:06,172-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,172-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,173-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,174-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,174-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-r84heesk - Error file missing
+2012-06-06 15:27:06,174-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,174-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-r84heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/21.result
+2012-06-06 15:27:06,174-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,175-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,175-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,175-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,175-0500 INFO  LateBindingScheduler JobQueue: 48
+2012-06-06 15:27:06,176-0500 INFO  LateBindingScheduler JobQueue: 47
+2012-06-06 15:27:06,176-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,176-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,177-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,178-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,178-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,179-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,178-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,178-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,179-0500 INFO  LateBindingScheduler JobQueue: 49
+2012-06-06 15:27:06,180-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,181-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,181-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,182-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,182-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,182-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,183-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,184-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,184-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,184-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,185-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,185-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,185-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,185-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,186-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,187-0500 INFO  LateBindingScheduler JobQueue: 50
+2012-06-06 15:27:06,187-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,188-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,188-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,188-0500 INFO  LateBindingScheduler JobQueue: 51
+2012-06-06 15:27:06,189-0500 INFO  LateBindingScheduler JobQueue: 53
+2012-06-06 15:27:06,189-0500 INFO  LateBindingScheduler JobQueue: 52
+2012-06-06 15:27:06,191-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,695-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 15:27:09,703-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-7a4heesk thread=0-1-20-1-1 host=localhost replicationGroup=384heesk
+2012-06-06 15:27:09,717-0500 INFO  vdl:createdirset START jobid=hello-7a4heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:09,717-0500 INFO  vdl:createdirset END jobid=hello-7a4heesk - Done initializing directory structure
+2012-06-06 15:27:09,720-0500 INFO  vdl:dostagein START jobid=hello-7a4heesk - Staging in files
+2012-06-06 15:27:09,729-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,731-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:09,736-0500 INFO  vdl:dostagein END jobid=hello-7a4heesk - Staging in finished
+2012-06-06 15:27:09,739-0500 DEBUG vdl:execute2 JOB_START jobid=hello-7a4heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/7/hello-7a4heesk host=localhost
+2012-06-06 15:27:09,749-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-20-1-1-1339014425736) is /bin/bash shared/_swiftwrap hello-7a4heesk -jobdir 7 -scratch  -e /home/skrieder/swift/multi/hello -out 20.result -err stderr.txt -i -d  -if scott3a.sh -of 20.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:09,757-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-7a4heesk -jobdir 7 -scratch  -e /home/skrieder/swift/multi/hello -out 20.result -err stderr.txt -i -d  -if scott3a.sh -of 20.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:09,901-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,906-0500 DEBUG vdl:checkjobstatus START jobid=hello-7a4heesk
+2012-06-06 15:27:09,919-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,920-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-7a4heesk - Failure file found
+2012-06-06 15:27:09,924-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,930-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,930-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,934-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-7a4heesk
+2012-06-06 15:27:09,934-0500 INFO  vdl:dostageout START jobid=hello-7a4heesk - Staging out files
+2012-06-06 15:27:09,935-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:09,940-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=20.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:09,944-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,975-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,976-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-7a4heesk - Error file missing
+2012-06-06 15:27:09,978-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-7a4heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/20.result
+2012-06-06 15:27:09,987-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:09,993-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:10,000-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:10,004-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:10,013-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,025-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 15:27:21,029-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-9a4heesk thread=0-1-48-1-1 host=localhost replicationGroup=474heesk
+2012-06-06 15:27:21,035-0500 INFO  vdl:createdirset START jobid=hello-9a4heesk host=localhost - Initializing directory structure
+2012-06-06 15:27:21,036-0500 INFO  vdl:createdirset END jobid=hello-9a4heesk - Done initializing directory structure
+2012-06-06 15:27:21,037-0500 INFO  vdl:dostagein START jobid=hello-9a4heesk - Staging in files
+2012-06-06 15:27:21,043-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,044-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 15:27:21,045-0500 INFO  vdl:dostagein END jobid=hello-9a4heesk - Staging in finished
+2012-06-06 15:27:21,046-0500 DEBUG vdl:execute2 JOB_START jobid=hello-9a4heesk tr=hello arguments=[] tmpdir=hello16-20120606-1527-85dq6iod/jobs/9/hello-9a4heesk host=localhost
+2012-06-06 15:27:21,051-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-48-1-1-1339014425778) is /bin/bash shared/_swiftwrap hello-9a4heesk -jobdir 9 -scratch  -e /home/skrieder/swift/multi/hello -out 48.result -err stderr.txt -i -d  -if scott3a.sh -of 48.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:21,057-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/hello16-20120606-1527-85dq6iod command: /bin/bash /var/tmp/hello16-20120606-1527-85dq6iod/shared/_swiftwrap hello-9a4heesk -jobdir 9 -scratch  -e /home/skrieder/swift/multi/hello -out 48.result -err stderr.txt -i -d  -if scott3a.sh -of 48.result -k  -cdmfile  -status files -a
+2012-06-06 15:27:21,201-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,203-0500 DEBUG vdl:checkjobstatus START jobid=hello-9a4heesk
+2012-06-06 15:27:21,212-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,213-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-9a4heesk - Failure file found
+2012-06-06 15:27:21,218-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,222-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,223-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,226-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-9a4heesk
+2012-06-06 15:27:21,227-0500 INFO  vdl:dostageout START jobid=hello-9a4heesk - Staging out files
+2012-06-06 15:27:21,228-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 15:27:21,230-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=48.result srcdir=hello16-20120606-1527-85dq6iod/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 15:27:21,233-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,252-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,253-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-9a4heesk - Error file missing
+2012-06-06 15:27:21,254-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-9a4heesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/hello16-20120606-1527-85dq6iod/shared/48.result
+2012-06-06 15:27:21,260-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,264-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,268-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,272-0500 INFO  LateBindingScheduler JobQueue: 55
+2012-06-06 15:27:21,277-0500 INFO  LateBindingScheduler JobQueue: 55

@@ -1,0 +1,39 @@
+2012-06-06 18:49:15,236-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, scott1sm10msB.swift]
+2012-06-06 18:49:15,236-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 18:49:15,237-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     a1sm10ms stdout=@filename(t);
+}
+
+string inputNames = "test1 test2 test3 test4";
+
+//messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+messagefile inputfiles[] = 64;
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 18:49:15,237-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 18:49:15,237-0500 INFO  Loader scott1sm10msB.swift: source file is new. Recompiling.
+2012-06-06 18:49:15,237-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 18:49:15,237-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 18:49:15,804-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 18:49:15,874-0500 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Compile error in assignment at line 14: You cannot assign value of type int to a variable of type messagefile[]
+	at org.griphyn.vdl.engine.Karajan.assign(Karajan.java:475)
+	at org.griphyn.vdl.engine.Karajan.statement(Karajan.java:523)
+	at org.griphyn.vdl.engine.Karajan.statements(Karajan.java:493)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:270)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:106)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:310)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: org.griphyn.vdl.karajan.CompilationException: You cannot assign value of type int to a variable of type messagefile[]
+	at org.griphyn.vdl.engine.Karajan.assign(Karajan.java:467)
+	... 6 more

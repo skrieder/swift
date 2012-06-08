@@ -1,0 +1,50 @@
+2012-06-06 18:49:34,947-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, scott1sm10msB.swift]
+2012-06-06 18:49:34,947-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 18:49:34,948-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     a1sm10ms stdout=@filename(t);
+}
+
+string inputNames = "test1 test2 test3 test4";
+
+//messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+messagefile inputfiles[63];
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 18:49:34,948-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 18:49:34,949-0500 INFO  Loader scott1sm10msB.swift: source file is new. Recompiling.
+2012-06-06 18:49:35,081-0500 ERROR VDLt2VDLx Could not compile SwiftScript source: line 12:24: expecting ']', found '63'
+2012-06-06 18:49:35,082-0500 DEBUG VDLt2VDLx Full parser exception
+line 12:24: expecting ']', found '63'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declpart(SwiftScriptParser.java:1120)
+	at org.globus.swift.parser.SwiftScriptParser.declaration(SwiftScriptParser.java:689)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:271)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+2012-06-06 18:49:35,085-0500 DEBUG Loader Exception when compiling scott1sm10msB.swift
+org.griphyn.vdl.toolkit.VDLt2VDLx$ParsingException: Could not compile SwiftScript source: expecting ']', found '63'
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:67)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: line 12:24: expecting ']', found '63'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declpart(SwiftScriptParser.java:1120)
+	at org.globus.swift.parser.SwiftScriptParser.declaration(SwiftScriptParser.java:689)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:271)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	... 3 more

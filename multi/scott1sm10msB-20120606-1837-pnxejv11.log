@@ -1,0 +1,354 @@
+2012-06-06 18:37:20,998-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, scott1sm10msB.swift]
+2012-06-06 18:37:20,998-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 18:37:20,999-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     a1sm10ms stdout=@filename(t);
+}
+
+string inputNames = "test";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 18:37:20,999-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 18:37:20,999-0500 INFO  Loader scott1sm10msB.swift: source file is new. Recompiling.
+2012-06-06 18:37:21,563-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 18:37:21,752-0500 DEBUG Loader setting: sites.file to: 0-throttle-sites.xml
+2012-06-06 18:37:21,752-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-06 18:37:21,754-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+<!-- sites.xml specifies details of the sites that Swift can run on.
+
+The first entry entry, for localhost, should work on most linux-like systems
+without any change.
+
+It may be necessary to change the two occurences of /var/tmp to a different
+working directory.
+
+The jobThrottle profile is set to 0 so that Swift will not try to run more
+than two jobs at once (the minimum) when using the local sites. This is
+appropriate for local execution, but make sure if/when using another
+execution mechanism to submit to an HPC resource that this jobThrottle
+is removed.
+
+-->
+
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">.01</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
+  </pool>
+
+
+
+
+
+<!-- The remainder of this file is commented out by default. It contains
+example site definitions for a number of sites on TeraGrid and OSG.
+
+How this list was constructed:
+
+1. Teragrid
+http://www.teragrid.org/userinfo/hardware/resources.php
+fill out the gatekeeper info and the gridftp hostname
+for the storage/workspace, login into the machine, and make yourself a
+temporary directory
+
+2. OSG
+http://osg-cat.grid.iu.edu/index.php?site_name=osgcat
+sort by CPUs
+Add the gatekeeper hostname into the jobmanager name and into the gridftp url
+Add the ($TMP) or ($WNTMP) to the storage element in the gridftp url AND
+into the workspace element
+
+TODO by user:
+customize the storage and workdirectory to use your personal working directories
+
+-->
+
+
+<!--
+  <pool handle="skynet" >
+    <gridftp url="gsiftp://skynet-login.isi.edu" > 
+    </gridftp>
+    <jobmanager universe="vanilla" url="skynet-login.isi.edu/jobmanager-fork" major="2" />
+    <workdirectory >/nfs/scratch01/tiberius</workdirectory>
+  </pool>
+-->
+<!--
+  <pool handle="teraport" >
+    <gridftp  url="gsiftp://tp-grid1.uchicago.edu" /> 
+    <jobmanager universe="vanilla" url="tp-grid1.uchicago.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/home/tiberius/scratch/SWIFT-WORK</workdirectory>
+  </pool>
+-->
+<!--
+<pool handle="ncsa_32" >
+    <gridftp  url="gsiftp://login-w.ncsa.teragrid.org" />
+    <jobmanager universe="vanilla" url="grid-w.ncsa.teragrid.org/jobmanager" major="2" /> 
+    <workdirectory >/u/ac/tstef</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="purdue" >
+    <gridftp  url="gsiftp://tg-data.purdue.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-gatekeeper.purdue.teragrid.org" major="2" />
+    <workdirectory >/scratch/teragrid/stef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="tacc" >
+    <gridftp  url="gsiftp://tg-gridftp.lonestar.tacc.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-login.tacc.teragrid.org/jobmanager-lsf" major="2" />
+    <workdirectory >/work/teragrid/tstef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="UC" >
+    <gridftp url="gsiftp://tg-gridftp.uc.teragrid.org" />
+    <execution provider="gt4" jobmanager="PBS" url="tg-grid.uc.teragrid.org" />
+    <workdirectory >/disks/scratchgpfs1/tstef</workdirectory>
+</pool>
+ -->
+ 
+<!-- OSG SITES -->
+<!-- 
+<pool handle="OSG_LIGO_PSU" >
+    <gridftp  url="gsiftp://grid3.aset.psu.edu" />
+    <jobmanager universe="vanilla" url="grid3.aset.psu.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/usr1/grid3/data</workdirectory>
+</pool>
+ -->
+<!-- 
+<pool handle="fnal" >
+    <gridftp  url="gsiftp://fngp-osg.fnal.gov" />
+    <jobmanager universe="vanilla" url="fngp-osg.fnal.gov/jobmanager-pbs" major="2" minor="2" />
+    <workdirectory >/grid/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="prod_slac" >
+    <gridftp  url="gsiftp://osgserv01.slac.stanford.edu" />
+    <jobmanager universe="vanilla" url="osgserv01.slac.stanford.edu/jobmanager-lsf" major="2" />
+    <workdirectory >/nfs/slac/g/grid/osg/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="bnl_atlas_2" >
+    <gridftp  url="gsiftp://gridgk02.racf.bnl.gov" />
+    <jobmanager universe="vanilla" url="gridgk02.racf.bnl.gov/jobmanager-condor" major="2" />
+    <workdirectory >/usatlas/prodjob/share/</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="unm_hpc" >
+    <gridftp  url="gsiftp://milta.alliance.unm.edu" />
+    <jobmanager universe="vanilla" url="milta.alliance.unm.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+<!--  
+<pool handle="UWM_CMS" >
+    <gridftp  url="gsiftp://cmsgrid02.hep.wisc.edu" />
+    <jobmanager universe="vanilla" url="cmsgrid02.hep.wisc.edu/jobmanager-condor" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+
+</config>
+
+
+2012-06-06 18:37:21,755-0500 DEBUG textfiles END SITES:
+2012-06-06 18:37:21,759-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 18:37:22,481-0500 INFO  unknown Using sites file: 0-throttle-sites.xml
+2012-06-06 18:37:22,520-0500 INFO  unknown Using tc.data: tc.data
+2012-06-06 18:37:22,622-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 18:37:23,322-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 18:37:23,323-0500 INFO  unknown RUNID id=run:20120606-1837-pnxejv11
+2012-06-06 18:37:23,367-0500 INFO  SetFieldValue Set: inputNames=test
+2012-06-06 18:37:23,388-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 18:37:23,391-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-06 18:37:23,392-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 18:37:23,397-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 18:37:23,401-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 18:37:23,403-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 18:37:23,418-0500 INFO  vdl:execute START thread=0-1-0-1 tr=a1sm10ms
+2012-06-06 18:37:23,453-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-06 18:37:23,461-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-06 18:37:23,466-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,470-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,476-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-06 18:37:23,483-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,514-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,519-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,522-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,530-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,537-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,541-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-06 18:37:23,547-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-8xe3mesk thread=0-1-0-1-1 host=localhost replicationGroup=7xe3mesk
+2012-06-06 18:37:23,569-0500 INFO  vdl:createdirset START jobid=a1sm10ms-8xe3mesk host=localhost - Initializing directory structure
+2012-06-06 18:37:23,571-0500 INFO  vdl:createdirset END jobid=a1sm10ms-8xe3mesk - Done initializing directory structure
+2012-06-06 18:37:23,574-0500 INFO  vdl:dostagein START jobid=a1sm10ms-8xe3mesk - Staging in files
+2012-06-06 18:37:23,595-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,607-0500 DEBUG vdl:dostagein CDM: file://localhost/test : DEFAULT
+2012-06-06 18:37:23,625-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test srchost=localhost srcdir= srcname=test desthost=localhost destdir=scott1sm10msB-20120606-1837-pnxejv11/shared/ provider=file policy=DEFAULT
+2012-06-06 18:37:23,654-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,656-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-8xe3mesk - Error file missing
+2012-06-06 18:37:23,661-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-8xe3mesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+2012-06-06 18:37:23,709-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job a1sm10ms-8xe3mesk
+2012-06-06 18:37:23,711-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from scott1sm10msB-20120606-1837-pnxejv11/info/8 on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/scott1sm10msB-20120606-1837-pnxejv11/info/8/a1sm10ms-8xe3mesk-info
+2012-06-06 18:37:23,731-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 18:37:23,737-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-axe3mesk thread=0-1-0-1-1 host=localhost replicationGroup=9xe3mesk
+2012-06-06 18:37:23,746-0500 INFO  vdl:createdirset START jobid=a1sm10ms-axe3mesk host=localhost - Initializing directory structure
+2012-06-06 18:37:23,747-0500 INFO  vdl:createdirset END jobid=a1sm10ms-axe3mesk - Done initializing directory structure
+2012-06-06 18:37:23,749-0500 INFO  vdl:dostagein START jobid=a1sm10ms-axe3mesk - Staging in files
+2012-06-06 18:37:23,756-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,757-0500 DEBUG vdl:dostagein CDM: file://localhost/test : DEFAULT
+2012-06-06 18:37:23,761-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test srchost=localhost srcdir= srcname=test desthost=localhost destdir=scott1sm10msB-20120606-1837-pnxejv11/shared/ provider=file policy=DEFAULT
+2012-06-06 18:37:23,779-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,781-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-axe3mesk - Error file missing
+2012-06-06 18:37:23,782-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-axe3mesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+2012-06-06 18:37:23,816-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job a1sm10ms-axe3mesk
+2012-06-06 18:37:23,818-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from scott1sm10msB-20120606-1837-pnxejv11/info/a on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/scott1sm10msB-20120606-1837-pnxejv11/info/a/a1sm10ms-axe3mesk-info
+2012-06-06 18:37:23,833-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-06 18:37:23,839-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=a1sm10ms-cxe3mesk thread=0-1-0-1-1 host=localhost replicationGroup=bxe3mesk
+2012-06-06 18:37:23,848-0500 INFO  vdl:createdirset START jobid=a1sm10ms-cxe3mesk host=localhost - Initializing directory structure
+2012-06-06 18:37:23,849-0500 INFO  vdl:createdirset END jobid=a1sm10ms-cxe3mesk - Done initializing directory structure
+2012-06-06 18:37:23,851-0500 INFO  vdl:dostagein START jobid=a1sm10ms-cxe3mesk - Staging in files
+2012-06-06 18:37:23,858-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,859-0500 DEBUG vdl:dostagein CDM: file://localhost/test : DEFAULT
+2012-06-06 18:37:23,864-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=test srchost=localhost srcdir= srcname=test desthost=localhost destdir=scott1sm10msB-20120606-1837-pnxejv11/shared/ provider=file policy=DEFAULT
+2012-06-06 18:37:23,882-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-06 18:37:23,883-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=a1sm10ms-cxe3mesk - Error file missing
+2012-06-06 18:37:23,885-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=a1sm10ms-cxe3mesk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+2012-06-06 18:37:23,918-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job a1sm10ms-cxe3mesk
+2012-06-06 18:37:23,919-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from scott1sm10msB-20120606-1837-pnxejv11/info/c on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/scott1sm10msB-20120606-1837-pnxejv11/info/c/a1sm10ms-cxe3mesk-info
+2012-06-06 18:37:23,927-0500 INFO  vdl:execute END_FAILURE thread=0-1-0-1 tr=a1sm10ms
+2012-06-06 18:37:23,933-0500 DEBUG VDL2ExecutionContext Exception in a1sm10ms:
+Arguments: []
+Host: localhost
+Directory: scott1sm10msB-20120606-1837-pnxejv11/jobs/c/a1sm10ms-cxe3mesk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Exception in a1sm10ms:
+Arguments: []
+Host: localhost
+Directory: scott1sm10msB-20120606-1837-pnxejv11/jobs/c/a1sm10ms-cxe3mesk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-06 18:37:24,064-0500 INFO  ExecutionContext Detailed exception: 
+Exception in a1sm10ms:
+Arguments: []
+Host: localhost
+Directory: scott1sm10msB-20120606-1837-pnxejv11/jobs/c/a1sm10ms-cxe3mesk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./test
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-06 18:37:24,065-0500 INFO  Loader Swift finished with errors

@@ -1,0 +1,1090 @@
+2012-06-06 13:30:19,216-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, sleep1ms.swift]
+2012-06-06 13:30:19,216-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 13:30:19,217-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     sleep1ms stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f,i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 13:30:19,217-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 13:30:19,218-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 13:30:19,218-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 13:30:19,218-0500 DEBUG Loader Recompilation suppressed.
+2012-06-06 13:30:19,367-0500 DEBUG Loader setting: sites.file to: 0-throttle-sites.xml
+2012-06-06 13:30:19,367-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-06 13:30:19,370-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+<!-- sites.xml specifies details of the sites that Swift can run on.
+
+The first entry entry, for localhost, should work on most linux-like systems
+without any change.
+
+It may be necessary to change the two occurences of /var/tmp to a different
+working directory.
+
+The jobThrottle profile is set to 0 so that Swift will not try to run more
+than two jobs at once (the minimum) when using the local sites. This is
+appropriate for local execution, but make sure if/when using another
+execution mechanism to submit to an HPC resource that this jobThrottle
+is removed.
+
+-->
+
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">0</profile>
+  </pool>
+
+
+
+
+
+<!-- The remainder of this file is commented out by default. It contains
+example site definitions for a number of sites on TeraGrid and OSG.
+
+How this list was constructed:
+
+1. Teragrid
+http://www.teragrid.org/userinfo/hardware/resources.php
+fill out the gatekeeper info and the gridftp hostname
+for the storage/workspace, login into the machine, and make yourself a
+temporary directory
+
+2. OSG
+http://osg-cat.grid.iu.edu/index.php?site_name=osgcat
+sort by CPUs
+Add the gatekeeper hostname into the jobmanager name and into the gridftp url
+Add the ($TMP) or ($WNTMP) to the storage element in the gridftp url AND
+into the workspace element
+
+TODO by user:
+customize the storage and workdirectory to use your personal working directories
+
+-->
+
+
+<!--
+  <pool handle="skynet" >
+    <gridftp url="gsiftp://skynet-login.isi.edu" > 
+    </gridftp>
+    <jobmanager universe="vanilla" url="skynet-login.isi.edu/jobmanager-fork" major="2" />
+    <workdirectory >/nfs/scratch01/tiberius</workdirectory>
+  </pool>
+-->
+<!--
+  <pool handle="teraport" >
+    <gridftp  url="gsiftp://tp-grid1.uchicago.edu" /> 
+    <jobmanager universe="vanilla" url="tp-grid1.uchicago.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/home/tiberius/scratch/SWIFT-WORK</workdirectory>
+  </pool>
+-->
+<!--
+<pool handle="ncsa_32" >
+    <gridftp  url="gsiftp://login-w.ncsa.teragrid.org" />
+    <jobmanager universe="vanilla" url="grid-w.ncsa.teragrid.org/jobmanager" major="2" /> 
+    <workdirectory >/u/ac/tstef</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="purdue" >
+    <gridftp  url="gsiftp://tg-data.purdue.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-gatekeeper.purdue.teragrid.org" major="2" />
+    <workdirectory >/scratch/teragrid/stef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="tacc" >
+    <gridftp  url="gsiftp://tg-gridftp.lonestar.tacc.teragrid.org" />
+    <jobmanager universe="vanilla" url="tg-login.tacc.teragrid.org/jobmanager-lsf" major="2" />
+    <workdirectory >/work/teragrid/tstef</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="UC" >
+    <gridftp url="gsiftp://tg-gridftp.uc.teragrid.org" />
+    <execution provider="gt4" jobmanager="PBS" url="tg-grid.uc.teragrid.org" />
+    <workdirectory >/disks/scratchgpfs1/tstef</workdirectory>
+</pool>
+ -->
+ 
+<!-- OSG SITES -->
+<!-- 
+<pool handle="OSG_LIGO_PSU" >
+    <gridftp  url="gsiftp://grid3.aset.psu.edu" />
+    <jobmanager universe="vanilla" url="grid3.aset.psu.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/usr1/grid3/data</workdirectory>
+</pool>
+ -->
+<!-- 
+<pool handle="fnal" >
+    <gridftp  url="gsiftp://fngp-osg.fnal.gov" />
+    <jobmanager universe="vanilla" url="fngp-osg.fnal.gov/jobmanager-pbs" major="2" minor="2" />
+    <workdirectory >/grid/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="prod_slac" >
+    <gridftp  url="gsiftp://osgserv01.slac.stanford.edu" />
+    <jobmanager universe="vanilla" url="osgserv01.slac.stanford.edu/jobmanager-lsf" major="2" />
+    <workdirectory >/nfs/slac/g/grid/osg/data</workdirectory>
+</pool>
+-->
+<!-- 
+<pool handle="bnl_atlas_2" >
+    <gridftp  url="gsiftp://gridgk02.racf.bnl.gov" />
+    <jobmanager universe="vanilla" url="gridgk02.racf.bnl.gov/jobmanager-condor" major="2" />
+    <workdirectory >/usatlas/prodjob/share/</workdirectory>
+</pool>
+-->
+<!--
+<pool handle="unm_hpc" >
+    <gridftp  url="gsiftp://milta.alliance.unm.edu" />
+    <jobmanager universe="vanilla" url="milta.alliance.unm.edu/jobmanager-pbs" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+<!--  
+<pool handle="UWM_CMS" >
+    <gridftp  url="gsiftp://cmsgrid02.hep.wisc.edu" />
+    <jobmanager universe="vanilla" url="cmsgrid02.hep.wisc.edu/jobmanager-condor" major="2" />
+    <workdirectory >/tmp</workdirectory>
+</pool>
+-->
+
+</config>
+
+
+2012-06-06 13:30:19,370-0500 DEBUG textfiles END SITES:
+2012-06-06 13:30:19,375-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 13:30:20,045-0500 INFO  unknown Using sites file: 0-throttle-sites.xml
+2012-06-06 13:30:20,108-0500 INFO  unknown Using tc.data: tc.data
+2012-06-06 13:30:20,258-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 13:30:20,911-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 13:30:20,912-0500 INFO  unknown RUNID id=run:20120606-1330-bjo79oz4
+2012-06-06 13:30:20,973-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh
+2012-06-06 13:30:20,989-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 13:30:20,989-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-06 13:30:20,989-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-06 13:30:20,990-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[3]
+2012-06-06 13:30:20,990-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[4]
+2012-06-06 13:30:20,990-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[5]
+2012-06-06 13:30:20,990-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[6]
+2012-06-06 13:30:20,990-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[7]
+2012-06-06 13:30:20,991-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[8]
+2012-06-06 13:30:20,991-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[9]
+2012-06-06 13:30:20,991-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[10]
+2012-06-06 13:30:20,991-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[11]
+2012-06-06 13:30:20,991-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[12]
+2012-06-06 13:30:20,992-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[13]
+2012-06-06 13:30:20,992-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[14]
+2012-06-06 13:30:20,992-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[15]
+2012-06-06 13:30:20,992-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[16]
+2012-06-06 13:30:20,993-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[17]
+2012-06-06 13:30:20,993-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[18]
+2012-06-06 13:30:20,993-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[19]
+2012-06-06 13:30:20,993-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[20]
+2012-06-06 13:30:20,993-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[21]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[22]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[23]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[24]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[25]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[26]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[27]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[28]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[29]
+2012-06-06 13:30:20,994-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[30]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[31]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[32]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[33]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[34]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[35]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[36]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[37]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[38]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[39]
+2012-06-06 13:30:20,995-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[40]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[41]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[42]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[43]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[44]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[45]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[46]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[47]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[48]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[49]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[50]
+2012-06-06 13:30:20,996-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[51]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[52]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[53]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[54]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[55]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[56]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[57]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[58]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[59]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[60]
+2012-06-06 13:30:20,997-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[61]
+2012-06-06 13:30:20,998-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[62]
+2012-06-06 13:30:20,998-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[63]
+2012-06-06 13:30:21,003-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-2
+2012-06-06 13:30:21,003-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-3
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-8
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-6
+2012-06-06 13:30:21,005-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-9
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-7
+2012-06-06 13:30:21,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-12
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-5
+2012-06-06 13:30:21,004-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-4
+2012-06-06 13:30:21,007-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-11
+2012-06-06 13:30:21,006-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-06 13:30:21,007-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-13
+2012-06-06 13:30:21,006-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-10
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-15
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 13:30:21,009-0500 DEBUG vdl:mains SCOPE thread=0-1-3
+2012-06-06 13:30:21,009-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-21
+2012-06-06 13:30:21,007-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-1
+2012-06-06 13:30:21,007-0500 DEBUG vdl:mains SCOPE thread=0-1-8
+2012-06-06 13:30:21,010-0500 DEBUG vdl:mains SCOPE thread=0-1-5
+2012-06-06 13:30:21,010-0500 DEBUG vdl:mains SCOPE thread=0-1-4
+2012-06-06 13:30:21,011-0500 DEBUG vdl:mains SCOPE thread=0-1-10
+2012-06-06 13:30:21,013-0500 DEBUG vdl:mains SCOPE thread=0-1-15
+2012-06-06 13:30:21,013-0500 DEBUG vdl:mains SCOPE thread=0-1-13
+2012-06-06 13:30:21,014-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-14
+2012-06-06 13:30:21,010-0500 DEBUG vdl:mains SCOPE thread=0-1-12
+2012-06-06 13:30:21,009-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-20
+2012-06-06 13:30:21,009-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-19
+2012-06-06 13:30:21,009-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-17
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains SCOPE thread=0-1-6
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains SCOPE thread=0-1-9
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-16
+2012-06-06 13:30:21,008-0500 DEBUG vdl:mains SCOPE thread=0-1-7
+2012-06-06 13:30:21,015-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-29
+2012-06-06 13:30:21,015-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-28
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-34
+2012-06-06 13:30:21,015-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-25
+2012-06-06 13:30:21,015-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-27
+2012-06-06 13:30:21,015-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-26
+2012-06-06 13:30:21,014-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-24
+2012-06-06 13:30:21,014-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-23
+2012-06-06 13:30:21,014-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-22
+2012-06-06 13:30:21,010-0500 DEBUG vdl:mains SCOPE thread=0-1-11
+2012-06-06 13:30:21,011-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-18
+2012-06-06 13:30:21,017-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-41
+2012-06-06 13:30:21,017-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-37
+2012-06-06 13:30:21,017-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-35
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-40
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-38
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-33
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-30
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains SCOPE thread=0-1-21
+2012-06-06 13:30:21,016-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-31
+2012-06-06 13:30:21,019-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-44
+2012-06-06 13:30:21,020-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-49
+2012-06-06 13:30:21,019-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-39
+2012-06-06 13:30:21,019-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-32
+2012-06-06 13:30:21,018-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-47
+2012-06-06 13:30:21,018-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-45
+2012-06-06 13:30:21,018-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-46
+2012-06-06 13:30:21,018-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-42
+2012-06-06 13:30:21,018-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-43
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-16
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-29
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-34
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-26
+2012-06-06 13:30:21,021-0500 DEBUG vdl:mains SCOPE thread=0-1-17
+2012-06-06 13:30:21,021-0500 DEBUG vdl:mains SCOPE thread=0-1-19
+2012-06-06 13:30:21,021-0500 DEBUG vdl:mains SCOPE thread=0-1-20
+2012-06-06 13:30:21,020-0500 DEBUG vdl:mains SCOPE thread=0-1-14
+2012-06-06 13:30:21,020-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-48
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-50
+2012-06-06 13:30:21,020-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-36
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-40
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-35
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-37
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-18
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-41
+2012-06-06 13:30:21,023-0500 DEBUG vdl:mains SCOPE thread=0-1-22
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-23
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-25
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-24
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-27
+2012-06-06 13:30:21,022-0500 DEBUG vdl:mains SCOPE thread=0-1-28
+2012-06-06 13:30:21,026-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-55
+2012-06-06 13:30:21,026-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-60
+2012-06-06 13:30:21,026-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-57
+2012-06-06 13:30:21,025-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-56
+2012-06-06 13:30:21,025-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-54
+2012-06-06 13:30:21,025-0500 DEBUG vdl:mains SCOPE thread=0-1-30
+2012-06-06 13:30:21,025-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-51
+2012-06-06 13:30:21,024-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-53
+2012-06-06 13:30:21,024-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-52
+2012-06-06 13:30:21,024-0500 DEBUG vdl:mains SCOPE thread=0-1-33
+2012-06-06 13:30:21,024-0500 DEBUG vdl:mains SCOPE thread=0-1-38
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-32
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-39
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-49
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-44
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-31
+2012-06-06 13:30:21,029-0500 DEBUG vdl:mains SCOPE thread=0-1-43
+2012-06-06 13:30:21,027-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-61
+2012-06-06 13:30:21,027-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-63
+2012-06-06 13:30:21,030-0500 DEBUG vdl:mains SCOPE thread=0-1-48
+2012-06-06 13:30:21,027-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-62
+2012-06-06 13:30:21,027-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-58
+2012-06-06 13:30:21,026-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-59
+2012-06-06 13:30:21,031-0500 DEBUG vdl:mains SCOPE thread=0-1-55
+2012-06-06 13:30:21,030-0500 DEBUG vdl:mains SCOPE thread=0-1-36
+2012-06-06 13:30:21,030-0500 DEBUG vdl:mains SCOPE thread=0-1-50
+2012-06-06 13:30:21,029-0500 DEBUG vdl:mains SCOPE thread=0-1-42
+2012-06-06 13:30:21,029-0500 DEBUG vdl:mains SCOPE thread=0-1-45
+2012-06-06 13:30:21,032-0500 DEBUG vdl:mains SCOPE thread=0-1-51
+2012-06-06 13:30:21,029-0500 DEBUG vdl:mains SCOPE thread=0-1-46
+2012-06-06 13:30:21,028-0500 DEBUG vdl:mains SCOPE thread=0-1-47
+2012-06-06 13:30:21,033-0500 DEBUG vdl:mains SCOPE thread=0-1-61
+2012-06-06 13:30:21,033-0500 DEBUG vdl:mains SCOPE thread=0-1-62
+2012-06-06 13:30:21,033-0500 DEBUG vdl:mains SCOPE thread=0-1-58
+2012-06-06 13:30:21,033-0500 DEBUG vdl:mains SCOPE thread=0-1-59
+2012-06-06 13:30:21,032-0500 DEBUG vdl:mains SCOPE thread=0-1-52
+2012-06-06 13:30:21,032-0500 DEBUG vdl:mains SCOPE thread=0-1-53
+2012-06-06 13:30:21,031-0500 DEBUG vdl:mains SCOPE thread=0-1-54
+2012-06-06 13:30:21,031-0500 DEBUG vdl:mains SCOPE thread=0-1-56
+2012-06-06 13:30:21,031-0500 DEBUG vdl:mains SCOPE thread=0-1-57
+2012-06-06 13:30:21,031-0500 DEBUG vdl:mains SCOPE thread=0-1-60
+2012-06-06 13:30:21,033-0500 DEBUG vdl:mains SCOPE thread=0-1-63
+2012-06-06 13:30:21,073-0500 INFO  SetFieldValue Set: swift#mapper#17001=3.result
+2012-06-06 13:30:21,073-0500 INFO  SetFieldValue Set: swift#mapper#17001=6.result
+2012-06-06 13:30:21,075-0500 INFO  SetFieldValue Set: swift#mapper#17001=17.result
+2012-06-06 13:30:21,075-0500 INFO  SetFieldValue Set: swift#mapper#17001=15.result
+2012-06-06 13:30:21,076-0500 INFO  SetFieldValue Set: swift#mapper#17001=29.result
+2012-06-06 13:30:21,077-0500 INFO  SetFieldValue Set: swift#mapper#17001=9.result
+2012-06-06 13:30:21,077-0500 INFO  SetFieldValue Set: swift#mapper#17001=5.result
+2012-06-06 13:30:21,077-0500 INFO  SetFieldValue Set: swift#mapper#17001=13.result
+2012-06-06 13:30:21,077-0500 INFO  SetFieldValue Set: swift#mapper#17001=7.result
+2012-06-06 13:30:21,079-0500 INFO  SetFieldValue Set: swift#mapper#17001=12.result
+2012-06-06 13:30:21,079-0500 INFO  SetFieldValue Set: swift#mapper#17001=27.result
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  SetFieldValue Set: swift#mapper#17001=4.result
+2012-06-06 13:30:21,079-0500 INFO  SetFieldValue Set: swift#mapper#17001=10.result
+2012-06-06 13:30:21,081-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  SetFieldValue Set: swift#mapper#17001=11.result
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=8.result
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  SetFieldValue Set: swift#mapper#17001=16.result
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,080-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,083-0500 INFO  SetFieldValue Set: swift#mapper#17001=30.result
+2012-06-06 13:30:21,083-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,083-0500 INFO  SetFieldValue Set: swift#mapper#17001=25.result
+2012-06-06 13:30:21,083-0500 INFO  SetFieldValue Set: swift#mapper#17001=48.result
+2012-06-06 13:30:21,084-0500 INFO  SetFieldValue Set: swift#mapper#17001=39.result
+2012-06-06 13:30:21,082-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=18.result
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=19.result
+2012-06-06 13:30:21,082-0500 INFO  SetFieldValue Set: swift#mapper#17001=22.result
+2012-06-06 13:30:21,085-0500 INFO  SetFieldValue Set: swift#mapper#17001=24.result
+2012-06-06 13:30:21,085-0500 INFO  SetFieldValue Set: swift#mapper#17001=55.result
+2012-06-06 13:30:21,085-0500 INFO  SetFieldValue Set: swift#mapper#17001=31.result
+2012-06-06 13:30:21,085-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,085-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,086-0500 INFO  SetFieldValue Set: swift#mapper#17001=37.result
+2012-06-06 13:30:21,085-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,087-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,087-0500 INFO  SetFieldValue Set: swift#mapper#17001=49.result
+2012-06-06 13:30:21,084-0500 INFO  SetFieldValue Set: swift#mapper#17001=41.result
+2012-06-06 13:30:21,083-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,083-0500 INFO  SetFieldValue Set: swift#mapper#17001=40.result
+2012-06-06 13:30:21,087-0500 INFO  SetFieldValue Set: swift#mapper#17001=33.result
+2012-06-06 13:30:21,087-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,087-0500 INFO  SetFieldValue Set: swift#mapper#17001=45.result
+2012-06-06 13:30:21,087-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,087-0500 INFO  SetFieldValue Set: swift#mapper#17001=38.result
+2012-06-06 13:30:21,087-0500 INFO  SetFieldValue Set: swift#mapper#17001=43.result
+2012-06-06 13:30:21,086-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,086-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,085-0500 INFO  SetFieldValue Set: swift#mapper#17001=14.result
+2012-06-06 13:30:21,089-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,089-0500 INFO  SetFieldValue Set: swift#mapper#17001=32.result
+2012-06-06 13:30:21,089-0500 INFO  SetFieldValue Set: swift#mapper#17001=42.result
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  SetFieldValue Set: swift#mapper#17001=46.result
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,088-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,091-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 13:30:21,091-0500 INFO  SetFieldValue Set: swift#mapper#17001=34.result
+2012-06-06 13:30:21,091-0500 INFO  SetFieldValue Set: swift#mapper#17001=28.result
+2012-06-06 13:30:21,091-0500 INFO  SetFieldValue Set: swift#mapper#17001=26.result
+2012-06-06 13:30:21,091-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,092-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=23.result
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=58.result
+2012-06-06 13:30:21,092-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=50.result
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=47.result
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,090-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,093-0500 INFO  SetFieldValue Set: swift#mapper#17001=35.result
+2012-06-06 13:30:21,093-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,093-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,093-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,093-0500 INFO  SetFieldValue Set: swift#mapper#17001=59.result
+2012-06-06 13:30:21,094-0500 INFO  SetFieldValue Set: swift#mapper#17001=51.result
+2012-06-06 13:30:21,094-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,094-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,094-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,094-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,095-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,096-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,096-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,098-0500 INFO  SetFieldValue Set: swift#mapper#17001=53.result
+2012-06-06 13:30:21,100-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,100-0500 INFO  SetFieldValue Set: swift#mapper#17001=52.result
+2012-06-06 13:30:21,089-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,101-0500 INFO  SetFieldValue Set: swift#mapper#17001=57.result
+2012-06-06 13:30:21,101-0500 INFO  SetFieldValue Set: swift#mapper#17001=63.result
+2012-06-06 13:30:21,102-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,102-0500 INFO  SetFieldValue Set: swift#mapper#17001=56.result
+2012-06-06 13:30:21,102-0500 INFO  SetFieldValue Set: swift#mapper#17001=54.result
+2012-06-06 13:30:21,102-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,102-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,103-0500 INFO  SetFieldValue Set: swift#mapper#17001=44.result
+2012-06-06 13:30:21,094-0500 INFO  SetFieldValue Set: swift#mapper#17001=61.result
+2012-06-06 13:30:21,094-0500 INFO  SetFieldValue Set: swift#mapper#17001=36.result
+2012-06-06 13:30:21,103-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,103-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-17-1 name=countwords
+2012-06-06 13:30:21,093-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,093-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=21.result
+2012-06-06 13:30:21,092-0500 INFO  SetFieldValue Set: swift#mapper#17001=20.result
+2012-06-06 13:30:21,091-0500 INFO  SetFieldValue Set: swift#mapper#17001=62.result
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-24-1 name=countwords
+2012-06-06 13:30:21,091-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-31-1 name=countwords
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-16-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-33-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-15-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-22-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-25-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-3-1 name=countwords
+2012-06-06 13:30:21,104-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-6-1 name=countwords
+2012-06-06 13:30:21,103-0500 INFO  SetFieldValue Set: swift#mapper#17001=60.result
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-40-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-11-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-18-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-10-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-46-1 name=countwords
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-48-1 name=countwords
+2012-06-06 13:30:21,105-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-27-1 name=countwords
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-39-1 name=countwords
+2012-06-06 13:30:21,105-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-12-1 name=countwords
+2012-06-06 13:30:21,105-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-41-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-32-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-4-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-45-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-5-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-37-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-38-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-30-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-13-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-29-1 name=countwords
+2012-06-06 13:30:21,106-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-2-1 name=countwords
+2012-06-06 13:30:21,108-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-55-1 name=countwords
+2012-06-06 13:30:21,108-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-8-1 name=countwords
+2012-06-06 13:30:21,108-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,108-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-49-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-14-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-7-1 name=countwords
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 13:30:21,109-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-34-1 name=countwords
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-42-1 name=countwords
+2012-06-06 13:30:21,110-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-58-1 name=countwords
+2012-06-06 13:30:21,110-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-21-1 name=countwords
+2012-06-06 13:30:21,110-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-50-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-19-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-1-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-43-1 name=countwords
+2012-06-06 13:30:21,110-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-35-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-20-1 name=countwords
+2012-06-06 13:30:21,107-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-9-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-47-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-59-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-61-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-36-1 name=countwords
+2012-06-06 13:30:21,112-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-53-1 name=countwords
+2012-06-06 13:30:21,110-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-28-1 name=countwords
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-23-1 name=countwords
+2012-06-06 13:30:21,116-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-57-1 name=countwords
+2012-06-06 13:30:21,116-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-63-1 name=countwords
+2012-06-06 13:30:21,116-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-56-1 name=countwords
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-26-1 name=countwords
+2012-06-06 13:30:21,109-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-62-1 name=countwords
+2012-06-06 13:30:21,108-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,108-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,108-0500 INFO  RootDataNode Found mapped data c:countfile - Open.$
+2012-06-06 13:30:21,117-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-60-1 name=countwords
+2012-06-06 13:30:21,117-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-44-1 name=countwords
+2012-06-06 13:30:21,117-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-54-1 name=countwords
+2012-06-06 13:30:21,116-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-52-1 name=countwords
+2012-06-06 13:30:21,111-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-51-1 name=countwords
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-42-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-27-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-37-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-40-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-13-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-47-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-45-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-31-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-15-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-18-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-41-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-29-1 tr=sleep1ms
+2012-06-06 13:30:21,145-0500 INFO  vdl:execute START thread=0-1-23-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-12-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-55-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-57-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-11-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-3-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-46-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-33-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-2-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-1-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-22-1 tr=sleep1ms
+2012-06-06 13:30:21,146-0500 INFO  vdl:execute START thread=0-1-19-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-8-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-48-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-0-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-28-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-17-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-63-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-58-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-50-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-43-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-30-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-4-1 tr=sleep1ms
+2012-06-06 13:30:21,147-0500 INFO  vdl:execute START thread=0-1-21-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-32-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-25-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-53-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-49-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-14-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-36-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-34-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-6-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-38-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-5-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-7-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-62-1 tr=sleep1ms
+2012-06-06 13:30:21,151-0500 INFO  vdl:execute START thread=0-1-56-1 tr=sleep1ms
+2012-06-06 13:30:21,151-0500 INFO  vdl:execute START thread=0-1-39-1 tr=sleep1ms
+2012-06-06 13:30:21,148-0500 INFO  vdl:execute START thread=0-1-59-1 tr=sleep1ms
+2012-06-06 13:30:21,151-0500 INFO  vdl:execute START thread=0-1-26-1 tr=sleep1ms
+2012-06-06 13:30:21,153-0500 INFO  vdl:execute START thread=0-1-52-1 tr=sleep1ms
+2012-06-06 13:30:21,153-0500 INFO  vdl:execute START thread=0-1-60-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-16-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-24-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-20-1 tr=sleep1ms
+2012-06-06 13:30:21,154-0500 INFO  vdl:execute START thread=0-1-54-1 tr=sleep1ms
+2012-06-06 13:30:21,155-0500 INFO  vdl:execute START thread=0-1-51-1 tr=sleep1ms
+2012-06-06 13:30:21,150-0500 INFO  vdl:execute START thread=0-1-61-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-9-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-35-1 tr=sleep1ms
+2012-06-06 13:30:21,149-0500 INFO  vdl:execute START thread=0-1-10-1 tr=sleep1ms
+2012-06-06 13:30:21,153-0500 INFO  vdl:execute START thread=0-1-44-1 tr=sleep1ms
+2012-06-06 13:30:21,186-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=1.000
+2012-06-06 13:30:21,190-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-06 13:30:21,191-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,193-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,194-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-06 13:30:21,197-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,208-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,211-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,213-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,217-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,221-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,224-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-06 13:30:21,228-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-6aqs9esk thread=0-1-29-1-1 host=localhost replicationGroup=q8qs9esk
+2012-06-06 13:30:21,237-0500 INFO  vdl:createdirset START jobid=sleep1ms-6aqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:21,237-0500 INFO  vdl:createdirset END jobid=sleep1ms-6aqs9esk - Done initializing directory structure
+2012-06-06 13:30:21,238-0500 INFO  vdl:dostagein START jobid=sleep1ms-6aqs9esk - Staging in files
+2012-06-06 13:30:21,250-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,262-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:21,274-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=sleep1ms-20120606-1330-bjo79oz4/shared/ provider=file policy=DEFAULT
+2012-06-06 13:30:21,277-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,278-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_END file=scott3a.sh srchost=localhost srcdir= srcname=scott3a.sh desthost=localhost destdir=sleep1ms-20120606-1330-bjo79oz4/shared/ provider=file
+2012-06-06 13:30:21,280-0500 INFO  vdl:dostagein END jobid=sleep1ms-6aqs9esk - Staging in finished
+2012-06-06 13:30:21,283-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-6aqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/6/sleep1ms-6aqs9esk host=localhost
+2012-06-06 13:30:21,286-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	scott3a		/home/skrieder/swift/multi/scott3a.sh		INSTALLED	INTEL32::LINUX	null
+localhost	scott3b		/home/skrieder/swift/multi/scott3b.sh		INSTALLED	INTEL32::LINUX	null
+localhost	cka		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm0ms		/home/skrieder/swift/cuda/1sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm1ms		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm10ms	/home/skrieder/swift/cuda/1sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm100ms	/home/skrieder/swift/cuda/1sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm0ms		/home/skrieder/swift/cuda/2sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm1ms		/home/skrieder/swift/cuda/2sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm10ms	/home/skrieder/swift/cuda/2sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm100ms	/home/skrieder/swift/cuda/2sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm0ms		/home/skrieder/swift/cuda/4sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm1ms		/home/skrieder/swift/cuda/4sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm10ms	/home/skrieder/swift/cuda/4sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm100ms	/home/skrieder/swift/cuda/4sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm0ms		/home/skrieder/swift/cuda/8sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm1ms		/home/skrieder/swift/cuda/8sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm10ms	/home/skrieder/swift/cuda/8sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm100ms	/home/skrieder/swift/cuda/8sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm0ms	/home/skrieder/swift/cuda/16sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm1ms	/home/skrieder/swift/cuda/16sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm10ms	/home/skrieder/swift/cuda/16sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm100ms	/home/skrieder/swift/cuda/16sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep0ms	/home/skrieder/swift/c/sleep0ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1ms	/home/skrieder/swift/c/sleep1ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10ms	/home/skrieder/swift/c/sleep10ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep100ms	/home/skrieder/swift/c/sleep100ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1000ms	/home/skrieder/swift/c/sleep1000ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10000ms	/home/skrieder/swift/c/sleep10000ms			INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-06 13:30:21,286-0500 DEBUG textfiles END TC:
+2012-06-06 13:30:21,300-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-29-1-1-1339007420150) is /bin/bash shared/_swiftwrap sleep1ms-6aqs9esk -jobdir 6 -scratch  -e /home/skrieder/swift/c/sleep1ms -out 29.result -err stderr.txt -i -d  -if scott3a.sh -of 29.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:21,317-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-6aqs9esk -jobdir 6 -scratch  -e /home/skrieder/swift/c/sleep1ms -out 29.result -err stderr.txt -i -d  -if scott3a.sh -of 29.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:21,469-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,475-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-6aqs9esk
+2012-06-06 13:30:21,486-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,488-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-6aqs9esk - Failure file found
+2012-06-06 13:30:21,493-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,497-0500 INFO  LateBindingScheduler JobQueue: 64
+2012-06-06 13:30:21,500-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,502-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-6aqs9esk
+2012-06-06 13:30:21,504-0500 INFO  vdl:dostageout START jobid=sleep1ms-6aqs9esk - Staging out files
+2012-06-06 13:30:21,505-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:21,514-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=29.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:21,518-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,546-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,548-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-6aqs9esk - Error file missing
+2012-06-06 13:30:21,551-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-6aqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/29.result
+2012-06-06 13:30:21,564-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,568-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,575-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,578-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,587-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,598-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:30:21,602-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-8aqs9esk thread=0-1-2-1-1 host=localhost replicationGroup=b9qs9esk
+2012-06-06 13:30:21,605-0500 INFO  vdl:createdirset START jobid=sleep1ms-8aqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:21,606-0500 INFO  vdl:createdirset END jobid=sleep1ms-8aqs9esk - Done initializing directory structure
+2012-06-06 13:30:21,607-0500 INFO  vdl:dostagein START jobid=sleep1ms-8aqs9esk - Staging in files
+2012-06-06 13:30:21,610-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,611-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:21,612-0500 INFO  vdl:dostagein END jobid=sleep1ms-8aqs9esk - Staging in finished
+2012-06-06 13:30:21,613-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-8aqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/8/sleep1ms-8aqs9esk host=localhost
+2012-06-06 13:30:21,618-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339007420192) is /bin/bash shared/_swiftwrap sleep1ms-8aqs9esk -jobdir 8 -scratch  -e /home/skrieder/swift/c/sleep1ms -out 2.result -err stderr.txt -i -d  -if scott3a.sh -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:21,621-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-8aqs9esk -jobdir 8 -scratch  -e /home/skrieder/swift/c/sleep1ms -out 2.result -err stderr.txt -i -d  -if scott3a.sh -of 2.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:21,764-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,766-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-8aqs9esk
+2012-06-06 13:30:21,774-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,775-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-8aqs9esk - Failure file found
+2012-06-06 13:30:21,780-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,784-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,784-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,785-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-8aqs9esk
+2012-06-06 13:30:21,786-0500 INFO  vdl:dostageout START jobid=sleep1ms-8aqs9esk - Staging out files
+2012-06-06 13:30:21,786-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:21,790-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:21,794-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,817-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,818-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-8aqs9esk - Error file missing
+2012-06-06 13:30:21,819-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-8aqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/2.result
+2012-06-06 13:30:21,827-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,832-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,838-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,843-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:21,850-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,359-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:30:23,365-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-aaqs9esk thread=0-1-30-1-1 host=localhost replicationGroup=f9qs9esk
+2012-06-06 13:30:23,374-0500 INFO  vdl:createdirset START jobid=sleep1ms-aaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:23,375-0500 INFO  vdl:createdirset END jobid=sleep1ms-aaqs9esk - Done initializing directory structure
+2012-06-06 13:30:23,376-0500 INFO  vdl:dostagein START jobid=sleep1ms-aaqs9esk - Staging in files
+2012-06-06 13:30:23,380-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,383-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:23,384-0500 INFO  vdl:dostagein END jobid=sleep1ms-aaqs9esk - Staging in finished
+2012-06-06 13:30:23,385-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-aaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/a/sleep1ms-aaqs9esk host=localhost
+2012-06-06 13:30:23,396-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-30-1-1-1339007420234) is /bin/bash shared/_swiftwrap sleep1ms-aaqs9esk -jobdir a -scratch  -e /home/skrieder/swift/c/sleep1ms -out 30.result -err stderr.txt -i -d  -if scott3a.sh -of 30.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:23,399-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-aaqs9esk -jobdir a -scratch  -e /home/skrieder/swift/c/sleep1ms -out 30.result -err stderr.txt -i -d  -if scott3a.sh -of 30.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:23,543-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,545-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-aaqs9esk
+2012-06-06 13:30:23,555-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,557-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-aaqs9esk - Failure file found
+2012-06-06 13:30:23,563-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,570-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,571-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,575-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-aaqs9esk
+2012-06-06 13:30:23,576-0500 INFO  vdl:dostageout START jobid=sleep1ms-aaqs9esk - Staging out files
+2012-06-06 13:30:23,577-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:23,579-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=30.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:23,583-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,610-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,611-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-aaqs9esk - Error file missing
+2012-06-06 13:30:23,613-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-aaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/30.result
+2012-06-06 13:30:23,622-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,628-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,636-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,640-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:23,648-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,658-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:30:26,661-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-caqs9esk thread=0-1-34-1-1 host=localhost replicationGroup=h9qs9esk
+2012-06-06 13:30:26,665-0500 INFO  vdl:createdirset START jobid=sleep1ms-caqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:26,666-0500 INFO  vdl:createdirset END jobid=sleep1ms-caqs9esk - Done initializing directory structure
+2012-06-06 13:30:26,667-0500 INFO  vdl:dostagein START jobid=sleep1ms-caqs9esk - Staging in files
+2012-06-06 13:30:26,671-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,673-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:26,675-0500 INFO  vdl:dostagein END jobid=sleep1ms-caqs9esk - Staging in finished
+2012-06-06 13:30:26,676-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-caqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/c/sleep1ms-caqs9esk host=localhost
+2012-06-06 13:30:26,682-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-34-1-1-1339007420276) is /bin/bash shared/_swiftwrap sleep1ms-caqs9esk -jobdir c -scratch  -e /home/skrieder/swift/c/sleep1ms -out 34.result -err stderr.txt -i -d  -if scott3a.sh -of 34.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:26,685-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-caqs9esk -jobdir c -scratch  -e /home/skrieder/swift/c/sleep1ms -out 34.result -err stderr.txt -i -d  -if scott3a.sh -of 34.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:26,830-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,831-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-caqs9esk
+2012-06-06 13:30:26,841-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,842-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-caqs9esk - Failure file found
+2012-06-06 13:30:26,848-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,853-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,853-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,858-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-caqs9esk
+2012-06-06 13:30:26,859-0500 INFO  vdl:dostageout START jobid=sleep1ms-caqs9esk - Staging out files
+2012-06-06 13:30:26,860-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:26,862-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=34.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:26,867-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,896-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,897-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-caqs9esk - Error file missing
+2012-06-06 13:30:26,898-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-caqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/34.result
+2012-06-06 13:30:26,908-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,913-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,920-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,924-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:26,932-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,442-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:30:34,445-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-eaqs9esk thread=0-1-22-1-1 host=localhost replicationGroup=i9qs9esk
+2012-06-06 13:30:34,450-0500 INFO  vdl:createdirset START jobid=sleep1ms-eaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:34,451-0500 INFO  vdl:createdirset END jobid=sleep1ms-eaqs9esk - Done initializing directory structure
+2012-06-06 13:30:34,452-0500 INFO  vdl:dostagein START jobid=sleep1ms-eaqs9esk - Staging in files
+2012-06-06 13:30:34,456-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,458-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:34,459-0500 INFO  vdl:dostagein END jobid=sleep1ms-eaqs9esk - Staging in finished
+2012-06-06 13:30:34,460-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-eaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/e/sleep1ms-eaqs9esk host=localhost
+2012-06-06 13:30:34,466-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-22-1-1-1339007420318) is /bin/bash shared/_swiftwrap sleep1ms-eaqs9esk -jobdir e -scratch  -e /home/skrieder/swift/c/sleep1ms -out 22.result -err stderr.txt -i -d  -if scott3a.sh -of 22.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:34,469-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-eaqs9esk -jobdir e -scratch  -e /home/skrieder/swift/c/sleep1ms -out 22.result -err stderr.txt -i -d  -if scott3a.sh -of 22.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:34,614-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,616-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-eaqs9esk
+2012-06-06 13:30:34,625-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,625-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-eaqs9esk - Failure file found
+2012-06-06 13:30:34,630-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,634-0500 INFO  LateBindingScheduler JobQueue: 64
+2012-06-06 13:30:34,635-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,638-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-eaqs9esk
+2012-06-06 13:30:34,639-0500 INFO  vdl:dostageout START jobid=sleep1ms-eaqs9esk - Staging out files
+2012-06-06 13:30:34,640-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:34,642-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=22.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:34,644-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,661-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,662-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-eaqs9esk - Error file missing
+2012-06-06 13:30:34,663-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-eaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/22.result
+2012-06-06 13:30:34,670-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,674-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,679-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,681-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:34,686-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,695-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:30:58,698-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-gaqs9esk thread=0-1-58-1-1 host=localhost replicationGroup=n9qs9esk
+2012-06-06 13:30:58,702-0500 INFO  vdl:createdirset START jobid=sleep1ms-gaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:30:58,703-0500 INFO  vdl:createdirset END jobid=sleep1ms-gaqs9esk - Done initializing directory structure
+2012-06-06 13:30:58,704-0500 INFO  vdl:dostagein START jobid=sleep1ms-gaqs9esk - Staging in files
+2012-06-06 13:30:58,708-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,709-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:30:58,711-0500 INFO  vdl:dostagein END jobid=sleep1ms-gaqs9esk - Staging in finished
+2012-06-06 13:30:58,711-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-gaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/g/sleep1ms-gaqs9esk host=localhost
+2012-06-06 13:30:58,716-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-58-1-1-1339007420360) is /bin/bash shared/_swiftwrap sleep1ms-gaqs9esk -jobdir g -scratch  -e /home/skrieder/swift/c/sleep1ms -out 58.result -err stderr.txt -i -d  -if scott3a.sh -of 58.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:58,717-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-gaqs9esk -jobdir g -scratch  -e /home/skrieder/swift/c/sleep1ms -out 58.result -err stderr.txt -i -d  -if scott3a.sh -of 58.result -k  -cdmfile  -status files -a
+2012-06-06 13:30:58,861-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,863-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-gaqs9esk
+2012-06-06 13:30:58,869-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,869-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-gaqs9esk - Failure file found
+2012-06-06 13:30:58,873-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,876-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,877-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,879-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-gaqs9esk
+2012-06-06 13:30:58,880-0500 INFO  vdl:dostageout START jobid=sleep1ms-gaqs9esk - Staging out files
+2012-06-06 13:30:58,880-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:30:58,883-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=58.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:30:58,884-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,901-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,902-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-gaqs9esk - Error file missing
+2012-06-06 13:30:58,904-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-gaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/58.result
+2012-06-06 13:30:58,910-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,913-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,918-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,921-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:30:58,925-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,447-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:32:06,451-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-iaqs9esk thread=0-1-41-1-1 host=localhost replicationGroup=j9qs9esk
+2012-06-06 13:32:06,455-0500 INFO  vdl:createdirset START jobid=sleep1ms-iaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:32:06,456-0500 INFO  vdl:createdirset END jobid=sleep1ms-iaqs9esk - Done initializing directory structure
+2012-06-06 13:32:06,456-0500 INFO  vdl:dostagein START jobid=sleep1ms-iaqs9esk - Staging in files
+2012-06-06 13:32:06,460-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,461-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:32:06,463-0500 INFO  vdl:dostagein END jobid=sleep1ms-iaqs9esk - Staging in finished
+2012-06-06 13:32:06,463-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-iaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/i/sleep1ms-iaqs9esk host=localhost
+2012-06-06 13:32:06,469-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-41-1-1-1339007420402) is /bin/bash shared/_swiftwrap sleep1ms-iaqs9esk -jobdir i -scratch  -e /home/skrieder/swift/c/sleep1ms -out 41.result -err stderr.txt -i -d  -if scott3a.sh -of 41.result -k  -cdmfile  -status files -a
+2012-06-06 13:32:06,470-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-iaqs9esk -jobdir i -scratch  -e /home/skrieder/swift/c/sleep1ms -out 41.result -err stderr.txt -i -d  -if scott3a.sh -of 41.result -k  -cdmfile  -status files -a
+2012-06-06 13:32:06,614-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,616-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-iaqs9esk
+2012-06-06 13:32:06,622-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,623-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-iaqs9esk - Failure file found
+2012-06-06 13:32:06,626-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,630-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,630-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,633-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-iaqs9esk
+2012-06-06 13:32:06,634-0500 INFO  vdl:dostageout START jobid=sleep1ms-iaqs9esk - Staging out files
+2012-06-06 13:32:06,635-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:32:06,638-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=41.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:32:06,639-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,654-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,655-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-iaqs9esk - Error file missing
+2012-06-06 13:32:06,656-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-iaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/41.result
+2012-06-06 13:32:06,660-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,663-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,668-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,671-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:32:06,677-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,697-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:33:14,700-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-kaqs9esk thread=0-1-31-1-1 host=localhost replicationGroup=d9qs9esk
+2012-06-06 13:33:14,705-0500 INFO  vdl:createdirset START jobid=sleep1ms-kaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:33:14,706-0500 INFO  vdl:createdirset END jobid=sleep1ms-kaqs9esk - Done initializing directory structure
+2012-06-06 13:33:14,707-0500 INFO  vdl:dostagein START jobid=sleep1ms-kaqs9esk - Staging in files
+2012-06-06 13:33:14,711-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,712-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:33:14,713-0500 INFO  vdl:dostagein END jobid=sleep1ms-kaqs9esk - Staging in finished
+2012-06-06 13:33:14,714-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-kaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/k/sleep1ms-kaqs9esk host=localhost
+2012-06-06 13:33:14,720-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-31-1-1-1339007420444) is /bin/bash shared/_swiftwrap sleep1ms-kaqs9esk -jobdir k -scratch  -e /home/skrieder/swift/c/sleep1ms -out 31.result -err stderr.txt -i -d  -if scott3a.sh -of 31.result -k  -cdmfile  -status files -a
+2012-06-06 13:33:14,721-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-kaqs9esk -jobdir k -scratch  -e /home/skrieder/swift/c/sleep1ms -out 31.result -err stderr.txt -i -d  -if scott3a.sh -of 31.result -k  -cdmfile  -status files -a
+2012-06-06 13:33:14,868-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,870-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-kaqs9esk
+2012-06-06 13:33:14,876-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,877-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-kaqs9esk - Failure file found
+2012-06-06 13:33:14,880-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,883-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,883-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,886-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-kaqs9esk
+2012-06-06 13:33:14,887-0500 INFO  vdl:dostageout START jobid=sleep1ms-kaqs9esk - Staging out files
+2012-06-06 13:33:14,887-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:33:14,895-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=31.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:33:14,896-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,914-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,915-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-kaqs9esk - Error file missing
+2012-06-06 13:33:14,916-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-kaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/31.result
+2012-06-06 13:33:14,924-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,927-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,931-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,934-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:33:14,939-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,458-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:34:22,461-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-maqs9esk thread=0-1-45-1-1 host=localhost replicationGroup=k9qs9esk
+2012-06-06 13:34:22,466-0500 INFO  vdl:createdirset START jobid=sleep1ms-maqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:34:22,466-0500 INFO  vdl:createdirset END jobid=sleep1ms-maqs9esk - Done initializing directory structure
+2012-06-06 13:34:22,467-0500 INFO  vdl:dostagein START jobid=sleep1ms-maqs9esk - Staging in files
+2012-06-06 13:34:22,471-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,472-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:34:22,474-0500 INFO  vdl:dostagein END jobid=sleep1ms-maqs9esk - Staging in finished
+2012-06-06 13:34:22,475-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-maqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/m/sleep1ms-maqs9esk host=localhost
+2012-06-06 13:34:22,479-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-45-1-1-1339007420486) is /bin/bash shared/_swiftwrap sleep1ms-maqs9esk -jobdir m -scratch  -e /home/skrieder/swift/c/sleep1ms -out 45.result -err stderr.txt -i -d  -if scott3a.sh -of 45.result -k  -cdmfile  -status files -a
+2012-06-06 13:34:22,480-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-maqs9esk -jobdir m -scratch  -e /home/skrieder/swift/c/sleep1ms -out 45.result -err stderr.txt -i -d  -if scott3a.sh -of 45.result -k  -cdmfile  -status files -a
+2012-06-06 13:34:22,625-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,627-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-maqs9esk
+2012-06-06 13:34:22,632-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,633-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-maqs9esk - Failure file found
+2012-06-06 13:34:22,636-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,639-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,640-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,643-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-maqs9esk
+2012-06-06 13:34:22,644-0500 INFO  vdl:dostageout START jobid=sleep1ms-maqs9esk - Staging out files
+2012-06-06 13:34:22,645-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:34:22,647-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=45.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:34:22,648-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,665-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,665-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-maqs9esk - Error file missing
+2012-06-06 13:34:22,667-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-maqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/45.result
+2012-06-06 13:34:22,673-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,676-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,680-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,683-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:34:22,689-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,709-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:35:30,712-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-oaqs9esk thread=0-1-8-1-1 host=localhost replicationGroup=c9qs9esk
+2012-06-06 13:35:30,717-0500 INFO  vdl:createdirset START jobid=sleep1ms-oaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:35:30,718-0500 INFO  vdl:createdirset END jobid=sleep1ms-oaqs9esk - Done initializing directory structure
+2012-06-06 13:35:30,718-0500 INFO  vdl:dostagein START jobid=sleep1ms-oaqs9esk - Staging in files
+2012-06-06 13:35:30,722-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,723-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:35:30,725-0500 INFO  vdl:dostagein END jobid=sleep1ms-oaqs9esk - Staging in finished
+2012-06-06 13:35:30,726-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-oaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/o/sleep1ms-oaqs9esk host=localhost
+2012-06-06 13:35:30,730-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-8-1-1-1339007420528) is /bin/bash shared/_swiftwrap sleep1ms-oaqs9esk -jobdir o -scratch  -e /home/skrieder/swift/c/sleep1ms -out 8.result -err stderr.txt -i -d  -if scott3a.sh -of 8.result -k  -cdmfile  -status files -a
+2012-06-06 13:35:30,731-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-oaqs9esk -jobdir o -scratch  -e /home/skrieder/swift/c/sleep1ms -out 8.result -err stderr.txt -i -d  -if scott3a.sh -of 8.result -k  -cdmfile  -status files -a
+2012-06-06 13:35:30,876-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,878-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-oaqs9esk
+2012-06-06 13:35:30,883-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,884-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-oaqs9esk - Failure file found
+2012-06-06 13:35:30,887-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,890-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,891-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,893-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-oaqs9esk
+2012-06-06 13:35:30,894-0500 INFO  vdl:dostageout START jobid=sleep1ms-oaqs9esk - Staging out files
+2012-06-06 13:35:30,894-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:35:30,896-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=8.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:35:30,898-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,914-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,914-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-oaqs9esk - Error file missing
+2012-06-06 13:35:30,915-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-oaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/8.result
+2012-06-06 13:35:30,921-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,923-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,928-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,930-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:35:30,935-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,450-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:36:38,453-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-qaqs9esk thread=0-1-56-1-1 host=localhost replicationGroup=49qs9esk
+2012-06-06 13:36:38,458-0500 INFO  vdl:createdirset START jobid=sleep1ms-qaqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:36:38,458-0500 INFO  vdl:createdirset END jobid=sleep1ms-qaqs9esk - Done initializing directory structure
+2012-06-06 13:36:38,459-0500 INFO  vdl:dostagein START jobid=sleep1ms-qaqs9esk - Staging in files
+2012-06-06 13:36:38,462-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,463-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:36:38,465-0500 INFO  vdl:dostagein END jobid=sleep1ms-qaqs9esk - Staging in finished
+2012-06-06 13:36:38,466-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-qaqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/q/sleep1ms-qaqs9esk host=localhost
+2012-06-06 13:36:38,471-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-56-1-1-1339007420570) is /bin/bash shared/_swiftwrap sleep1ms-qaqs9esk -jobdir q -scratch  -e /home/skrieder/swift/c/sleep1ms -out 56.result -err stderr.txt -i -d  -if scott3a.sh -of 56.result -k  -cdmfile  -status files -a
+2012-06-06 13:36:38,472-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-qaqs9esk -jobdir q -scratch  -e /home/skrieder/swift/c/sleep1ms -out 56.result -err stderr.txt -i -d  -if scott3a.sh -of 56.result -k  -cdmfile  -status files -a
+2012-06-06 13:36:38,617-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,618-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-qaqs9esk
+2012-06-06 13:36:38,623-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,624-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-qaqs9esk - Failure file found
+2012-06-06 13:36:38,628-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,630-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,631-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,634-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-qaqs9esk
+2012-06-06 13:36:38,635-0500 INFO  vdl:dostageout START jobid=sleep1ms-qaqs9esk - Staging out files
+2012-06-06 13:36:38,635-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:36:38,638-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=56.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:36:38,640-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,656-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,657-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-qaqs9esk - Error file missing
+2012-06-06 13:36:38,658-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-qaqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/56.result
+2012-06-06 13:36:38,664-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,667-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,672-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,675-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:36:38,681-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,695-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=0.000
+2012-06-06 13:37:46,698-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sleep1ms-saqs9esk thread=0-1-47-1-1 host=localhost replicationGroup=p9qs9esk
+2012-06-06 13:37:46,703-0500 INFO  vdl:createdirset START jobid=sleep1ms-saqs9esk host=localhost - Initializing directory structure
+2012-06-06 13:37:46,704-0500 INFO  vdl:createdirset END jobid=sleep1ms-saqs9esk - Done initializing directory structure
+2012-06-06 13:37:46,705-0500 INFO  vdl:dostagein START jobid=sleep1ms-saqs9esk - Staging in files
+2012-06-06 13:37:46,709-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,710-0500 DEBUG vdl:dostagein CDM: file://localhost/scott3a.sh : DEFAULT
+2012-06-06 13:37:46,711-0500 INFO  vdl:dostagein END jobid=sleep1ms-saqs9esk - Staging in finished
+2012-06-06 13:37:46,712-0500 DEBUG vdl:execute2 JOB_START jobid=sleep1ms-saqs9esk tr=sleep1ms arguments=[] tmpdir=sleep1ms-20120606-1330-bjo79oz4/jobs/s/sleep1ms-saqs9esk host=localhost
+2012-06-06 13:37:46,717-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-47-1-1-1339007420612) is /bin/bash shared/_swiftwrap sleep1ms-saqs9esk -jobdir s -scratch  -e /home/skrieder/swift/c/sleep1ms -out 47.result -err stderr.txt -i -d  -if scott3a.sh -of 47.result -k  -cdmfile  -status files -a
+2012-06-06 13:37:46,718-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/sleep1ms-20120606-1330-bjo79oz4 command: /bin/bash /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/_swiftwrap sleep1ms-saqs9esk -jobdir s -scratch  -e /home/skrieder/swift/c/sleep1ms -out 47.result -err stderr.txt -i -d  -if scott3a.sh -of 47.result -k  -cdmfile  -status files -a
+2012-06-06 13:37:46,863-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,864-0500 DEBUG vdl:checkjobstatus START jobid=sleep1ms-saqs9esk
+2012-06-06 13:37:46,869-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,870-0500 INFO  vdl:checkerrorfile FAILURE jobid=sleep1ms-saqs9esk - Failure file found
+2012-06-06 13:37:46,873-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,876-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,877-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,879-0500 DEBUG vdl:execute2 STAGING_OUT jobid=sleep1ms-saqs9esk
+2012-06-06 13:37:46,880-0500 INFO  vdl:dostageout START jobid=sleep1ms-saqs9esk - Staging out files
+2012-06-06 13:37:46,881-0500 DEBUG vdl:dostageout stageouts: [[$, c:countfile - Open]]
+2012-06-06 13:37:46,883-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=47.result srcdir=sleep1ms-20120606-1330-bjo79oz4/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-06 13:37:46,884-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,899-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,900-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sleep1ms-saqs9esk - Error file missing
+2012-06-06 13:37:46,901-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sleep1ms-saqs9esk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/sleep1ms-20120606-1330-bjo79oz4/shared/47.result
+2012-06-06 13:37:46,906-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,909-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,914-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,917-0500 INFO  LateBindingScheduler JobQueue: 63
+2012-06-06 13:37:46,922-0500 INFO  LateBindingScheduler JobQueue: 63

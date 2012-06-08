@@ -1,0 +1,17 @@
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     cka stdout=@filename(t);
+}
+
+//string inputNames = "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16";
+string inputNames = "a";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f, i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}

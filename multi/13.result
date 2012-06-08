@@ -1,11 +1,11 @@
-[1sm100ms] starting...
+[1sm10ms] starting...
 
 > Using CUDA device [0]: GeForce GTX 580
 > Detected Compute SM 2.0 hardware with 16 multi-processors
-Expected time for serial execution of 1 kernels = 0.100s
-Expected time for concurrent execution of 1 kernels = 0.100s
-Measured time for sample = 0.100s
-[1sm100ms] test results...
+Expected time for serial execution of 1 kernels = 0.010s
+Expected time for concurrent execution of 1 kernels = 0.010s
+Measured time for sample = 0.010s
+[1sm10ms] test results...
 PASSED
 
 > exiting in 0 seconds: done!

@@ -1,0 +1,50 @@
+2012-06-08 09:50:47,757-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, 3inloop.swift]
+2012-06-08 09:50:47,757-0500 DEBUG Loader Max heap: 252248064
+2012-06-08 09:50:47,758-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+
+app (messagefile t) countwords (messagefile f) {   
+     @filename(f) stdout=@filename(t);
+}
+
+string outputNames = "a1sm1ms b1sm1ms c1sm1ms";
+
+messagefile outputfiles[] <fixed_array_mapper;files=outputNames>;
+
+foreach f,i in outputfiles {
+  messagefile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-08 09:50:47,758-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-08 09:50:47,758-0500 INFO  Loader 3inloop.swift: source file is new. Recompiling.
+2012-06-08 09:50:47,759-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:50:47,759-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:50:47,888-0500 ERROR VDLt2VDLx Could not compile SwiftScript source: line 5:6: expecting an identifier, found '@'
+2012-06-08 09:50:47,888-0500 DEBUG VDLt2VDLx Full parser exception
+line 5:6: expecting an identifier, found '@'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+2012-06-08 09:50:47,891-0500 DEBUG Loader Exception when compiling 3inloop.swift
+org.griphyn.vdl.toolkit.VDLt2VDLx$ParsingException: Could not compile SwiftScript source: expecting an identifier, found '@'
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:67)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:45)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:305)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: line 5:6: expecting an identifier, found '@'
+	at antlr.Parser.match(Parser.java:211)
+	at org.globus.swift.parser.SwiftScriptParser.declarator(SwiftScriptParser.java:1094)
+	at org.globus.swift.parser.SwiftScriptParser.appproceduredecl(SwiftScriptParser.java:847)
+	at org.globus.swift.parser.SwiftScriptParser.topLevelStatement(SwiftScriptParser.java:222)
+	at org.globus.swift.parser.SwiftScriptParser.program(SwiftScriptParser.java:121)
+	at org.griphyn.vdl.toolkit.VDLt2VDLx.compile(VDLt2VDLx.java:62)
+	... 3 more

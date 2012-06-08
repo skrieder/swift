@@ -1,0 +1,439 @@
+2012-06-06 15:26:48,686-0500 DEBUG Loader arguments: [hello16.swift]
+2012-06-06 15:26:48,687-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 15:26:48,688-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     hello stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach f, i in inputfiles {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 15:26:48,688-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 15:26:48,688-0500 INFO  Loader hello16.swift: source file is new. Recompiling.
+2012-06-06 15:26:49,270-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 15:26:49,468-0500 DEBUG textfiles using default sites file
+2012-06-06 15:26:49,471-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-06 15:26:50,133-0500 INFO  unknown Using sites file: /usr/local/swift/bin/../etc/sites.xml
+2012-06-06 15:26:50,192-0500 INFO  unknown Using tc.data: /usr/local/swift/bin/../etc/tc.data
+2012-06-06 15:26:50,296-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-06 15:26:51,053-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-06 15:26:51,053-0500 INFO  unknown RUNID id=run:20120606-1526-vh8ifxbc
+2012-06-06 15:26:51,109-0500 INFO  SetFieldValue Set: inputNames=scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[0]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[1]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[2]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[3]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[4]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[5]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[6]
+2012-06-06 15:26:51,122-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[7]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[8]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[9]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[10]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[11]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[12]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[13]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[14]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[15]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[16]
+2012-06-06 15:26:51,123-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[17]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[18]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[19]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[20]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[21]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[22]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[23]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[24]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[25]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[26]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[27]
+2012-06-06 15:26:51,124-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[28]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[29]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[30]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[31]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[32]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[33]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[34]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[35]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[36]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[37]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[38]
+2012-06-06 15:26:51,125-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[39]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[40]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[41]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[42]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[43]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[44]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[45]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[46]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[47]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[48]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[49]
+2012-06-06 15:26:51,126-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[50]
+2012-06-06 15:26:51,127-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[51]
+2012-06-06 15:26:51,127-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[52]
+2012-06-06 15:26:51,127-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[53]
+2012-06-06 15:26:51,127-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[54]
+2012-06-06 15:26:51,127-0500 INFO  RootDataNode Found data inputfiles:messagefile[] - Open.[55]
+2012-06-06 15:26:51,133-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-3
+2012-06-06 15:26:51,133-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-8
+2012-06-06 15:26:51,134-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-11
+2012-06-06 15:26:51,134-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-12
+2012-06-06 15:26:51,135-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-15
+2012-06-06 15:26:51,136-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-16
+2012-06-06 15:26:51,137-0500 DEBUG vdl:mains SCOPE thread=0-1-3
+2012-06-06 15:26:51,133-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-10
+2012-06-06 15:26:51,138-0500 DEBUG vdl:mains SCOPE thread=0-1-11
+2012-06-06 15:26:51,133-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-6
+2012-06-06 15:26:51,138-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-9
+2012-06-06 15:26:51,138-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-19
+2012-06-06 15:26:51,138-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-18
+2012-06-06 15:26:51,137-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-17
+2012-06-06 15:26:51,140-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-24
+2012-06-06 15:26:51,137-0500 DEBUG vdl:mains SCOPE thread=0-1-8
+2012-06-06 15:26:51,135-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-14
+2012-06-06 15:26:51,135-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-7
+2012-06-06 15:26:51,142-0500 DEBUG vdl:mains SCOPE thread=0-1-15
+2012-06-06 15:26:51,134-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-13
+2012-06-06 15:26:51,142-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-28
+2012-06-06 15:26:51,142-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-26
+2012-06-06 15:26:51,141-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-25
+2012-06-06 15:26:51,140-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-27
+2012-06-06 15:26:51,143-0500 DEBUG vdl:mains SCOPE thread=0-1-16
+2012-06-06 15:26:51,140-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-23
+2012-06-06 15:26:51,140-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-22
+2012-06-06 15:26:51,140-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-5
+2012-06-06 15:26:51,139-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-20
+2012-06-06 15:26:51,139-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-21
+2012-06-06 15:26:51,139-0500 DEBUG vdl:mains SCOPE thread=0-1-12
+2012-06-06 15:26:51,144-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-33
+2012-06-06 15:26:51,144-0500 DEBUG vdl:mains SCOPE thread=0-1-10
+2012-06-06 15:26:51,144-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-32
+2012-06-06 15:26:51,144-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-2
+2012-06-06 15:26:51,143-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-4
+2012-06-06 15:26:51,143-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-30
+2012-06-06 15:26:51,143-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-31
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-40
+2012-06-06 15:26:51,143-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-29
+2012-06-06 15:26:51,142-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-1
+2012-06-06 15:26:51,147-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-41
+2012-06-06 15:26:51,147-0500 DEBUG vdl:mains SCOPE thread=0-1-9
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains SCOPE thread=0-1-6
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-43
+2012-06-06 15:26:51,148-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-46
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-42
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-44
+2012-06-06 15:26:51,150-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-49
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-36
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-37
+2012-06-06 15:26:51,146-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-38
+2012-06-06 15:26:51,145-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-35
+2012-06-06 15:26:51,145-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-34
+2012-06-06 15:26:51,151-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-54
+2012-06-06 15:26:51,151-0500 DEBUG vdl:mains SCOPE thread=0-1-24
+2012-06-06 15:26:51,152-0500 DEBUG vdl:mains SCOPE thread=0-1-14
+2012-06-06 15:26:51,151-0500 DEBUG vdl:mains SCOPE thread=0-1-17
+2012-06-06 15:26:51,151-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-51
+2012-06-06 15:26:51,150-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-50
+2012-06-06 15:26:51,150-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-39
+2012-06-06 15:26:51,149-0500 DEBUG vdl:mains SCOPE thread=0-1-18
+2012-06-06 15:26:51,154-0500 DEBUG vdl:mains SCOPE thread=0-1-26
+2012-06-06 15:26:51,149-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-47
+2012-06-06 15:26:51,154-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-0
+2012-06-06 15:26:51,148-0500 DEBUG vdl:mains SCOPE thread=0-1-19
+2012-06-06 15:26:51,148-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-48
+2012-06-06 15:26:51,147-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-45
+2012-06-06 15:26:51,156-0500 DEBUG vdl:mains SCOPE thread=0-1-22
+2012-06-06 15:26:51,156-0500 DEBUG vdl:mains SCOPE thread=0-1-5
+2012-06-06 15:26:51,156-0500 DEBUG vdl:mains SCOPE thread=0-1-20
+2012-06-06 15:26:51,155-0500 DEBUG vdl:mains SCOPE thread=0-1-23
+2012-06-06 15:26:51,155-0500 DEBUG vdl:mains SCOPE thread=0-1-27
+2012-06-06 15:26:51,157-0500 DEBUG vdl:mains SCOPE thread=0-1-32
+2012-06-06 15:26:51,154-0500 DEBUG vdl:mains SCOPE thread=0-1-25
+2012-06-06 15:26:51,158-0500 DEBUG vdl:mains SCOPE thread=0-1-4
+2012-06-06 15:26:51,158-0500 DEBUG vdl:mains SCOPE thread=0-1-30
+2012-06-06 15:26:51,153-0500 DEBUG vdl:mains SCOPE thread=0-1-28
+2012-06-06 15:26:51,153-0500 DEBUG vdl:mains SCOPE thread=0-1-13
+2012-06-06 15:26:51,153-0500 DEBUG vdl:mains SCOPE thread=0-1-7
+2012-06-06 15:26:51,152-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-52
+2012-06-06 15:26:51,152-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-53
+2012-06-06 15:26:51,152-0500 DEBUG vdl:mains FOREACH_IT_START line=13 thread=0-1-55
+2012-06-06 15:26:51,160-0500 DEBUG vdl:mains SCOPE thread=0-1-43
+2012-06-06 15:26:51,159-0500 DEBUG vdl:mains SCOPE thread=0-1-41
+2012-06-06 15:26:51,159-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-06 15:26:51,159-0500 DEBUG vdl:mains SCOPE thread=0-1-29
+2012-06-06 15:26:51,158-0500 DEBUG vdl:mains SCOPE thread=0-1-40
+2012-06-06 15:26:51,158-0500 DEBUG vdl:mains SCOPE thread=0-1-31
+2012-06-06 15:26:51,157-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-06 15:26:51,157-0500 DEBUG vdl:mains SCOPE thread=0-1-33
+2012-06-06 15:26:51,156-0500 DEBUG vdl:mains SCOPE thread=0-1-21
+2012-06-06 15:26:51,163-0500 DEBUG vdl:mains SCOPE thread=0-1-54
+2012-06-06 15:26:51,162-0500 DEBUG vdl:mains SCOPE thread=0-1-34
+2012-06-06 15:26:51,162-0500 DEBUG vdl:mains SCOPE thread=0-1-35
+2012-06-06 15:26:51,162-0500 DEBUG vdl:mains SCOPE thread=0-1-38
+2012-06-06 15:26:51,161-0500 DEBUG vdl:mains SCOPE thread=0-1-37
+2012-06-06 15:26:51,161-0500 DEBUG vdl:mains SCOPE thread=0-1-36
+2012-06-06 15:26:51,161-0500 DEBUG vdl:mains SCOPE thread=0-1-49
+2012-06-06 15:26:51,165-0500 DEBUG vdl:mains SCOPE thread=0-1-48
+2012-06-06 15:26:51,160-0500 DEBUG vdl:mains SCOPE thread=0-1-44
+2012-06-06 15:26:51,160-0500 DEBUG vdl:mains SCOPE thread=0-1-46
+2012-06-06 15:26:51,160-0500 DEBUG vdl:mains SCOPE thread=0-1-42
+2012-06-06 15:26:51,167-0500 DEBUG vdl:mains SCOPE thread=0-1-52
+2012-06-06 15:26:51,167-0500 DEBUG vdl:mains SCOPE thread=0-1-53
+2012-06-06 15:26:51,165-0500 DEBUG vdl:mains SCOPE thread=0-1-45
+2012-06-06 15:26:51,164-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-06 15:26:51,164-0500 DEBUG vdl:mains SCOPE thread=0-1-47
+2012-06-06 15:26:51,164-0500 DEBUG vdl:mains SCOPE thread=0-1-39
+2012-06-06 15:26:51,164-0500 DEBUG vdl:mains SCOPE thread=0-1-50
+2012-06-06 15:26:51,163-0500 DEBUG vdl:mains SCOPE thread=0-1-51
+2012-06-06 15:26:51,168-0500 DEBUG vdl:mains SCOPE thread=0-1-55
+2012-06-06 15:26:51,201-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=6.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=14.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=20.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=7.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=19.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=15.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=35.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=26.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=25.result
+2012-06-06 15:26:51,204-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-06 15:26:51,201-0500 INFO  SetFieldValue Set: swift#mapper#17001=8.result
+2012-06-06 15:26:51,204-0500 INFO  SetFieldValue Set: swift#mapper#17001=40.result
+2012-06-06 15:26:51,204-0500 INFO  SetFieldValue Set: swift#mapper#17001=29.result
+2012-06-06 15:26:51,204-0500 INFO  SetFieldValue Set: swift#mapper#17001=32.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=3.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=17.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=4.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=10.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=41.result
+2012-06-06 15:26:51,206-0500 INFO  SetFieldValue Set: swift#mapper#17001=43.result
+2012-06-06 15:26:51,206-0500 INFO  SetFieldValue Set: swift#mapper#17001=24.result
+2012-06-06 15:26:51,206-0500 INFO  SetFieldValue Set: swift#mapper#17001=36.result
+2012-06-06 15:26:51,207-0500 INFO  SetFieldValue Set: swift#mapper#17001=37.result
+2012-06-06 15:26:51,207-0500 INFO  SetFieldValue Set: swift#mapper#17001=42.result
+2012-06-06 15:26:51,207-0500 INFO  SetFieldValue Set: swift#mapper#17001=53.result
+2012-06-06 15:26:51,208-0500 INFO  SetFieldValue Set: swift#mapper#17001=5.result
+2012-06-06 15:26:51,208-0500 INFO  SetFieldValue Set: swift#mapper#17001=13.result
+2012-06-06 15:26:51,208-0500 INFO  SetFieldValue Set: swift#mapper#17001=16.result
+2012-06-06 15:26:51,208-0500 INFO  SetFieldValue Set: swift#mapper#17001=52.result
+2012-06-06 15:26:51,203-0500 INFO  SetFieldValue Set: swift#mapper#17001=38.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=18.result
+2012-06-06 15:26:51,202-0500 INFO  SetFieldValue Set: swift#mapper#17001=12.result
+2012-06-06 15:26:51,209-0500 INFO  SetFieldValue Set: swift#mapper#17001=31.result
+2012-06-06 15:26:51,209-0500 INFO  SetFieldValue Set: swift#mapper#17001=28.result
+2012-06-06 15:26:51,209-0500 INFO  SetFieldValue Set: swift#mapper#17001=30.result
+2012-06-06 15:26:51,210-0500 INFO  SetFieldValue Set: swift#mapper#17001=11.result
+2012-06-06 15:26:51,209-0500 INFO  SetFieldValue Set: swift#mapper#17001=48.result
+2012-06-06 15:26:51,207-0500 INFO  SetFieldValue Set: swift#mapper#17001=22.result
+2012-06-06 15:26:51,211-0500 INFO  SetFieldValue Set: swift#mapper#17001=47.result
+2012-06-06 15:26:51,211-0500 INFO  SetFieldValue Set: swift#mapper#17001=54.result
+2012-06-06 15:26:51,212-0500 INFO  SetFieldValue Set: swift#mapper#17001=51.result
+2012-06-06 15:26:51,213-0500 INFO  SetFieldValue Set: swift#mapper#17001=34.result
+2012-06-06 15:26:51,206-0500 INFO  SetFieldValue Set: swift#mapper#17001=44.result
+2012-06-06 15:26:51,213-0500 INFO  SetFieldValue Set: swift#mapper#17001=39.result
+2012-06-06 15:26:51,214-0500 INFO  SetFieldValue Set: swift#mapper#17001=23.result
+2012-06-06 15:26:51,214-0500 INFO  SetFieldValue Set: swift#mapper#17001=50.result
+2012-06-06 15:26:51,215-0500 INFO  SetFieldValue Set: swift#mapper#17001=33.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=49.result
+2012-06-06 15:26:51,205-0500 INFO  SetFieldValue Set: swift#mapper#17001=9.result
+2012-06-06 15:26:51,217-0500 INFO  SetFieldValue Set: swift#mapper#17001=55.result
+2012-06-06 15:26:51,213-0500 INFO  SetFieldValue Set: swift#mapper#17001=46.result
+2012-06-06 15:26:51,211-0500 INFO  SetFieldValue Set: swift#mapper#17001=45.result
+2012-06-06 15:26:51,210-0500 INFO  SetFieldValue Set: swift#mapper#17001=21.result
+2012-06-06 15:26:51,210-0500 INFO  SetFieldValue Set: swift#mapper#17001=27.result
+2012-06-06 15:26:51,218-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-1-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-43-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-52-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-44-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-27-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-4-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-38-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-3-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-8-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-7-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-29-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-14-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-15-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-13-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-48-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-2-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-40-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-12-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-32-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-30-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-6-1 name=countwords
+2012-06-06 15:26:51,220-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-24-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-37-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-36-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-53-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-49-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-17-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-41-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-47-1 name=countwords
+2012-06-06 15:26:51,223-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-54-1 name=countwords
+2012-06-06 15:26:51,223-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-20-1 name=countwords
+2012-06-06 15:26:51,223-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-11-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-42-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-26-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-31-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-10-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-19-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-25-1 name=countwords
+2012-06-06 15:26:51,221-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-22-1 name=countwords
+2012-06-06 15:26:51,224-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-45-1 name=countwords
+2012-06-06 15:26:51,225-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-51-1 name=countwords
+2012-06-06 15:26:51,225-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-34-1 name=countwords
+2012-06-06 15:26:51,225-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-39-1 name=countwords
+2012-06-06 15:26:51,225-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-46-1 name=countwords
+2012-06-06 15:26:51,226-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-23-1 name=countwords
+2012-06-06 15:26:51,226-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-50-1 name=countwords
+2012-06-06 15:26:51,227-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-0-1 name=countwords
+2012-06-06 15:26:51,228-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-33-1 name=countwords
+2012-06-06 15:26:51,229-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-55-1 name=countwords
+2012-06-06 15:26:51,224-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-21-1 name=countwords
+2012-06-06 15:26:51,224-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-18-1 name=countwords
+2012-06-06 15:26:51,223-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-35-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-5-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-9-1 name=countwords
+2012-06-06 15:26:51,222-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-16-1 name=countwords
+2012-06-06 15:26:51,225-0500 DEBUG countwords PROCEDURE line=5 thread=0-1-28-1 name=countwords
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-11-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-37-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-53-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-54-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-49-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-45-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-39-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-42-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-10-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-26-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-25-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-19-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-36-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-22-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-44-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-41-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-17-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-23-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-38-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-4-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-24-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-32-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-50-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-13-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-40-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-55-1 tr=hello
+2012-06-06 15:26:51,254-0500 INFO  vdl:execute START thread=0-1-7-1 tr=hello
+2012-06-06 15:26:51,255-0500 INFO  vdl:execute START thread=0-1-51-1 tr=hello
+2012-06-06 15:26:51,255-0500 INFO  vdl:execute START thread=0-1-21-1 tr=hello
+2012-06-06 15:26:51,255-0500 INFO  vdl:execute START thread=0-1-34-1 tr=hello
+2012-06-06 15:26:51,251-0500 INFO  vdl:execute START thread=0-1-46-1 tr=hello
+2012-06-06 15:26:51,255-0500 INFO  vdl:execute START thread=0-1-47-1 tr=hello
+2012-06-06 15:26:51,255-0500 INFO  vdl:execute START thread=0-1-43-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-2-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-3-1 tr=hello
+2012-06-06 15:26:51,256-0500 INFO  vdl:execute START thread=0-1-35-1 tr=hello
+2012-06-06 15:26:51,257-0500 INFO  vdl:execute START thread=0-1-5-1 tr=hello
+2012-06-06 15:26:51,257-0500 INFO  vdl:execute START thread=0-1-9-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-52-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-14-1 tr=hello
+2012-06-06 15:26:51,253-0500 INFO  vdl:execute START thread=0-1-33-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-20-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-1-1 tr=hello
+2012-06-06 15:26:51,258-0500 INFO  vdl:execute START thread=0-1-30-1 tr=hello
+2012-06-06 15:26:51,252-0500 INFO  vdl:execute START thread=0-1-0-1 tr=hello
+2012-06-06 15:26:51,258-0500 INFO  vdl:execute START thread=0-1-18-1 tr=hello
+2012-06-06 15:26:51,259-0500 INFO  vdl:execute START thread=0-1-12-1 tr=hello
+2012-06-06 15:26:51,259-0500 INFO  vdl:execute START thread=0-1-48-1 tr=hello
+2012-06-06 15:26:51,260-0500 INFO  vdl:execute START thread=0-1-31-1 tr=hello
+2012-06-06 15:26:51,258-0500 INFO  vdl:execute START thread=0-1-6-1 tr=hello
+2012-06-06 15:26:51,257-0500 INFO  vdl:execute START thread=0-1-27-1 tr=hello
+2012-06-06 15:26:51,262-0500 INFO  vdl:execute START thread=0-1-28-1 tr=hello
+2012-06-06 15:26:51,263-0500 INFO  vdl:execute START thread=0-1-29-1 tr=hello
+2012-06-06 15:26:51,257-0500 INFO  vdl:execute START thread=0-1-8-1 tr=hello
+2012-06-06 15:26:51,257-0500 INFO  vdl:execute START thread=0-1-16-1 tr=hello
+2012-06-06 15:26:51,256-0500 INFO  vdl:execute START thread=0-1-15-1 tr=hello
+2012-06-06 15:26:51,329-0500 INFO  vdl:execute END_FAILURE thread=0-1-10-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-7-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-2-1 tr=hello
+2012-06-06 15:26:51,329-0500 INFO  vdl:execute END_FAILURE thread=0-1-32-1 tr=hello
+2012-06-06 15:26:51,329-0500 INFO  vdl:execute END_FAILURE thread=0-1-27-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-49-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-28-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-38-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-51-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-30-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-1-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-39-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-3-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-22-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-34-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-9-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-52-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-42-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-53-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-15-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-36-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-37-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-33-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-55-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-20-1 tr=hello
+2012-06-06 15:26:51,332-0500 INFO  vdl:execute END_FAILURE thread=0-1-19-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-8-1 tr=hello
+2012-06-06 15:26:51,330-0500 INFO  vdl:execute END_FAILURE thread=0-1-16-1 tr=hello
+2012-06-06 15:26:51,333-0500 INFO  vdl:execute END_FAILURE thread=0-1-40-1 tr=hello
+2012-06-06 15:26:51,332-0500 INFO  vdl:execute END_FAILURE thread=0-1-44-1 tr=hello
+2012-06-06 15:26:51,332-0500 INFO  vdl:execute END_FAILURE thread=0-1-47-1 tr=hello
+2012-06-06 15:26:51,332-0500 INFO  vdl:execute END_FAILURE thread=0-1-24-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-48-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-43-1 tr=hello
+2012-06-06 15:26:51,331-0500 INFO  vdl:execute END_FAILURE thread=0-1-41-1 tr=hello
+2012-06-06 15:26:51,336-0500 DEBUG VDL2ExecutionContext The application "hello" is not available in the given site/pool in your tc.data catalog 
+The application "hello" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-06-06 15:26:51,348-0500 INFO  ExecutionContext Detailed exception: 
+The application "hello" is not available in the given site/pool in your tc.data catalog 
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:105)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost.processStatusChange(AllocateHost.java:111)
+	at org.globus.cog.karajan.workflow.nodes.grid.AllocateHost$StatusChangeHandler.run(AllocateHost.java:88)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: org.globus.cog.karajan.scheduler.NoSuchResourceException
+2012-06-06 15:26:51,348-0500 INFO  Loader Swift finished with errors

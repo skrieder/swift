@@ -1,0 +1,327 @@
+2012-06-08 09:57:55,935-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, 3inloop.swift]
+2012-06-08 09:57:55,935-0500 DEBUG Loader Max heap: 252248064
+2012-06-08 09:57:55,936-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+
+app (messagefile t) countwords (messagefile f) {   
+    sh @filename(f) stdout=@filename(t);
+}
+
+string outputNames = "a1sm1ms b1sm1ms c1sm1ms";
+
+messagefile outputfiles[] <fixed_array_mapper;files=outputNames>;
+
+foreach f,i in outputfiles {
+  messagefile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-08 09:57:55,936-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-08 09:57:55,936-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:57:55,936-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:57:55,937-0500 DEBUG Loader Recompilation suppressed.
+2012-06-08 09:57:56,083-0500 DEBUG Loader setting: sites.file to: 0-throttle-sites.xml
+2012-06-08 09:57:56,084-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-08 09:57:56,084-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">.01</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
+  </pool>
+
+</config>
+
+
+2012-06-08 09:57:56,084-0500 DEBUG textfiles END SITES:
+2012-06-08 09:57:56,088-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-08 09:57:56,752-0500 INFO  unknown Using sites file: 0-throttle-sites.xml
+2012-06-08 09:57:56,794-0500 INFO  unknown Using tc.data: tc.data
+2012-06-08 09:57:56,929-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-08 09:57:58,008-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-08 09:57:58,011-0500 INFO  unknown RUNID id=run:20120608-0957-ojfxi7c4
+2012-06-08 09:57:58,079-0500 INFO  SetFieldValue Set: outputNames=a1sm1ms b1sm1ms c1sm1ms
+2012-06-08 09:57:58,092-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[0]
+2012-06-08 09:57:58,092-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[1]
+2012-06-08 09:57:58,092-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[2]
+2012-06-08 09:57:58,097-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-1
+2012-06-08 09:57:58,097-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-2
+2012-06-08 09:57:58,097-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-08 09:57:58,097-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-06-08 09:57:58,098-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-08 09:57:58,098-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-08 09:57:58,108-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-08 09:57:58,108-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-08 09:57:58,108-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-08 09:57:58,110-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-1-1 name=countwords
+2012-06-08 09:57:58,111-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-1 name=countwords
+2012-06-08 09:57:58,111-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-2-1 name=countwords
+2012-06-08 09:57:58,114-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:57:58,114-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:57:58,114-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:57:58,125-0500 INFO  vdl:execute START thread=0-1-0-1 tr=sh
+2012-06-08 09:57:58,125-0500 INFO  vdl:execute START thread=0-1-1-1 tr=sh
+2012-06-08 09:57:58,125-0500 INFO  vdl:execute START thread=0-1-2-1 tr=sh
+2012-06-08 09:57:58,146-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-08 09:57:58,147-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-08 09:57:58,149-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-08 09:57:58,152-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,155-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,157-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-08 09:57:58,160-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,174-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,177-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,179-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,183-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,187-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,189-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-08 09:57:58,193-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-mrtgbhsk thread=0-1-1-1-1 host=localhost replicationGroup=irtgbhsk
+2012-06-08 09:57:58,193-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-lrtgbhsk thread=0-1-0-1-1 host=localhost replicationGroup=jrtgbhsk
+2012-06-08 09:57:58,213-0500 INFO  vdl:createdirset START jobid=sh-lrtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,213-0500 INFO  vdl:createdirset START jobid=sh-mrtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,215-0500 INFO  vdl:createdirset END jobid=sh-lrtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,215-0500 INFO  vdl:createdirset END jobid=sh-mrtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,217-0500 INFO  vdl:dostagein START jobid=sh-lrtgbhsk - Staging in files
+2012-06-08 09:57:58,217-0500 INFO  vdl:dostagein START jobid=sh-mrtgbhsk - Staging in files
+2012-06-08 09:57:58,237-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,237-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,249-0500 DEBUG vdl:dostagein CDM: file://localhost/a1sm1ms : DEFAULT
+2012-06-08 09:57:58,249-0500 DEBUG vdl:dostagein CDM: file://localhost/b1sm1ms : DEFAULT
+2012-06-08 09:57:58,264-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=b1sm1ms srchost=localhost srcdir= srcname=b1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,264-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=a1sm1ms srchost=localhost srcdir= srcname=a1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,294-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,295-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,296-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-lrtgbhsk - Error file missing
+2012-06-08 09:57:58,296-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-mrtgbhsk - Error file missing
+2012-06-08 09:57:58,301-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-lrtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+2012-06-08 09:57:58,301-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-mrtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./b1sm1ms
+2012-06-08 09:57:58,354-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-mrtgbhsk
+2012-06-08 09:57:58,354-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-lrtgbhsk
+2012-06-08 09:57:58,356-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/m on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/m/sh-mrtgbhsk-info
+2012-06-08 09:57:58,356-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/l on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/l/sh-lrtgbhsk-info
+2012-06-08 09:57:58,377-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,378-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,383-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-prtgbhsk thread=0-1-2-1-1 host=localhost replicationGroup=krtgbhsk
+2012-06-08 09:57:58,384-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-qrtgbhsk thread=0-1-0-1-1 host=localhost replicationGroup=nrtgbhsk
+2012-06-08 09:57:58,393-0500 INFO  vdl:createdirset START jobid=sh-prtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,394-0500 INFO  vdl:createdirset START jobid=sh-qrtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,395-0500 INFO  vdl:createdirset END jobid=sh-prtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,395-0500 INFO  vdl:createdirset END jobid=sh-qrtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,396-0500 INFO  vdl:dostagein START jobid=sh-prtgbhsk - Staging in files
+2012-06-08 09:57:58,397-0500 INFO  vdl:dostagein START jobid=sh-qrtgbhsk - Staging in files
+2012-06-08 09:57:58,403-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,404-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,405-0500 DEBUG vdl:dostagein CDM: file://localhost/c1sm1ms : DEFAULT
+2012-06-08 09:57:58,406-0500 DEBUG vdl:dostagein CDM: file://localhost/a1sm1ms : DEFAULT
+2012-06-08 09:57:58,410-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=c1sm1ms srchost=localhost srcdir= srcname=c1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,411-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=a1sm1ms srchost=localhost srcdir= srcname=a1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,429-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,429-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,430-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-prtgbhsk - Error file missing
+2012-06-08 09:57:58,431-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-qrtgbhsk - Error file missing
+2012-06-08 09:57:58,432-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-prtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./c1sm1ms
+2012-06-08 09:57:58,433-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-qrtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+2012-06-08 09:57:58,457-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-qrtgbhsk
+2012-06-08 09:57:58,458-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/q on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/q/sh-qrtgbhsk-info
+2012-06-08 09:57:58,459-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-prtgbhsk
+2012-06-08 09:57:58,459-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/p on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/p/sh-prtgbhsk-info
+2012-06-08 09:57:58,467-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,467-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,472-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-urtgbhsk thread=0-1-1-1-1 host=localhost replicationGroup=ortgbhsk
+2012-06-08 09:57:58,472-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-trtgbhsk thread=0-1-0-1-1 host=localhost replicationGroup=srtgbhsk
+2012-06-08 09:57:58,479-0500 INFO  vdl:createdirset START jobid=sh-urtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,480-0500 INFO  vdl:createdirset END jobid=sh-urtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,480-0500 INFO  vdl:createdirset START jobid=sh-trtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,481-0500 INFO  vdl:dostagein START jobid=sh-urtgbhsk - Staging in files
+2012-06-08 09:57:58,481-0500 INFO  vdl:createdirset END jobid=sh-trtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,483-0500 INFO  vdl:dostagein START jobid=sh-trtgbhsk - Staging in files
+2012-06-08 09:57:58,487-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,488-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,488-0500 DEBUG vdl:dostagein CDM: file://localhost/b1sm1ms : DEFAULT
+2012-06-08 09:57:58,490-0500 DEBUG vdl:dostagein CDM: file://localhost/a1sm1ms : DEFAULT
+2012-06-08 09:57:58,492-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=b1sm1ms srchost=localhost srcdir= srcname=b1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,493-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=a1sm1ms srchost=localhost srcdir= srcname=a1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,505-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,506-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-urtgbhsk - Error file missing
+2012-06-08 09:57:58,508-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-urtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./b1sm1ms
+2012-06-08 09:57:58,511-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:57:58,512-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-trtgbhsk - Error file missing
+2012-06-08 09:57:58,514-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-trtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+2012-06-08 09:57:58,534-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-urtgbhsk
+2012-06-08 09:57:58,535-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/u on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/u/sh-urtgbhsk-info
+2012-06-08 09:57:58,538-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-trtgbhsk
+2012-06-08 09:57:58,539-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/t on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/t/sh-trtgbhsk-info
+2012-06-08 09:57:58,544-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,544-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,546-0500 INFO  vdl:execute END_FAILURE thread=0-1-0-1 tr=sh
+2012-06-08 09:57:58,549-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-xrtgbhsk thread=0-1-2-1-1 host=localhost replicationGroup=rrtgbhsk
+2012-06-08 09:57:58,551-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-yrtgbhsk thread=0-1-1-1-1 host=localhost replicationGroup=vrtgbhsk
+2012-06-08 09:57:58,552-0500 DEBUG VDL2ExecutionContext Exception in sh:
+Arguments: [a1sm1ms]
+Host: localhost
+Directory: 3inloop-20120608-0957-ojfxi7c4/jobs/t/sh-trtgbhsk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Exception in sh:
+Arguments: [a1sm1ms]
+Host: localhost
+Directory: 3inloop-20120608-0957-ojfxi7c4/jobs/t/sh-trtgbhsk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-08 09:57:58,558-0500 INFO  vdl:createdirset START jobid=sh-yrtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,557-0500 INFO  vdl:createdirset START jobid=sh-xrtgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,562-0500 INFO  vdl:createdirset END jobid=sh-yrtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,563-0500 INFO  vdl:createdirset END jobid=sh-xrtgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,563-0500 INFO  vdl:dostagein START jobid=sh-yrtgbhsk - Staging in files
+2012-06-08 09:57:58,564-0500 INFO  vdl:dostagein START jobid=sh-xrtgbhsk - Staging in files
+2012-06-08 09:57:58,567-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,568-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,568-0500 DEBUG vdl:dostagein CDM: file://localhost/c1sm1ms : DEFAULT
+2012-06-08 09:57:58,569-0500 DEBUG vdl:dostagein CDM: file://localhost/b1sm1ms : DEFAULT
+2012-06-08 09:57:58,570-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=c1sm1ms srchost=localhost srcdir= srcname=c1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,571-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=b1sm1ms srchost=localhost srcdir= srcname=b1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,582-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,582-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-xrtgbhsk - Error file missing
+2012-06-08 09:57:58,583-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-xrtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./c1sm1ms
+2012-06-08 09:57:58,585-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,586-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-yrtgbhsk - Error file missing
+2012-06-08 09:57:58,587-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-yrtgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./b1sm1ms
+2012-06-08 09:57:58,603-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-xrtgbhsk
+2012-06-08 09:57:58,604-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/x on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/x/sh-xrtgbhsk-info
+2012-06-08 09:57:58,607-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-yrtgbhsk
+2012-06-08 09:57:58,608-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/y on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/y/sh-yrtgbhsk-info
+2012-06-08 09:57:58,611-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:57:58,612-0500 INFO  vdl:execute END_FAILURE thread=0-1-1-1 tr=sh
+2012-06-08 09:57:58,613-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=sh-0stgbhsk thread=0-1-2-1-1 host=localhost replicationGroup=zrtgbhsk
+2012-06-08 09:57:58,616-0500 INFO  vdl:createdirset START jobid=sh-0stgbhsk host=localhost - Initializing directory structure
+2012-06-08 09:57:58,616-0500 INFO  vdl:createdirset END jobid=sh-0stgbhsk - Done initializing directory structure
+2012-06-08 09:57:58,616-0500 INFO  vdl:dostagein START jobid=sh-0stgbhsk - Staging in files
+2012-06-08 09:57:58,618-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,618-0500 DEBUG vdl:dostagein CDM: file://localhost/c1sm1ms : DEFAULT
+2012-06-08 09:57:58,619-0500 DEBUG vdl:dostageinfile FILE_STAGE_IN_START file=c1sm1ms srchost=localhost srcdir= srcname=c1sm1ms desthost=localhost destdir=3inloop-20120608-0957-ojfxi7c4/shared/ provider=file policy=DEFAULT
+2012-06-08 09:57:58,626-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:57:58,626-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=sh-0stgbhsk - Error file missing
+2012-06-08 09:57:58,627-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=sh-0stgbhsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./c1sm1ms
+2012-06-08 09:57:58,642-0500 WARN  vdl:transferwrapperlog Failed to transfer wrapper log for job sh-0stgbhsk
+2012-06-08 09:57:58,643-0500 DEBUG vdl:transferwrapperlog Exception for wrapper log failure from 3inloop-20120608-0957-ojfxi7c4/info/0 on localhost: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0957-ojfxi7c4/info/0/sh-0stgbhsk-info
+2012-06-08 09:57:58,645-0500 INFO  vdl:execute END_FAILURE thread=0-1-2-1 tr=sh
+2012-06-08 09:57:58,681-0500 INFO  ExecutionContext Detailed exception: 
+Exception in sh:
+Arguments: [a1sm1ms]
+Host: localhost
+Directory: 3inloop-20120608-0957-ojfxi7c4/jobs/t/sh-trtgbhsk
+stderr.txt: 
+
+stdout.txt: 
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /home/skrieder/swift/multi/./a1sm1ms
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-08 09:57:58,682-0500 INFO  Loader Swift finished with errors

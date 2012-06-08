@@ -1,0 +1,38 @@
+2012-06-06 15:27:58,526-0500 DEBUG Loader arguments: [-tc.file, tc.data, hello16.swift]
+2012-06-06 15:27:58,526-0500 DEBUG Loader Max heap: 252248064
+2012-06-06 15:27:58,528-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+type countfile; 
+
+app (countfile t) countwords (messagefile f) {   
+     hello stdout=@filename(t);
+}
+
+string inputNames = "scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh scott3a.sh";
+
+messagefile inputfiles[] <fixed_array_mapper;files=inputNames>;
+
+foreach i in 64 {
+  countfile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords(f);
+}
+
+
+2012-06-06 15:27:58,528-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-06 15:27:58,528-0500 INFO  Loader hello16.swift: source file is new. Recompiling.
+2012-06-06 15:27:58,528-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:27:58,528-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-06 15:27:59,109-0500 INFO  Karajan Validation of XML intermediate file was successful
+2012-06-06 15:27:59,189-0500 DEBUG Loader Detailed exception:
+org.griphyn.vdl.karajan.CompilationException: Compile error in foreach statement at line 13: You can iterate through an array structure only
+	at org.griphyn.vdl.engine.Karajan.foreachStat(Karajan.java:791)
+	at org.griphyn.vdl.engine.Karajan.statement(Karajan.java:529)
+	at org.griphyn.vdl.engine.Karajan.statements(Karajan.java:493)
+	at org.griphyn.vdl.engine.Karajan.program(Karajan.java:270)
+	at org.griphyn.vdl.engine.Karajan.compile(Karajan.java:106)
+	at org.griphyn.vdl.karajan.Loader.compile(Loader.java:310)
+	at org.griphyn.vdl.karajan.Loader.main(Loader.java:151)
+Caused by: org.griphyn.vdl.karajan.CompilationException: You can iterate through an array structure only
+	at org.griphyn.vdl.engine.Karajan.foreachStat(Karajan.java:769)
+	... 6 more

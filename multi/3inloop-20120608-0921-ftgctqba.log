@@ -1,0 +1,494 @@
+2012-06-08 09:21:32,845-0500 DEBUG Loader arguments: [-tc.file, tc.data, -sites.file, 0-throttle-sites.xml, 3inloop.swift]
+2012-06-08 09:21:32,845-0500 DEBUG Loader Max heap: 252248064
+2012-06-08 09:21:32,847-0500 DEBUG textfiles BEGIN SWIFTSCRIPT:
+
+type messagefile; 
+
+app (messagefile t) countwords () {   
+     hello stdout=@filename(t);
+}
+
+string outputNames = "test1 test2 test3";
+
+messagefile outputfiles[] <fixed_array_mapper;files=outputNames>;
+
+foreach f,i in outputfiles {
+  messagefile c <single_file_mapper; file=@strcat(i, ".result")>;
+  c = countwords();
+}
+
+
+2012-06-08 09:21:32,847-0500 DEBUG textfiles END SWIFTSCRIPT:
+2012-06-08 09:21:32,847-0500 DEBUG Loader kmlversion is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:21:32,847-0500 DEBUG Loader build version is >239b8550-a5ff-44be-a124-5e7ecd70737d<
+2012-06-08 09:21:32,847-0500 DEBUG Loader Recompilation suppressed.
+2012-06-08 09:21:32,994-0500 DEBUG Loader setting: sites.file to: 0-throttle-sites.xml
+2012-06-08 09:21:32,994-0500 DEBUG Loader setting: tc.file to: tc.data
+2012-06-08 09:21:32,994-0500 DEBUG textfiles BEGIN SITES:
+<config>
+
+  <pool handle="localhost">
+    <filesystem provider="local" />
+    <execution provider="local" />
+    <workdirectory >/var/tmp</workdirectory>
+    <profile namespace="karajan" key="jobThrottle">.01</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
+  </pool>
+
+</config>
+
+
+2012-06-08 09:21:32,994-0500 DEBUG textfiles END SITES:
+2012-06-08 09:21:32,999-0500 INFO  VDL2ExecutionContext Stack dump:
+Level 1
+[iA = 0, iB = 0, bA = false, bB = false]
+	vdl:instanceconfig = Swift configuration []
+	vdl:operation = run
+	swift.home = /usr/local/swift/bin/..
+	PATH_SEPARATOR = /
+
+
+2012-06-08 09:21:33,673-0500 INFO  unknown Using sites file: 0-throttle-sites.xml
+2012-06-08 09:21:33,712-0500 INFO  unknown Using tc.data: tc.data
+2012-06-08 09:21:33,844-0500 INFO  AbstractScheduler Setting resources to: {localhost=localhost}
+2012-06-08 09:21:34,498-0500 INFO  unknown Swift 0.93 swift-r5483 cog-r3339
+
+2012-06-08 09:21:34,499-0500 INFO  unknown RUNID id=run:20120608-0921-ftgctqba
+2012-06-08 09:21:34,543-0500 INFO  SetFieldValue Set: outputNames=test1 test2 test3
+2012-06-08 09:21:34,566-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[0]
+2012-06-08 09:21:34,566-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[1]
+2012-06-08 09:21:34,566-0500 INFO  RootDataNode Found data outputfiles:messagefile[] - Open.[2]
+2012-06-08 09:21:34,570-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-2
+2012-06-08 09:21:34,570-0500 DEBUG vdl:mains SCOPE thread=0-1-2
+2012-06-08 09:21:34,570-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-0
+2012-06-08 09:21:34,570-0500 DEBUG vdl:mains FOREACH_IT_START line=12 thread=0-1-1
+2012-06-08 09:21:34,571-0500 DEBUG vdl:mains SCOPE thread=0-1-0
+2012-06-08 09:21:34,571-0500 DEBUG vdl:mains SCOPE thread=0-1-1
+2012-06-08 09:21:34,577-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-1-1 name=countwords
+2012-06-08 09:21:34,577-0500 INFO  SetFieldValue Set: swift#mapper#17001=0.result
+2012-06-08 09:21:34,577-0500 INFO  SetFieldValue Set: swift#mapper#17001=1.result
+2012-06-08 09:21:34,578-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-0-1 name=countwords
+2012-06-08 09:21:34,577-0500 INFO  SetFieldValue Set: swift#mapper#17001=2.result
+2012-06-08 09:21:34,577-0500 DEBUG countwords PROCEDURE line=4 thread=0-1-2-1 name=countwords
+2012-06-08 09:21:34,583-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:21:34,584-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:21:34,583-0500 INFO  RootDataNode Found mapped data c:messagefile - Open.$
+2012-06-08 09:21:34,591-0500 INFO  vdl:execute START thread=0-1-1-1 tr=hello
+2012-06-08 09:21:34,591-0500 INFO  vdl:execute START thread=0-1-0-1 tr=hello
+2012-06-08 09:21:34,591-0500 INFO  vdl:execute START thread=0-1-2-1 tr=hello
+2012-06-08 09:21:34,614-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-08 09:21:34,617-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.854
+2012-06-08 09:21:34,622-0500 INFO  GlobalSubmitQueue No global submit throttle set. Using default (1024)
+2012-06-08 09:21:34,627-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,631-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,638-0500 INFO  vdl:initshareddir START host=localhost - Initializing shared directory
+2012-06-08 09:21:34,645-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,676-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,681-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,685-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,693-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,700-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,704-0500 INFO  vdl:initshareddir END host=localhost - Done initializing shared directory
+2012-06-08 09:21:34,711-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-jnx0ahsk thread=0-1-2-1-1 host=localhost replicationGroup=fnx0ahsk
+2012-06-08 09:21:34,711-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-inx0ahsk thread=0-1-1-1-1 host=localhost replicationGroup=hnx0ahsk
+2012-06-08 09:21:34,735-0500 INFO  vdl:createdirset START jobid=hello-jnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:34,735-0500 INFO  vdl:createdirset START jobid=hello-inx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:34,737-0500 INFO  vdl:createdirset END jobid=hello-jnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:34,737-0500 INFO  vdl:createdirset END jobid=hello-inx0ahsk - Done initializing directory structure
+2012-06-08 09:21:34,741-0500 INFO  vdl:dostagein START jobid=hello-jnx0ahsk - Staging in files
+2012-06-08 09:21:34,741-0500 INFO  vdl:dostagein START jobid=hello-inx0ahsk - Staging in files
+2012-06-08 09:21:34,752-0500 INFO  vdl:dostagein END jobid=hello-jnx0ahsk - Staging in finished
+2012-06-08 09:21:34,752-0500 INFO  vdl:dostagein END jobid=hello-inx0ahsk - Staging in finished
+2012-06-08 09:21:34,758-0500 DEBUG vdl:execute2 JOB_START jobid=hello-inx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/i/hello-inx0ahsk host=localhost
+2012-06-08 09:21:34,758-0500 DEBUG vdl:execute2 JOB_START jobid=hello-jnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/j/hello-jnx0ahsk host=localhost
+2012-06-08 09:21:34,773-0500 DEBUG textfiles BEGIN TC:
+#This is the transformation catalog.
+#
+#It comes pre-configured with a number of simple transformations with
+#paths that are likely to work on a linux box. However, on some systems,
+#the paths to these executables will be different (for example, sometimes
+#some of these programs are found in /usr/bin rather than in /bin)
+#
+#NOTE WELL: fields in this file must be separated by tabs, not spaces; and
+#there must be no trailing whitespace at the end of each line.
+#
+# sitename  transformation  path   INSTALLED  platform  profiles
+localhost 	echo 		/bin/echo	INSTALLED	INTEL32::LINUX	null
+localhost 	cat 		/bin/cat	INSTALLED	INTEL32::LINUX	null
+localhost 	ls 		/bin/ls		INSTALLED	INTEL32::LINUX	null
+localhost 	grep 		/bin/grep	INSTALLED	INTEL32::LINUX	null
+localhost 	sort 		/bin/sort	INSTALLED	INTEL32::LINUX	null
+localhost 	paste 		/bin/paste	INSTALLED	INTEL32::LINUX	null
+localhost 	cp 		/bin/cp         INSTALLED	INTEL32::LINUX	null
+localhost 	touch 		/bin/touch      INSTALLED	INTEL32::LINUX	null
+localhost	wc		/usr/bin/wc	INSTALLED	INTEL32::LINUX	null
+localhost	sh		/bin/wc		INSTALLED	INTEL32::LINUX	null
+localhost	scott3a		/home/skrieder/swift/multi/scott3a.sh		INSTALLED	INTEL32::LINUX	null
+localhost	scott3b		/home/skrieder/swift/multi/scott3b.sh		INSTALLED	INTEL32::LINUX	null
+localhost	cka		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm0ms		/home/skrieder/swift/cuda/1sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm1ms		/home/skrieder/swift/cuda/1sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm10ms	/home/skrieder/swift/cuda/1sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a1sm100ms	/home/skrieder/swift/cuda/1sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm0ms		/home/skrieder/swift/cuda/2sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm1ms		/home/skrieder/swift/cuda/2sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm10ms	/home/skrieder/swift/cuda/2sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a2sm100ms	/home/skrieder/swift/cuda/2sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm0ms		/home/skrieder/swift/cuda/4sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm1ms		/home/skrieder/swift/cuda/4sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm10ms	/home/skrieder/swift/cuda/4sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a4sm100ms	/home/skrieder/swift/cuda/4sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm0ms		/home/skrieder/swift/cuda/8sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm1ms		/home/skrieder/swift/cuda/8sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm10ms	/home/skrieder/swift/cuda/8sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a8sm100ms	/home/skrieder/swift/cuda/8sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm0ms	/home/skrieder/swift/cuda/16sm0ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm1ms	/home/skrieder/swift/cuda/16sm1ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm10ms	/home/skrieder/swift/cuda/16sm10ms		INSTALLED	INTEL32::LINUX	null
+localhost	a16sm100ms	/home/skrieder/swift/cuda/16sm100ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep0ms	/home/skrieder/swift/c/sleep0ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1ms	/home/skrieder/swift/c/sleep1ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10ms	/home/skrieder/swift/c/sleep10ms		INSTALLED	INTEL32::LINUX	null
+localhost	sleep100ms	/home/skrieder/swift/c/sleep100ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep1000ms	/home/skrieder/swift/c/sleep1000ms			INSTALLED	INTEL32::LINUX	null
+localhost	sleep10000ms	/home/skrieder/swift/c/sleep10000ms			INSTALLED	INTEL32::LINUX	null
+localhost	hello		/home/skrieder/swift/multi/hello			INSTALLED	INTEL32::LINUX	null
+
+
+2012-06-08 09:21:34,774-0500 DEBUG textfiles END TC:
+2012-06-08 09:21:34,797-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339165293706) is /bin/bash shared/_swiftwrap hello-inx0ahsk -jobdir i -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:34,797-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339165293707) is /bin/bash shared/_swiftwrap hello-jnx0ahsk -jobdir j -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:34,815-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-inx0ahsk -jobdir i -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:34,815-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-jnx0ahsk -jobdir j -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:34,941-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,941-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,947-0500 DEBUG vdl:checkjobstatus START jobid=hello-inx0ahsk
+2012-06-08 09:21:34,947-0500 DEBUG vdl:checkjobstatus START jobid=hello-jnx0ahsk
+2012-06-08 09:21:34,961-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,961-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,963-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-jnx0ahsk - Failure file found
+2012-06-08 09:21:34,963-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-inx0ahsk - Failure file found
+2012-06-08 09:21:34,967-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,967-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,971-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,972-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,974-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,975-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:34,978-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-inx0ahsk
+2012-06-08 09:21:34,978-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-jnx0ahsk
+2012-06-08 09:21:34,982-0500 INFO  vdl:dostageout START jobid=hello-inx0ahsk - Staging out files
+2012-06-08 09:21:34,982-0500 INFO  vdl:dostageout START jobid=hello-jnx0ahsk - Staging out files
+2012-06-08 09:21:34,983-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:34,983-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,003-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,003-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,005-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,006-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,047-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,047-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,049-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-inx0ahsk - Error file missing
+2012-06-08 09:21:35,049-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-jnx0ahsk - Error file missing
+2012-06-08 09:21:35,054-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-jnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+2012-06-08 09:21:35,054-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-inx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/1.result
+2012-06-08 09:21:35,073-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,073-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,076-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,077-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,080-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,081-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,082-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,084-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,089-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,090-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,104-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,104-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,109-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-mnx0ahsk thread=0-1-2-1-1 host=localhost replicationGroup=knx0ahsk
+2012-06-08 09:21:35,109-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-nnx0ahsk thread=0-1-0-1-1 host=localhost replicationGroup=gnx0ahsk
+2012-06-08 09:21:35,117-0500 INFO  vdl:createdirset START jobid=hello-mnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,117-0500 INFO  vdl:createdirset START jobid=hello-nnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,118-0500 INFO  vdl:createdirset END jobid=hello-mnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,118-0500 INFO  vdl:createdirset END jobid=hello-nnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,119-0500 INFO  vdl:dostagein START jobid=hello-mnx0ahsk - Staging in files
+2012-06-08 09:21:35,119-0500 INFO  vdl:dostagein START jobid=hello-nnx0ahsk - Staging in files
+2012-06-08 09:21:35,121-0500 INFO  vdl:dostagein END jobid=hello-mnx0ahsk - Staging in finished
+2012-06-08 09:21:35,121-0500 INFO  vdl:dostagein END jobid=hello-nnx0ahsk - Staging in finished
+2012-06-08 09:21:35,122-0500 DEBUG vdl:execute2 JOB_START jobid=hello-mnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/m/hello-mnx0ahsk host=localhost
+2012-06-08 09:21:35,123-0500 DEBUG vdl:execute2 JOB_START jobid=hello-nnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/n/hello-nnx0ahsk host=localhost
+2012-06-08 09:21:35,135-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339165293787) is /bin/bash shared/_swiftwrap hello-mnx0ahsk -jobdir m -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,135-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339165293789) is /bin/bash shared/_swiftwrap hello-nnx0ahsk -jobdir n -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,136-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-mnx0ahsk -jobdir m -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,136-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-nnx0ahsk -jobdir n -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,260-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,263-0500 DEBUG vdl:checkjobstatus START jobid=hello-nnx0ahsk
+2012-06-08 09:21:35,270-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,271-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-nnx0ahsk - Failure file found
+2012-06-08 09:21:35,275-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,278-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-08 09:21:35,279-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,280-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,282-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-nnx0ahsk
+2012-06-08 09:21:35,283-0500 DEBUG vdl:checkjobstatus START jobid=hello-mnx0ahsk
+2012-06-08 09:21:35,284-0500 INFO  vdl:dostageout START jobid=hello-nnx0ahsk - Staging out files
+2012-06-08 09:21:35,285-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,290-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,292-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-mnx0ahsk - Failure file found
+2012-06-08 09:21:35,293-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,295-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,296-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,299-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,300-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,303-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-mnx0ahsk
+2012-06-08 09:21:35,304-0500 INFO  vdl:dostageout START jobid=hello-mnx0ahsk - Staging out files
+2012-06-08 09:21:35,306-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,313-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,315-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,316-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,317-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-nnx0ahsk - Error file missing
+2012-06-08 09:21:35,319-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-nnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/0.result
+2012-06-08 09:21:35,330-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,333-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,336-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,337-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-mnx0ahsk - Error file missing
+2012-06-08 09:21:35,339-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-mnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+2012-06-08 09:21:35,340-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,343-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,349-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,350-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,353-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,356-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,359-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,363-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-pnx0ahsk thread=0-1-1-1-1 host=localhost replicationGroup=lnx0ahsk
+2012-06-08 09:21:35,363-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,370-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,372-0500 INFO  vdl:createdirset START jobid=hello-pnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,373-0500 INFO  vdl:createdirset END jobid=hello-pnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,375-0500 INFO  vdl:dostagein START jobid=hello-pnx0ahsk - Staging in files
+2012-06-08 09:21:35,377-0500 INFO  vdl:dostagein END jobid=hello-pnx0ahsk - Staging in finished
+2012-06-08 09:21:35,380-0500 DEBUG vdl:execute2 JOB_START jobid=hello-pnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/p/hello-pnx0ahsk host=localhost
+2012-06-08 09:21:35,384-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,390-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-rnx0ahsk thread=0-1-0-1-1 host=localhost replicationGroup=onx0ahsk
+2012-06-08 09:21:35,390-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339165293867) is /bin/bash shared/_swiftwrap hello-pnx0ahsk -jobdir p -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,391-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-pnx0ahsk -jobdir p -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,400-0500 INFO  vdl:createdirset START jobid=hello-rnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,400-0500 INFO  vdl:createdirset END jobid=hello-rnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,402-0500 INFO  vdl:dostagein START jobid=hello-rnx0ahsk - Staging in files
+2012-06-08 09:21:35,404-0500 INFO  vdl:dostagein END jobid=hello-rnx0ahsk - Staging in finished
+2012-06-08 09:21:35,406-0500 DEBUG vdl:execute2 JOB_START jobid=hello-rnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/r/hello-rnx0ahsk host=localhost
+2012-06-08 09:21:35,416-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339165293869) is /bin/bash shared/_swiftwrap hello-rnx0ahsk -jobdir r -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,417-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-rnx0ahsk -jobdir r -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,535-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,538-0500 DEBUG vdl:checkjobstatus START jobid=hello-pnx0ahsk
+2012-06-08 09:21:35,546-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,547-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-pnx0ahsk - Failure file found
+2012-06-08 09:21:35,550-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,553-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-08 09:21:35,554-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,557-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-pnx0ahsk
+2012-06-08 09:21:35,559-0500 INFO  vdl:dostageout START jobid=hello-pnx0ahsk - Staging out files
+2012-06-08 09:21:35,560-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,561-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,564-0500 DEBUG vdl:checkjobstatus START jobid=hello-rnx0ahsk
+2012-06-08 09:21:35,567-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,569-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,571-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,573-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-rnx0ahsk - Failure file found
+2012-06-08 09:21:35,576-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,579-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,581-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-08 09:21:35,583-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-rnx0ahsk
+2012-06-08 09:21:35,585-0500 INFO  vdl:dostageout START jobid=hello-rnx0ahsk - Staging out files
+2012-06-08 09:21:35,586-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,589-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,590-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-pnx0ahsk - Error file missing
+2012-06-08 09:21:35,592-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-pnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/1.result
+2012-06-08 09:21:35,594-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=0.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,596-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,603-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,606-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,612-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,615-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,616-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,617-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-rnx0ahsk - Error file missing
+2012-06-08 09:21:35,619-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-rnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/0.result
+2012-06-08 09:21:35,622-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,627-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,629-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,632-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,633-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-tnx0ahsk thread=0-1-2-1-1 host=localhost replicationGroup=qnx0ahsk
+2012-06-08 09:21:35,638-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,641-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,643-0500 INFO  vdl:createdirset START jobid=hello-tnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,644-0500 INFO  vdl:createdirset END jobid=hello-tnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,645-0500 INFO  vdl:dostagein START jobid=hello-tnx0ahsk - Staging in files
+2012-06-08 09:21:35,648-0500 INFO  vdl:dostagein END jobid=hello-tnx0ahsk - Staging in finished
+2012-06-08 09:21:35,648-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,650-0500 DEBUG vdl:execute2 JOB_START jobid=hello-tnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/t/hello-tnx0ahsk host=localhost
+2012-06-08 09:21:35,660-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-2-1-1-1339165293946) is /bin/bash shared/_swiftwrap hello-tnx0ahsk -jobdir t -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,660-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,662-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-tnx0ahsk -jobdir t -scratch  -e /home/skrieder/swift/multi/hello -out 2.result -err stderr.txt -i -d  -if  -of 2.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,665-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-vnx0ahsk thread=0-1-1-1-1 host=localhost replicationGroup=snx0ahsk
+2012-06-08 09:21:35,674-0500 INFO  vdl:createdirset START jobid=hello-vnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,675-0500 INFO  vdl:createdirset END jobid=hello-vnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,677-0500 INFO  vdl:dostagein START jobid=hello-vnx0ahsk - Staging in files
+2012-06-08 09:21:35,679-0500 INFO  vdl:dostagein END jobid=hello-vnx0ahsk - Staging in finished
+2012-06-08 09:21:35,681-0500 DEBUG vdl:execute2 JOB_START jobid=hello-vnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/v/hello-vnx0ahsk host=localhost
+2012-06-08 09:21:35,692-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-1-1-1-1339165293949) is /bin/bash shared/_swiftwrap hello-vnx0ahsk -jobdir v -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,693-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-vnx0ahsk -jobdir v -scratch  -e /home/skrieder/swift/multi/hello -out 1.result -err stderr.txt -i -d  -if  -of 1.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,786-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,788-0500 DEBUG vdl:checkjobstatus START jobid=hello-tnx0ahsk
+2012-06-08 09:21:35,794-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,795-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-tnx0ahsk - Failure file found
+2012-06-08 09:21:35,798-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,801-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,802-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,803-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-tnx0ahsk
+2012-06-08 09:21:35,804-0500 INFO  vdl:dostageout START jobid=hello-tnx0ahsk - Staging out files
+2012-06-08 09:21:35,805-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,808-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=2.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,810-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,816-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,818-0500 DEBUG vdl:checkjobstatus START jobid=hello-vnx0ahsk
+2012-06-08 09:21:35,824-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,825-0500 INFO  vdl:checkerrorfile FAILURE jobid=hello-vnx0ahsk - Failure file found
+2012-06-08 09:21:35,826-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,826-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-tnx0ahsk - Error file missing
+2012-06-08 09:21:35,827-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-tnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+2012-06-08 09:21:35,828-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,830-0500 INFO  LateBindingScheduler JobQueue: 2
+2012-06-08 09:21:35,831-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,832-0500 DEBUG vdl:execute2 STAGING_OUT jobid=hello-vnx0ahsk
+2012-06-08 09:21:35,832-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,833-0500 INFO  vdl:dostageout START jobid=hello-vnx0ahsk - Staging out files
+2012-06-08 09:21:35,833-0500 DEBUG vdl:dostageout stageouts: [[$, c:messagefile - Open]]
+2012-06-08 09:21:35,835-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,836-0500 DEBUG vdl:dostageout FILE_STAGE_OUT_START srcname=1.result srcdir=3inloop-20120608-0921-ftgctqba/shared/ srchost=localhost destdir= desthost=localhost provider=file
+2012-06-08 09:21:35,838-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,839-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,842-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,847-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,853-0500 INFO  vdl:execute END_FAILURE thread=0-1-2-1 tr=hello
+2012-06-08 09:21:35,854-0500 INFO  WeightedHostScoreScheduler CONTACT_SELECTED host=localhost, score=99.853
+2012-06-08 09:21:35,855-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,856-0500 INFO  vdl:checkerrorfile NO_STATUS_FILE jobid=hello-vnx0ahsk - Error file missing
+2012-06-08 09:21:35,857-0500 DEBUG vdl:execute2 THREAD_ASSOCIATION jobid=hello-xnx0ahsk thread=0-1-0-1-1 host=localhost replicationGroup=unx0ahsk
+2012-06-08 09:21:35,858-0500 DEBUG vdl:execute2 APPLICATION_EXCEPTION jobid=hello-vnx0ahsk - Application exception: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/1.result
+2012-06-08 09:21:35,859-0500 DEBUG VDL2ExecutionContext Exception in hello:
+Arguments: []
+Host: localhost
+Directory: 3inloop-20120608-0921-ftgctqba/jobs/t/hello-tnx0ahsk
+stderr.txt: 
+stdout.txt: Hello World
+
+----
+
+Exception in hello:
+Arguments: []
+Host: localhost
+Directory: 3inloop-20120608-0921-ftgctqba/jobs/t/hello-tnx0ahsk
+stderr.txt: 
+stdout.txt: Hello World
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-08 09:21:35,865-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,861-0500 INFO  vdl:createdirset START jobid=hello-xnx0ahsk host=localhost - Initializing directory structure
+2012-06-08 09:21:35,870-0500 INFO  vdl:createdirset END jobid=hello-xnx0ahsk - Done initializing directory structure
+2012-06-08 09:21:35,871-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,871-0500 INFO  vdl:dostagein START jobid=hello-xnx0ahsk - Staging in files
+2012-06-08 09:21:35,872-0500 INFO  vdl:dostagein END jobid=hello-xnx0ahsk - Staging in finished
+2012-06-08 09:21:35,872-0500 DEBUG vdl:execute2 JOB_START jobid=hello-xnx0ahsk tr=hello arguments=[] tmpdir=3inloop-20120608-0921-ftgctqba/jobs/x/hello-xnx0ahsk host=localhost
+2012-06-08 09:21:35,874-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,875-0500 INFO  GridExec TASK_DEFINITION: Task(type=JOB_SUBMISSION, identity=urn:0-1-0-1-1-1339165294022) is /bin/bash shared/_swiftwrap hello-xnx0ahsk -jobdir x -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,875-0500 INFO  LateBindingScheduler JobQueue: 1
+2012-06-08 09:21:35,876-0500 INFO  JobSubmissionTaskHandler Submit: in: /var/tmp/3inloop-20120608-0921-ftgctqba command: /bin/bash /var/tmp/3inloop-20120608-0921-ftgctqba/shared/_swiftwrap hello-xnx0ahsk -jobdir x -scratch  -e /home/skrieder/swift/multi/hello -out 0.result -err stderr.txt -i -d  -if  -of 0.result -k  -cdmfile  -status files -a
+2012-06-08 09:21:35,879-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,884-0500 INFO  vdl:execute END_FAILURE thread=0-1-1-1 tr=hello
+2012-06-08 09:21:35,979-0500 INFO  LateBindingScheduler JobQueue: 0
+2012-06-08 09:21:35,980-0500 INFO  ExecutionContext Detailed exception: 
+Exception in hello:
+Arguments: []
+Host: localhost
+Directory: 3inloop-20120608-0921-ftgctqba/jobs/t/hello-tnx0ahsk
+stderr.txt: 
+stdout.txt: Hello World
+
+----
+
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.karajan.workflow.nodes.functions.KException.function(KException.java:29)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:27)
+	at org.globus.cog.karajan.workflow.nodes.AbstractSequentialWithArguments.completed(AbstractSequentialWithArguments.java:194)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.complete(FlowNode.java:214)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.post(FlowContainer.java:58)
+	at org.globus.cog.karajan.workflow.nodes.functions.AbstractFunction.post(AbstractFunction.java:28)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.startNext(Sequential.java:29)
+	at org.globus.cog.karajan.workflow.nodes.Sequential.executeChildren(Sequential.java:20)
+	at org.globus.cog.karajan.workflow.nodes.FlowContainer.execute(FlowContainer.java:63)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.restart(FlowNode.java:139)
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.start(FlowNode.java:197)
+	at org.globus.cog.karajan.workflow.events.EventBus.start(EventBus.java:104)
+	at org.globus.cog.karajan.workflow.events.EventTargetPair.run(EventTargetPair.java:40)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: null
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.karajan.workflow.nodes.FlowNode.failImmediately(FlowNode.java:101)
+	at org.globus.cog.karajan.workflow.nodes.grid.AbstractGridNode$1.run(AbstractGridNode.java:308)
+	... 6 more
+Caused by: org.globus.cog.abstraction.impl.file.FileNotFoundException: File not found: /var/tmp/3inloop-20120608-0921-ftgctqba/shared/2.result
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.getFile(FileResourceImpl.java:225)
+	at org.globus.cog.abstraction.impl.file.local.FileResourceImpl.putFile(FileResourceImpl.java:286)
+	at org.globus.cog.abstraction.impl.file.AbstractFileResource.putFile(AbstractFileResource.java:152)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.doDestination(DelegatedFileTransferHandler.java:314)
+	at org.globus.cog.abstraction.impl.fileTransfer.CachingDelegatedFileTransferHandler.doDestination(CachingDelegatedFileTransferHandler.java:46)
+	at org.globus.cog.abstraction.impl.fileTransfer.DelegatedFileTransferHandler.run(DelegatedFileTransferHandler.java:487)
+	... 1 more
+2012-06-08 09:21:35,981-0500 INFO  Loader Swift finished with errors
+2012-06-08 09:21:35,981-0500 DEBUG vdl:checkjobstatus START jobid=hello-xnx0ahsk

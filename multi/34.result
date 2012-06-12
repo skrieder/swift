@@ -4,7 +4,7 @@
 > Detected Compute SM 2.0 hardware with 16 multi-processors
 Expected time for serial execution of 16 kernels = 1.600s
 Expected time for concurrent execution of 16 kernels = 0.100s
-Measured time for sample = 0.100s
+Measured time for sample = 0.101s
 [16sm100ms] test results...
 PASSED
 

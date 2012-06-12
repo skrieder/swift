@@ -44,5 +44,5 @@ int main()
 	//    else
 	//	usleep(1000000);
 	// }
-  return 1;
+  return 0;
 }

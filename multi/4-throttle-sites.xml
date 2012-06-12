@@ -21,7 +21,8 @@ is removed.
     <filesystem provider="local" />
     <execution provider="local" />
     <workdirectory >/var/tmp</workdirectory>
-    <profile namespace="karajan" key="jobThrottle">4</profile>
+    <profile namespace="karajan" key="jobThrottle">.03</profile>
+    <profile namespace="karajan" key="initialScore">10000</profile>
   </pool>
 
 

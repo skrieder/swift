@@ -1,0 +1,25 @@
+Progress  2012-06-12 09:07:39.538812612-0500  LOG_START
+
+_____________________________________________________________________________
+
+        Wrapper (_swiftwrap)
+_____________________________________________________________________________
+
+Job directory mode is: link on shared filesystem
+PWD=/var/tmp/scott16sm1000ms-20120612-0907-rktk2ssb
+DIR=jobs/8/a16sm1000ms-8drqtnsk
+EXEC=/home/skrieder/swift/cuda/16sm100ms
+STDIN=
+STDOUT=23.result
+STDERR=stderr.txt
+DIRS=
+INF=scott3a.sh
+OUTF=23.result
+KICKSTART=
+CDM_FILE=
+MPI_RANK=
+ARGS=
+ARGC=0
+Progress  2012-06-12 09:07:39.558788060-0500  CREATE_JOBDIR
+Created job directory: jobs/8/a16sm1000ms-8drqtnsk
+Progress  2012-06-12 09:07:39.568902796-0500  CREATE_INPUTDIR

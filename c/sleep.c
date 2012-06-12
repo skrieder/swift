@@ -40,7 +40,7 @@ int main()
   //  {
   //    printf("testing...\n");
   //   if (a==1)
-	msleep(10000);
+	msleep(100);
 	//    else
 	//	usleep(1000000);
 	// }
